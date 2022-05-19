@@ -1,0 +1,12 @@
+currLabel: Kategorien
+customIcon: null
+enabled: true
+handle: categories
+icon: categories
+layout: eb1f8a0c-76c5-48cc-9672-7044f646159e # Default
+newWindow: false
+order: 3
+prevLabel: Kategorien
+prevUrl: categories
+type: ''
+url: categories

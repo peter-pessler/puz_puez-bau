@@ -1,0 +1,85 @@
+field: 457b88a8-df91-4984-bd97-0f2a7c0c86bb # Blog Detail Matrix
+fieldLayouts:
+  e2dec0d2-ecfb-450e-bb58-2ea0d41937c1:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 12b09f63-0061-48ce-8ec5-40b02676205d # Bild Detail Seite
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: b35d5043-f418-487c-9dc6-fcb6fb2c15fe # Bild Unterschrift
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+fields:
+  12b09f63-0061-48ce-8ec5-40b02676205d: # Bild Detail Seite
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: bildDetailSeite
+    instructions: 'Format: ??? x ??? Pixel'
+    name: 'Bild Detail Seite'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: true
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  b35d5043-f418-487c-9dc6-fcb6fb2c15fe: # Bild Unterschrift
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: bildUnterschrift
+    instructions: (optional)
+    name: 'Bild Unterschrift'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: bild
+name: Bild
+sortOrder: 1

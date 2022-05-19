@@ -1,0 +1,53 @@
+{% import "_includes/forms" as form %}
+
+{% set fieldOptions = [] %}
+{% for type in fieldTypes %}
+    {% set label = type | capitalize %}
+    {% set option = {label:label , value: type} %}
+    {% set fieldOptions = fieldOptions | merge([option]) %}
+{% endfor %}
+<tr>
+    <input type="hidden" name="fields[{{index}}][id]" value="{{field.id | default(0)}}">
+    <td>
+        {{ form.textField({
+            name: 'fields['~ index ~'][name]',
+            class: 'form-name',
+            required: true,
+            value: field.name | default(''),
+        }) }}
+    </td>
+    <td>
+        {{ form.selectField({
+            name: 'fields['~ index ~'][type]',
+            class: 'form-type',
+            required: true,
+            options: fieldOptions,
+            value: field.type | default('')
+        }) }}
+    </td>
+    <td>
+        <div class="clearfix">
+            {{ form.checkboxField({
+                label: 'Required' | t('wheelform'),
+                name: 'fields['~ index ~'][required]',
+                class: 'form-required',
+                value: 1,
+                checked: field.required | default(0),
+            }) }}
+        </div>
+        <div class="clearfix">
+            {{ form.checkboxField({
+                label: 'Entries View' | t('wheelform'),
+                name: 'fields['~ index ~'][index_view]',
+                class: 'index-view',
+                value: 1,
+                checked: field.index_view | default(0),
+            }) }}
+        </div>
+
+    </td>
+    <td>
+        <a href="#" class="form-field-add" data-icon="plus"></a>
+        <a href="#" class="form-field-rm right" data-icon="remove"></a>
+    </td>
+</tr>

@@ -1,0 +1,45 @@
+{% set layout = '' %}
+{% set layout = element.layout.value  %}
+
+<style>
+    {% switch layout %}
+
+        {% case "theme0" %}
+
+            .theme0{
+                border: 3px solid orange!important;
+            }
+
+        {% case "theme1" %}
+
+            .theme1{
+                border: 3px solid orange!important;
+            }
+
+    {% endswitch %}
+
+    .layoutcontainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: stretch;
+    }
+    .layoutcontainer img{
+        border: 3px solid transparent;
+        width: 150px;
+        margin-right: 25px;
+    }
+</style>
+
+<div class="layoutcontainer">
+    <div>
+        <div>Neutrale Contentseite</div>
+        <img class="theme0" src="/assets/images/backend/neutral-screen.png" />
+    </div>
+    <div>
+        <div>Home</div>
+        <img class="theme1" src="/assets/images/backend/home-screen.png" />
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{% extends '_layouts/main' %}
+
+{% block headerimage %}
+  {% include '_include-atoms/headerimage' with {detailbild: ''} %}
+{% endblock %}
+
+{% block module %}
+  <section>
+    {% set matrixElemente = siteconfig.generalModules %}
+    {% if matrixElemente is defined and matrixElemente %}
+      {% for block in matrixElemente %}
+        {% include ('_include-block-components/modul_' ~ block.type.handle) %}
+      {% endfor %}
+    {% endif %}
+  </section>
+{% endblock %}
+

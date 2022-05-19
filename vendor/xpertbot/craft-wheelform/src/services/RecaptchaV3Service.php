@@ -1,0 +1,54 @@
+<?php
+namespace wheelform\services;
+
+use craft\helpers\Template;
+use wheelform\Plugin as Wheelform;
+use yii\helpers\Html;
+
+class RecaptchaV3Service extends BaseService
+{
+    public function __invoke($attributes)
+    {
+        $settings = Wheelform::getInstance()->getSettings();
+        $recaptcha_public = empty($settings->recaptcha_public) ? "" : \Craft::parseEnv($settings->recaptcha_public);
+        if(empty($recaptcha_public)) {
+            return NULL;
+        }
+        if(array_key_exists('action', $attributes)) {
+            $action = preg_replace("/[^A-Za-z ]/", '', $attributes['action']);
+        } else {
+            $uri = \Craft::$app->getRequest()->getUrl();
+            if($uri == '/') {
+                $action = "homepage";
+            } else {
+                $action = preg_replace("/[^A-Za-z ]/", '', $uri);
+            }
+        }
+
+        $html = Html::jsFile("https://www.google.com/recaptcha/api.js?render={$recaptcha_public}&onload=wheelformRecaptchaV3onload");
+        $html .= Html::script("
+        if (!WheelformRecaptcha) {
+            var WheelformRecaptcha = {
+                callbacks: [],
+            };
+        }
+        
+        var wheelformProcessRecaptchaCallback = function() {
+            grecaptcha.execute('{$recaptcha_public}', {action: '{$action}'}).then(function(token) {
+                if(WheelformRecaptcha.callbacks.length > 0) {
+                    for(var i = 0; i < WheelformRecaptcha.callbacks.length; i++) {
+                        var callback = WheelformRecaptcha.callbacks[i];
+                        callback(token);
+                    }
+                }
+            });
+        }
+        
+        var wheelformRecaptchaV3onload = function() {
+            grecaptcha.ready(function() {
+                wheelformProcessRecaptchaCallback()
+            });
+        }");
+        return Template::raw($html);
+    }
+}

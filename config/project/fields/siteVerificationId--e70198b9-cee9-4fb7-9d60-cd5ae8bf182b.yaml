@@ -1,0 +1,19 @@
+columnSuffix: yakynptt
+contentColumnType: text
+fieldGroup: 3ce9e77b-5b04-4678-a633-58827f84519a # Common
+handle: siteVerificationId
+instructions: ''
+name: 'Site Verification ID'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

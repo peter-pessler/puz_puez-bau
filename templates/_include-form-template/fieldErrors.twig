@@ -1,0 +1,36 @@
+// --------------------------------------------
+// BEFORE SAVE USER ELEMENT EVENT. Add our own validation
+// --------------------------------------------
+
+use craft\elements\User as UserElement;
+use craft\base\Element;
+use craft\events\ModelEvent;
+
+Event::on(
+UserElement::class,
+Element::EVENT_BEFORE_SAVE,
+function(ModelEvent $e) {
+if ($e->isNew && $e->sender instanceof \craft\elements\User) {
+$errors = false;
+if (!Craft::$app->request->post('name')){
+$e->sender->addError('name','name is required');
+$errors = true;
+}
+if (!Craft::$app->request->post('lastName')){
+$e->sender->addError('lastName','Last name is required');
+$errors = true;
+}
+if (strlen(Craft::$app->request->post('fields.phoneNumber')) < 10) {
+$e->sender->addError('phoneNumber','Telephone number should be at least 10 characters long');
+$errors = true;
+}
+if (!is_numeric(Craft::$app->request->post('fields.phoneNumber'))) {
+$e->sender->addError('phoneNumber','Telephone number must be numeric');
+$errors = true;
+}
+if ($errors){
+$e->isValid = false;
+}
+}
+}
+);

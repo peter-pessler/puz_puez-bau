@@ -1,0 +1,140 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    first: true,
+    label: "From Email"|t('wheelform'),
+    required: true,
+    id: 'from_email',
+    name: 'from_email',
+    instructions: "The email address that the contact form will send from."|t('wheelform'),
+    value: settings.from_email,
+    autofocus: true,
+    errors: settings.getErrors('from_email')
+}) }}
+
+{{ forms.textField({
+    label: "From Name"|t('wheelform'),
+    id: 'from_name',
+    name: 'from_name',
+    instructions: "Name used for from-email address"|t('wheelform'),
+    value: settings.from_name ?? "",
+    autofocus: true,
+    errors: settings.getErrors('from_name')
+}) }}
+
+{{ forms.textField({
+    label: "CP Nav Label"|t('wheelform'),
+    required: false,
+    id: 'cp_label',
+    name: 'cp_label',
+    instructions: "Label displayed on Admin sidebar navigation."|t('wheelform'),
+    value: settings.cp_label | default('Forms'),
+    errors: settings.getErrors('cp_label')
+}) }}
+
+{{ forms.textField({
+    label: "Success Flash Message"|t('wheelform'),
+    id: "success_message",
+    name: "success_message",
+    instructions: "The flash message displayed after successfully sending a message."|t('wheelform'),
+    value: settings.success_message ?? "Thank You! we will review your submission shortly." |t ('wheelform'),
+    errors: settings.getErrors('success_message'),
+    required: true,
+}) }}
+<div class="field">
+    <div class="heading">
+        <label for="volume_id">{{ "Volume"|t('wheelform')}}</label>
+        <div class="instructions">
+            {{ "Select an volume folder to save uploaded form files."|t('wheelform') }}
+        </div>
+    </div>
+    <div class="input ltr">
+        {{ forms.select({
+            id: "volume_id",
+            name: "volume_id",
+            options: volumes,
+            value: settings.volume_id ?? settings.volume_id,
+            errors: settings.getErrors('volume_id'),
+            required: false,
+        }) }}
+    </div>
+</div>
+
+<div class="field">
+    <div class="heading">
+        <label for="recaptcha_version">{{ "Recaptcha version"|t('wheelform')}}</label>
+    </div>
+    <div class="input ltr">
+        {{
+            forms.select({
+                id: 'recaptcha_version',
+                name: 'recaptcha_version',
+                options: {"2":"V2", "3":"V3"},
+                value: settings.recaptcha_version ? settings.recaptcha_version : "",
+                errors: settings.getErrors('recaptcha_version'),
+                required: false,
+            })
+        }}
+    </div>
+</div>
+
+{{ forms.autosuggestField({
+    label: "Recaptcha Public Key"|t('wheelform'),
+    id: "recaptcha_public",
+    class: 'ltr',
+    name: "recaptcha_public",
+    suggestEnvVars: true,
+    suggestAliases: true,
+    value: settings.recaptcha_public | default(''),
+    errors: settings.getErrors('recaptcha_public'),
+    required: false,
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Recaptcha Private Key"|t('wheelform'),
+    id: "recaptcha_secret",
+    class: 'ltr',
+    suggestEnvVars: true,
+    suggestAliases: true,
+    name: "recaptcha_secret",
+    value: settings.recaptcha_secret | default(''),
+    errors: settings.getErrors('recaptcha_secret'),
+    required: false,
+}) }}
+
+<div class="field">
+    <div class="heading">
+        <label for="recaptcha_min_score">{{ "Recaptcha Minimum score"|t('wheelform')}}</label>
+    </div>
+    <div class="input ltr">
+        {{
+            forms.select({
+                id: 'recaptcha_min_score',
+                name: 'recaptcha_min_score',
+                options: {"0.1": "0.1", "0.2": "0.2", "0.3": "0.3", "0.4": "0.4", "0.5": "0.5", "0.6": "0.6", "0.7": "0.7", "0.8": "0.8", "0.9": "0.9", "1.0": "1.0"},
+                value: settings.recaptcha_min_score ? settings.recaptcha_min_score : "",
+                errors: settings.getErrors('recaptcha_min_score'),
+                required: false,
+            })
+        }}
+    </div>
+</div>
+
+<div class="field">
+    <div class="heading">
+        <label for="disabled_fields">{{ "Disabled fields"|t('wheelform')}}</label>
+        <div class="instructions">
+            {{ "Select the fields to disable in the form dialog."|t('wheelform') }}
+        </div>
+    </div>
+    <div class="input ltr">
+        {{ forms.checkboxGroup({
+            id: "disabled_fields",
+            name: "disabled_fields",
+            options: fields,
+            values: settings.disabled_fields ?? settings.disabled_fields,
+            errors: settings.getErrors('disabled_fields'),
+            required: false,
+        }) }}
+    </div>
+</div>

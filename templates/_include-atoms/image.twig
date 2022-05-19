@@ -1,0 +1,17 @@
+{#
+********************************************************
+Aufruf Beispiel:
+{% include '_include-atoms/image' with {image: item.blogDetail.image, size: blogPreview} %}
+********************************************************
+#}
+{% if image is defined and image and image.one() %}
+  <img
+    class="w-100 {% if class is defined %}{{class}}{% endif %}"
+    {% if size is defined %}
+      src="{{image.one().getUrl(size)}}"
+    {% else %}
+      src="{{image.one().getUrl()}}"
+    {% endif %}
+
+    alt="{{image.one().title}}">
+{% endif %}

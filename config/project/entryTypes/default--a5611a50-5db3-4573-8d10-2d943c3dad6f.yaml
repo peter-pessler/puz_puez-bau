@@ -1,0 +1,117 @@
+fieldLayouts:
+  16b95d44-09ed-4f94-983f-0f18984d83ef:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            heading: 'Teaser Bild'
+            type: craft\fieldlayoutelements\Heading
+          -
+            style: tip
+            tip: 'Format 420 x 210 Pixel'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: cebbeb25-2a8a-4de4-b189-091888e45444 # Bild
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Headline kurz'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 45bde3f7-927b-4780-9504-a3daed7ba8f6 # Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Blog Kurzbeschreibung'
+            type: craft\fieldlayoutelements\Heading
+          -
+            style: tip
+            tip: 'ca. 125 Zeichen'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: bc5ea38e-325e-4908-aca2-715a2e6c3fa1 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Blog Teaser'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: bdb3307a-c609-43bc-88ad-c997b23b7c29 # Keyvisual Image Single
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 91842fdf-3636-4bcf-8cd5-c49abfb0b583 # Headline (H1)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 457b88a8-df91-4984-bd97-0f2a7c0c86bb # Blog Detail Matrix
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Blog Detailseite'
+        sortOrder: 2
+handle: default
+hasTitleField: true
+name: Standard
+section: 2a6d8e6b-ffa1-4e93-9bd5-e51c6e600f58 # Blog Arikel
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

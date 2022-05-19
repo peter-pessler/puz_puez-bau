@@ -1,0 +1,73 @@
+ul.accordion-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+
+  li {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: $wl-color-white;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.active {
+      label {
+        background-color: rgba($wl-color-accordion-label, 0.1);
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    label {
+      font-weight: bold!important;
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 10px 10px 10px 10px;
+      margin: 0;
+      cursor: pointer;
+
+      &::after {
+        content: url('/assets/images/arrow-accordion.svg');
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        transform: rotate(0deg);
+        //transform: scale(.9);
+      }
+      &:hover {
+        background-color: rgba($wl-color-accordion-label, 0.2);
+        color: $wl-color-accordion-label;
+        transition: $transition;
+        &::after {
+          transform: rotate(90deg);
+          transition: $transition;
+        }
+      }
+    }
+
+    div.accordion-content {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 10px 10px 10px 10px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+currLabel: Tags
+customIcon: null
+enabled: true
+handle: tags
+icon: /usr/www/users/devswu/starter/starter-entwicklung/vendor/ether/tags/src/icon-mask.svg
+layout: eb1f8a0c-76c5-48cc-9672-7044f646159e # Default
+newWindow: false
+order: 6
+prevLabel: Tags
+prevUrl: tags
+type: ''
+url: tags

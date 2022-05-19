@@ -1,0 +1,124 @@
+fieldLayouts:
+  9d51e25f-d8f3-4d8f-acaa-0890d7662b0e:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: cc710618-bcae-48f4-9b78-591bdca3bccf # Auswahl Kategorie Jobs
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: abefc379-7da5-45c5-8820-6a847ec19e59 # Auswahl Tag Job
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Kategorie Auswahl'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: cebbeb25-2a8a-4de4-b189-091888e45444 # Bild
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4d4a7cdf-7cf5-4ffa-b23c-3693707cbac8 # Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4bf9855c-ef1d-44c8-a13a-6d2add7efbb0 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Karriere Teaser'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: bdb3307a-c609-43bc-88ad-c997b23b7c29 # Keyvisual Image Single
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 91842fdf-3636-4bcf-8cd5-c49abfb0b583 # Headline (H1)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 67f553d8-602a-49f3-a4ef-8910c7034fa9 # Karriere Detail Matrix
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Karriere Detailseite'
+        sortOrder: 3
+handle: default
+hasTitleField: true
+name: Standard
+section: f732c6a1-bddf-4e8c-9e25-479605650856 # Karriere Artikel
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

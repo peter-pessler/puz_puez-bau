@@ -1,0 +1,9 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+<section class="wl-wrapper">
+    <h2>{{ block.headline }}</h2>
+    <div class="text">
+        {{ block.text }}
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,76 @@
+{#
+********************************************************
+Aufruf Beispiel:
+{% include '_include-atoms/image-picture-with-and-height' with {class: 'contentImage', sourceMediaSettings: settings, image: modulImage, imageSize: '700x400', imageMode: 'crop'} %}
+********************************************************
+- size ist ein String (source Bilder) von Bildbreite|Bildhöhe von niedrig zu groß
+- imageSize ein String von Bildbreite|Bildhöhe und wird im img src verwendet!
+********************************************************
+#}{% if image is defined and image and imageSize and imageMode %}
+
+    {% set imgSizeArr = imageSize|split('x') %}
+    {% set imgWidth = imgSizeArr[0] %}
+    {% set imgHeight =  imgSizeArr[1] %}
+
+    {% if imgHeight == '' %}
+        {% set imgSrc = image.getUrl({
+            mode: imageMode,
+            format: (imgFormat),
+            width: imgWidth,
+            quality: (imgQuality),
+        })  %}
+    {% elseif imgWidth == '' %}
+        {% set imgSrc = image.getUrl({
+            mode: imageMode,
+            format: (imgFormat),
+            height: imgHeight,
+            quality: (imgQuality),
+        })  %}
+    {% else %}
+        {% set imgSrc = image.getUrl({
+            mode: imageMode,
+            format: (imgFormat),
+            width: imgWidth,
+            height: imgHeight,
+            quality: (imgQuality),
+        })  %}
+    {% endif %}<picture>
+
+    {% for key,setting in sourceMediaSettings|reverse %}
+        {% set sourceMediaWidth = key|split('-')[1] %}
+        {% set sourceMediaImageSize = setting.size %}
+        {% set sourceMediaImageSizeArr = sourceMediaImageSize|split('x') %}
+        {% set sourceMediaImgWidth = sourceMediaImageSizeArr[0] %}
+        {% set sourceMediaImgHeight =  sourceMediaImageSizeArr[1] %}
+        {% set mode = setting.mode %}
+        {% if sourceMediaImgHeight == '' %}
+            {% set imgMediaSource = image.getUrl({
+                mode: mode,
+                format: (imgFormat),
+                width: sourceMediaImgWidth,
+                quality: (imgQuality),
+            })  %}
+        {% elseif sourceMediaImgWidth == '' %}
+            {% set imgMediaSource = image.getUrl({
+                mode: mode,
+                format: (imgFormat),
+                height: sourceMediaImgHeight,
+                quality: (imgQuality),
+            })  %}
+        {% else %}
+            {% set imgMediaSource = image.getUrl({
+                mode: mode,
+                format: (imgFormat),
+                width: sourceMediaImgWidth,
+                height: sourceMediaImgHeight,
+                quality: (imgQuality),
+            })  %}
+        {% endif %}
+
+        <source media="(max-width: {{ sourceMediaWidth }}px)" type="image/webp" srcset="{{ imgMediaSource }}">
+    {% endfor %}
+
+    <img {% if class is not empty %}class="{{ class }}" {% endif %}src="{{ imgSrc }}" alt="{{ image.title }}" />
+
+
+    </picture>{% endif %}

@@ -1,0 +1,79 @@
+{% extends "_layouts/cp" %}
+
+{% do view.registerAssetBundle("wheelform\\assets\\WheelformCpAsset") %}
+
+{% set title = title ? title : "Wheel Forms" %}
+
+{% block actionButton %}
+    {% if currentUser.can('wheelform_new_form') %}
+    <div class="buttons">
+        <a class="btn submit icon" href="{{ url('wheelform/form/new') }}">{{ 'New Form'|t('wheelform') }}</a>
+    </div>
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+    <div class="tableview">
+        {% if wheelforms is not empty %}
+            <table class="data fullwidth">
+                <thead>
+                    <tr>
+                        <th scope="col" class="thin">
+                            {{ 'Form ID' | t('wheelform') }}
+                        </th>
+                        <th class="thin">
+                            {{ 'Active' | t('wheelform') }}
+                        </th>
+                        <th scope="col">
+                            {{ 'Form Name' | t('wheelform') }}
+                        </th>
+                        <th scope="col">
+                            {{ 'Entries' | t('wheelform') }}
+                        </th>
+                        <th scope="col" class="thin">
+                            {{ 'New' | t('wheelform') }}
+                        </th>
+                        <th scope="col" class="thin">
+                            {{ 'Settings' | t('wheelform') }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in wheelforms %}
+                        <tr data-id="{{ form.id }}" data-name="{{ form.name|t }}">
+                            <td>{{ form.id }}</td>
+                            <td><span class="status {{ form.active ? 'active' : 'disabled' }}"></span></td>
+                            <td>{{ form.name }}</td>
+                            <td>
+                            {% if (currentUser.can('wheelform_view_all_forms_entries') or currentUser.can('wheelform_view_entries_' ~ form.id)) and form.entryCount > 0 %}
+                                <a href="{{ url('wheelform/form/' ~ form.id ~ '/entries')}}">
+                            {% endif %}
+
+                                {{ form.entryCount }}
+
+                            {% if (currentUser.can('wheelform_view_all_forms_entries') or currentUser.can('wheelform_view_entries_' ~ form.id)) and form.entryCount > 0 %}
+                                </a>
+                            {% endif %}
+                            </td>
+                            <td>
+                            {% if form.hasNew() %}
+                                <span class="new-badge">!</span>
+                            {% else %}
+                                --
+                            {% endif %}
+                            </td>
+                            <td>
+                                {% if (currentUser.can('wheelform_change_all_forms_settings') or currentUser.can('wheelform_change_settings_' ~ form.id)) %}
+                                    <a href="{{ url('wheelform/form/edit/'~ form.id) }}" class="settings icon" title="{{ 'Settings'|t('wheelform') }}"></a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>{{ 'No forms' | t('wheelform') }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

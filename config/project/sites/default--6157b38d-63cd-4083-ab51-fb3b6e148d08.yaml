@@ -1,0 +1,9 @@
+baseUrl: $PRIMARY_SITE_URL
+enabled: true
+handle: default
+hasUrls: true
+language: de
+name: 'Entwicklung Dev Wunderlabs'
+primary: true
+siteGroup: 369b82b2-671c-4c1a-80da-f8c573740193 # Startertesting Dev Wunderlabs
+sortOrder: 1

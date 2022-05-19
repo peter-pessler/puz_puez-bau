@@ -1,0 +1,12 @@
+currLabel: 'Field Manager'
+customIcon: null
+enabled: true
+handle: field-manager
+icon: /usr/www/users/devswu/starter/starter-entwicklung/vendor/verbb/field-manager/src/icon-mask.svg
+layout: eb1f8a0c-76c5-48cc-9672-7044f646159e # Default
+newWindow: false
+order: 9999
+prevLabel: 'Field Manager'
+prevUrl: field-manager
+type: ''
+url: field-manager

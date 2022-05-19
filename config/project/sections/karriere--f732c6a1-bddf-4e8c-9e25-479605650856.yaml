@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: karriere
+name: 'Karriere Artikel'
+propagationMethod: all
+siteSettings:
+  6157b38d-63cd-4083-ab51-fb3b6e148d08: # Entwicklung Dev Wunderlabs
+    enabledByDefault: true
+    hasUrls: true
+    template: _extends-elements/templ_karriere-detail
+    uriFormat: 'karriere/{slug}'
+structure:
+  maxLevels: null
+  uid: 29355c26-8c78-4df1-a695-5f8d1060b018
+type: structure

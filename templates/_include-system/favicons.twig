@@ -1,0 +1,41 @@
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="application-name" content="site">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-square70x70logo" content="/images/favicons/msapplication-tiny.png">
+<meta name="msapplication-square150x150logo" content="/images/favicons/msapplication-square.png">
+<meta name="msapplication-square310x310logo" content="/images/favicons/msapplication-large.png">
+<meta name="msapplication-square512x512logo" content="/images/favicons/msapplication-large.png">
+
+{% set webappicon = siteconfig.imgWebappicon.one()|default(false) %}
+    {% if webappicon %}
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 16, height: 16, quality: ('100'),
+        }) }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 32, height: 32, quality: ('100'),
+        }) }}">
+        <link rel="icon" type="image/png" sizes="128x128" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 128, height: 128, quality: ('100'),
+        }) }}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 192, height: 192, quality: ('100'),
+        }) }}">
+        {# ----------------------------------------------------------------------------------------------------------------- #}
+
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 76, height: 76, quality: ('100'),
+        }) }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 120, height: 120, quality: ('100'),
+        }) }}">
+        <link rel="apple-touch-icon" sizes="128x128" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 128, height: 128, quality: ('100'),
+        }) }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 152, height: 152, quality: ('100'),
+        }) }}">
+        <link rel="apple-touch-icon" sizes="192x192" href="{{ siteconfig.imgWebappicon.one().getUrl({
+            format: ('png'), width: 192, height: 192, quality: ('100'),
+        }) }}">
+    {% endif %}

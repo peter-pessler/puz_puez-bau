@@ -1,0 +1,32 @@
+{% set mID = ( craft.app.request.getParam('blockid') )? craft.app.request.getParam('blockid') : '' %}
+{% set output = ( craft.app.request.getParam('output') )? craft.app.request.getParam('output') : '' %}
+{% set sectionname = ( craft.app.request.getParam('sectionname') )? craft.app.request.getParam('sectionname') : '' %}
+{% set pageid = ( craft.app.request.getParam('pageid') )? craft.app.request.getParam('pageid') : '' %}
+
+{% if mID != '' and sectionname != '' %}
+
+
+
+    {% for entry in craft.entries.section(sectionname).all() %}
+        {% for modulBlock in entry.generalModules.id(mID).all()  %}
+            {% set block = modulBlock  %}
+            {% if craft.app.request.getParam('template') %}
+                {% set tempalte = craft.app.request.getParam('template') %}
+                {% if tempalte is not empty  %}
+                    {% include  '_ajax-feedback/' ~ tempalte with { block: block, output: output, pageid: entry.id }  %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+{% endif %}
+
+{#
+{% set mID = craft.app.request.getParam('blockid') %}
+{% set output = craft.app.request.getParam('output') %}
+{% set sectionname = craft.app.request.getParam('sectionname') %}
+{% set pageid = craft.app.request.getParam('pageid') %}
+
+#}
+
+

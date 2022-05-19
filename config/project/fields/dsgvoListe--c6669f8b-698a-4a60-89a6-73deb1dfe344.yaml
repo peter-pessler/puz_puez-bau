@@ -1,0 +1,29 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 5fb5bf2a-0b15-4777-a41f-4e9cbc93598c # footer
+handle: dsgvoListe
+instructions: ''
+name: 'DSGVO / Kontakt Liste'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 1faf768e-a3e7-44d8-96fb-9384984c32eb # Link Liste
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_dsgvoliste}}'
+  fieldLayout: table
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

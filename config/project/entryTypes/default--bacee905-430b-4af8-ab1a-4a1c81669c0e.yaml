@@ -1,0 +1,130 @@
+fieldLayouts:
+  08ddae62-d0fc-49e8-b546-56d72fb4ba1c:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 91842fdf-3636-4bcf-8cd5-c49abfb0b583 # Headline (H1)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: bdb3307a-c609-43bc-88ad-c997b23b7c29 # Keyvisual Image Single
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0a143773-bd1e-4894-a6b0-d77ea1cf6f98 # Keyvisual Images Slider
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Keyvisual Header'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: f23dc60b-6eb1-4b00-84b8-9f3f8b0feeba # Redirect
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 2e4dc8a3-4dcf-430c-b4bc-9cc47bff1bf9 # Seite aus Navigation ausschließen
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: ae45e2e7-9234-4297-9b83-7b08ac0feeb7
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Einstellungen
+        sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: c0a74b7c-15be-479e-a2b9-93efdedf8325 # SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 4
+handle: default
+hasTitleField: true
+name: Standard
+section: 760656b1-ffd5-45e4-ab8d-4ed7b3eb2628 # Content Page
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,38 @@
+<html>
+<body>
+    <ul>
+    {% for name, field in fields %}
+        <li>
+            <strong>{{ field.label|t }}:</strong><br>
+            {% switch field.type %}
+
+                {% case "file" %}
+                    {% if field.value is not empty %}
+                        {% if field.value.assetUrl is not empty %}
+                            <a href="{{ field.value.assetUrl }}" target="_blank">{{ field.value.name }}</a>
+                        {% else %}
+                            {{ field.value.name }}
+                        {% endif %}
+                    {% endif %}
+                {% case "list" %}
+                    {% if field.value %}
+                        <ul>
+                        {% for item in field.value %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% case "checkbox" %}
+                    {{ field.value | join(',')}}
+
+                {% default %}
+                {# Text based items #}
+                {{ field.value|nl2br }}
+
+            {% endswitch %}
+            <br>&nbsp;
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

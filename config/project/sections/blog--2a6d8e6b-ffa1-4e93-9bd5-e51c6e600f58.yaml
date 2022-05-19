@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: blog
+name: 'Blog Arikel'
+propagationMethod: all
+siteSettings:
+  6157b38d-63cd-4083-ab51-fb3b6e148d08: # Entwicklung Dev Wunderlabs
+    enabledByDefault: true
+    hasUrls: true
+    template: _extends-elements/templ_blog-detail
+    uriFormat: 'blog/{slug}'
+structure:
+  maxLevels: null
+  uid: a1a8d5bd-b185-4885-9da1-c9b4dc2d0fb9
+type: structure

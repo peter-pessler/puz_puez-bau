@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "outDir": "./src/assets/js",
+        "rootDir": "."
+    },
+    "include": [
+        "resources/js/**/*",
+    ],
+    "exclude": [
+        "node_modules",
+        "src/assets/js"
+    ]
+}

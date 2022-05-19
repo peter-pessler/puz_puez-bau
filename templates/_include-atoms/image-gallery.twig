@@ -1,0 +1,89 @@
+{#
+********************************************************
+Aufruf Beispiel:
+{% include '_include-atoms/image-picture-with-and-height' with {class: 'contentImage', sourceMediaSettings: settings, image: modulImage, imageSize: '700x400', imageMode: 'crop'} %}
+********************************************************
+- size ist ein String (source Bilder) von Bildbreite|Bildhöhe von niedrig zu groß
+- imageSize ein String von Bildbreite|Bildhöhe und wird im img src verwendet!
+********************************************************
+#}{% if galleryImage is defined and galleryImage and previewImageSize and previewImageMode %}
+    {# Vorschau Bild #}
+    {% set imgSizeArr = previewImageSize|split('x') %}
+    {% set imgWidth = imgSizeArr[0] %}
+    {% set imgHeight =  imgSizeArr[1] %}
+    {% set alt =  galleryImage.title %}
+
+    {% if imgHeight == '' %}
+        {% set imgSrc = previewImage.getUrl({
+            mode: previewImageMode,
+            format: (imgFormat),
+            width: imgWidth,
+            quality: (imgQuality),
+        })  %}
+    {% elseif imgWidth == '' %}
+        {% set imgSrc = previewImage.getUrl({
+            mode: previewImageMode,
+            format: (imgFormat),
+            height: imgHeight,
+            quality: (imgQuality),
+        })  %}
+    {% else %}
+        {% set imgSrc = previewImage.getUrl({
+            mode: previewImageMode,
+            format: (imgFormat),
+            width: imgWidth,
+            height: imgHeight,
+            quality: (imgQuality),
+        })  %}
+    {% endif %}
+    {# ---------------------------------------------------------------------------------------------------- #}
+    {# Gallery Bild #}
+    {% set settingCount = 0 %}
+    {% set dataSrc = '' %}
+    {% set dataResponsiveStr = '' %}
+
+    {% for key,setting in sourceMediaSettings %}
+        {% set sourceMediaWidth = key|split('-')[1] %}
+        {% set sourceMediaImageSize = setting.size %}
+        {% set sourceMediaImageSizeArr = sourceMediaImageSize|split('x') %}
+        {% set sourceMediaImgWidth = sourceMediaImageSizeArr[0] %}
+        {% set sourceMediaImgHeight =  sourceMediaImageSizeArr[1] %}
+        {% set mode = setting.mode %}
+        {% if sourceMediaImgHeight == '' %}
+            {% set imgMediaSource = galleryImage.getUrl({
+                mode: mode,
+                format: (imgFormat),
+                width: sourceMediaImgWidth,
+                quality: (imgQuality),
+            })  %}
+        {% elseif sourceMediaImgWidth == '' %}
+            {% set imgMediaSource = galleryImage.getUrl({
+                mode: mode,
+                format: (imgFormat),
+                height: sourceMediaImgHeight,
+                quality: (imgQuality),
+            })  %}
+        {% else %}
+            {% set imgMediaSource = galleryImage.getUrl({
+                mode: mode,
+                format: (imgFormat),
+                width: sourceMediaImgWidth,
+                height: sourceMediaImgHeight,
+                quality: (imgQuality),
+            })  %}
+        {% endif %}
+        {# ---------------------------------------------------------------------------------------------------- #}
+        {% if settingCount == 0 %}
+            {% set dataSrc = imgMediaSource %}
+        {% else %}
+            {% if settingCount == sourceMediaSettings|length -1  %}
+                {% set dataResponsiveStr = dataResponsiveStr ~ imgMediaSource ~ '|' ~ sourceMediaWidth %}
+            {% else %}
+                {% set dataResponsiveStr = dataResponsiveStr ~ imgMediaSource ~ '|' ~ sourceMediaWidth ~ ', ' %}
+            {% endif %}
+        {% endif %}
+        {# ---------------------------------------------------------------------------------------------------- #}
+        {% set settingCount = settingCount +1 %}
+    {% endfor %}
+    <a data-responsive="{{ dataResponsiveStr }}" data-src="{{ dataSrc }}" data-title="{{ dataTitle }}"><img src="{{ imgSrc }}" alt="{{ alt }}"/></a>
+  {% endif %}

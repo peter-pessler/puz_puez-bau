@@ -1,0 +1,102 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  58b1e359-8de4-42d3-9182-1ed155e24195:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d65de783-92f4-4e4c-a273-b819f2826efb # Modul ausblenden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3c7d7e60-a496-4ded-9d67-17c8c92c1d06 # Headline (H2)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eaec0d50-777b-4e2d-a8f2-196367bbfeec # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3c7d7e60-a496-4ded-9d67-17c8c92c1d06: # Headline (H2)
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: "Sie können Anrede und Name dynamisch ersetzen lassen.\r\nBeispiel: Hallo Herr Maier! => Hallo [[anrede]] [[name]]!"
+    name: 'Headline (H2)'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d65de783-92f4-4e4c-a273-b819f2826efb: # Modul ausblenden
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: modulAusblenden
+    instructions: '<img src="/assets/images/logo.png" style="width:150px;" />'
+    name: 'Modul ausblenden'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  eaec0d50-777b-4e2d-a8f2-196367bbfeec: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: "Sie können Anrede und Name dynamisch ersetzen lassen.\r\nBeispiel: Hallo Herr Maier! => Hallo [[anrede]] [[name]]!"
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: formularAntwort
+name: 'Formular Antwort'
+sortOrder: 6

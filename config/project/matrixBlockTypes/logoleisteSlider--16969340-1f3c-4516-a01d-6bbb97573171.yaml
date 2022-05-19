@@ -1,0 +1,80 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  8fc23662-0391-4003-9a79-a2f86a57a28f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f100491a-941d-47fb-9b5f-c1f5aae3df1a # Modul ausblenden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 61092de6-430d-4771-ac3d-881ea36e706e # Logos
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  61092de6-430d-4771-ac3d-881ea36e706e: # Logos
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: logos
+    instructions: "Format: 100 x 45 Pixel <br />\r\n<span style=\"color:red;\">Bitte nur Logos in PNG Format hochladen.</span>"
+    name: Logos
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  f100491a-941d-47fb-9b5f-c1f5aae3df1a: # Modul ausblenden
+    columnSuffix: qidlbwai
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: modulAusblenden
+    instructions: ''
+    name: 'Modul ausblenden'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: logoleisteSlider
+name: 'Logoleiste Slider'
+sortOrder: 10

@@ -1,0 +1,333 @@
+// Cover-Mixin | Zoomt Hintergrundbilder immer auf die richtige Größe
+@mixin cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* =================================================== */
+
+// Icon-Mixin | Benutzung: @include icon("icon-burger");
+@mixin icon($icon-path) {
+	background: url(/assets/images/icons/#{$icon-path}.svg) no-repeat center center;
+}
+
+/* =================================================== */
+
+// Remove Clear-Mixin | Entfernt Pseudo-Elemente bei display:flex
+@mixin remove-clear {
+	&::after, &::before {
+		display: none;
+	}
+}
+
+/* =================================================== */
+
+// Funktion zur schnelleren Eingabe responsiver Abstände/Größen | Benutzung z.B.: padding: clc(2.5);  ->  padding: calc(2.5vh + 2.5vw + 25px);
+@function clc($factor) {
+	@return calc(#{$factor*1}vh + #{$factor*1}vw + #{$factor*10}px);
+}
+
+/**
+	* Font Face-Mixin
+	*
+	* Benutzung: @include font-face(Font-Family, Dateiname, Schriftschnitt (default=300), Italic (default=normal));
+	* Beispiel: @include font-face("Fira Sans", "fira-sans-bold", bold);
+	* Anmerkungen: font-weight & font-style können weggelassen werden, da ein Default gesetzt ist.
+	*/
+
+@mixin font-face($font-family, $font-path, $font-weight:300, $font-style:normal) {
+	@font-face {
+		font-family: "#{$font-family}";
+		src: url("/assets/fonts/#{$font-path}.woff2") format("woff2"), url("/assets/fonts/#{$font-path}.woff") format("woff");
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+}
+
+
+/* =================================================== */
+// Font size mixin
+/* =================================================== */
+/*
+// simple (no scale)
+x { @include font-size(15px); }
+
+//  fluid scale based on default bounding
+x { @include font-size(16px, 24px); }
+
+//  fluid scale based on custom bounding
+//  (you could also change defaults)
+x { @include font-size(16px, 24px, 320px, 960px); }
+
+*/
+@mixin responsive-font(
+	$min,                        			// font-size
+    $max: null,                  			// optional maximum font size
+    $lock-min: $base-font-breakpoint-min,  	// optional minimum viewport width
+    $lock-max: $base-font-breakpoint-max,   		// optional maximum viewport width
+	$font-family: $base-font-family,		// opional font family
+	$line-height: $base-line-height
+){
+	& { font-size: $min; }
+	@if $max {
+		@media (min-width: $lock-min) {
+			& {
+				font-size: calc(
+								#{$min} +
+								#{num($max) - num($min)} *
+								(100vw - #{$lock-min}) /
+								#{num($lock-max) - num($lock-min)}
+				);
+			}
+		}
+		@media (min-width: $lock-max){
+			& { font-size: $max; }
+		}
+	}
+
+	@if $line-height != 0{
+		line-height: $line-height;
+	}
+
+	font-family: $font-family;
+}
+
+/* =================================================== */
+
+/**
+	* Breakpoint-Mixin
+	* @mixin breakpoint hat nichts mit bootstrap zu tun!
+	* Benutzung: @include breakpoint(Start-Wert, End-Wert, Start-Wert, End-Wert) {…}
+	* Beispiel: @include breakpoint(1200, 800, 750, 500) {…}
+	* Anmerkungen: Es ist möglich, das Mixin mit 1–4 Werten zu befüllen.
+	* Bei einem Media Query mit Mindestbreite: @include breakpoint(0, Start-Wert) {…}
+	*/
+
+@mixin wl-breakpoint($bp-max-width-one, $bp-min-width-one:0, $bp-max-width-two:0, $bp-min-width-two:0) {
+
+	// Max-Width
+	@if $bp-max-width-one > 0 and $bp-min-width-one == 0 and $bp-max-width-two == 0 and $bp-min-width-two == 0 {
+		@media (max-width:#{$bp-max-width-one}px) {
+			@content;
+		}
+	}
+
+	// Min-Width
+	@if $bp-max-width-one == 0 and $bp-min-width-one > 0 and $bp-max-width-two == 0 and $bp-min-width-two == 0 {
+		@media (min-width:#{$bp-min-width-one + 1}px) {
+			@content;
+		}
+	}
+
+	// Max-Width + Min-Width
+	@if $bp-max-width-one > 0 and $bp-min-width-one > 0 and $bp-max-width-two == 0 and $bp-min-width-two == 0 {
+		@media (max-width:#{$bp-max-width-one}px) and (min-width:#{$bp-min-width-one + 1}px) {
+			@content;
+		}
+	}
+
+	// Max-Width + Min-Width & Max-Width
+	@if $bp-max-width-one > 0 and $bp-min-width-one > 0 and $bp-max-width-two > 0 and $bp-min-width-two == 0 {
+		@media (max-width:#{$bp-max-width-one}px) and (min-width:#{$bp-min-width-one + 1}px) {
+			@content;
+		}
+
+		@media (max-width:#{$bp-max-width-two}px) {
+			@content;
+		}
+	}
+
+	// Max-Width + Min-Width & Max-Width + Min-Width
+	@if $bp-max-width-one > 0 and $bp-min-width-one > 0 and $bp-max-width-two > 0 and $bp-min-width-two > 0 {
+		@media (max-width:#{$bp-max-width-one}px) and (min-width:#{$bp-min-width-one + 1}px) {
+			@content;
+		}
+
+		@media (max-width:#{$bp-max-width-two}px) and (min-width:#{$bp-min-width-two + 1}px) {
+			@content;
+		}
+	}
+}
+
+
+
+
+/*************************************************************************************
+* blendet von links nach rechts eine animierte Linie ein
+* Funktioniert auch bei Text mit Umbruch
+*
+* AUFRUF:
+*   a{
+*     @include animatedLink($textColor, $lineColor);
+*   }
+*
+*/
+
+@mixin animatedLink($textColor, $lineColor) {
+
+	transition: all 0.3s linear;
+	display: inline-block;
+	color: $textColor;
+	text-decoration: none;
+	padding-bottom: 5px;
+	background: linear-gradient(to right, $lineColor 0%, $lineColor 98%);
+	background-size: 0px 2px;
+	background-repeat: no-repeat;
+	background-position: left 85%;
+
+	&:hover {
+		background-size: 100% 2px;
+	}
+
+}
+
+
+
+/*************************************************************************************
+* blendet eine Linie ein
+* Funktioniert auch bei Text mit Umbruch
+*
+* AUFRUF:
+*   a{
+*     @include link($textColor, $lineColor);
+*   }
+*
+*/
+
+@mixin link($textColor, $lineColor, $textColorHover, $lineColorHover) {
+
+	transition: all 0.3s linear;
+	display: inline-block;
+	color: $textColor;
+	text-decoration: none;
+	padding-bottom: 5px;
+	background: linear-gradient(to right, $lineColor 0%, $lineColor 98%);
+	background-size: 100% 2px;
+	background-repeat: no-repeat;
+	background-position: left 85%;
+
+	&:hover{
+		transition: $transition;
+		color: $textColorHover;
+		background: linear-gradient(to right, $lineColorHover 0%, $lineColorHover 98%);
+		background-size: 100% 2px;
+		background-repeat: no-repeat;
+		background-position: left 85%;
+	}
+
+}
+
+/*************************************************************************************
+* Botton mit Hover
+* Funktioniert auch bei Text mit Umbruch
+*
+* AUFRUF:
+*   a{
+*     @include btn($bgColor, $textColor, $borderColor, $bgColorHover, $textColorHover, $borderColorHover);
+*   }
+*
+*/
+
+@mixin btn($bgColor, $textColor, $borderColor, $bgColorHover, $textColorHover, $borderColorHover) {
+	display: inline-block;
+	transition: $transition;
+	background-color: $bgColor;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 9px;
+	padding-bottom: 8px;
+	color: $textColor;
+	border-radius: 13px;
+	text-decoration: none;
+	border: 3px solid $borderColor;
+	@include responsive-font(17px, 17px, $base-font-breakpoint-min, $base-font-breakpoint-max, $font-family-interBold, $base-line-height);
+
+	&:hover{
+		transition: $transition;
+		color: $textColorHover;
+		background-color: $bgColorHover;
+		border: 3px solid $borderColorHover;
+
+	}
+}
+
+/*************************************************************************************
+* Grid Aufruf | Anzahl Spalten + Spalten Abstand
+*
+* AUFRUF:
+*   @include  item($anzahlItem, $abstandZeile)
+*/
+
+@mixin item($anzahlItem, $abstandZeile){
+	display: grid;
+	grid-template-columns: repeat($anzahlItem, 1fr);
+	gap: 0 $abstandZeile; /* Spalte | Zeile   */
+
+}
+
+
+/*************************************************************************************
+* H1 / H2 / h3 / h4  minus-magin + Abstand
+*
+* ACHTUNG! erster + zweiter Wert sind negative Zahlen wird aber erst in mixin mit Minus ausgegeben
+* Alle Werte ohne px Angabe
+* AUFRUF:
+*   @include  margin-headline($anzahlItem, $abstandZeile)
+*/
+
+@mixin margin-headline-top($minusMaginPageWidth, $minusMaginChangePoint,  $ausgleich, $abstandTop){
+
+	@if $abstandTop == 0 {
+		margin-top: - #{$minusMaginPageWidth}px;
+
+		@media screen and (max-width: $base-hl-font-breakpoint-max) {
+			margin-top: - #{$minusMaginChangePoint}px;
+		}
+	}
+
+	@if $abstandTop > 0 {
+
+		margin-top: calc( #{$abstandTop}px - #{$minusMaginPageWidth}px);
+
+		@media screen and (max-width: $base-hl-font-breakpoint-max) {
+			margin-top: calc(#{$abstandTop}px - #{$minusMaginChangePoint}px + 3vw - #{$ausgleich}px);
+		}
+	}
+
+}
+
+
+
+
+/*************************************************************************************
+* H1 / H2 / h3 / h4  minus-magin + Abstand
+*
+* ACHTUNG! erster + zweiter Wert sind negative Zahlen wird aber erst in mixin mit Minus ausgegeben
+* Alle Werte ohne px Angabe
+* AUFRUF:
+*   @include  margin-headline($anzahlItem, $abstandZeile)
+*/
+
+@mixin margin-headline-bottom($minusMaginPageWidth, $minusMaginChangePoint, $ausgleich, $abstandBottom){
+
+	@if $abstandBottom == 0 {
+		margin-bottom: - #{$minusMaginPageWidth}px;
+
+		@media screen and (max-width: $base-hl-font-breakpoint-max) {
+			margin-bottom: - #{$minusMaginChangePoint}px;
+		}
+	}
+
+	@if $abstandBottom > 0 {
+
+		margin-bottom: calc( #{$abstandBottom}px - #{$minusMaginPageWidth}px);
+
+		@media screen and (max-width: $base-hl-font-breakpoint-max) {
+			margin-bottom: calc(#{$abstandBottom}px - #{$minusMaginChangePoint}px + 3vw - #{$ausgleich}px);
+		}
+	}
+
+}
+
+

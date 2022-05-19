@@ -1,0 +1,36 @@
+body{
+
+  &.startseite{
+
+  }
+
+  &.contentseite{
+
+  }
+
+}
+
+/* ******************************************************* */
+
+header {
+
+  .wl-header-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+  }
+
+}
+
+.logo {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+

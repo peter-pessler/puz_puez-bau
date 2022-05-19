@@ -1,0 +1,129 @@
+/*************************************************************************************
+* Hover Effect dotted Underline
+*
+*/
+@mixin underline-dotted-effect($underline-color,$link-color) {
+
+      &.underline-dotted-effect {
+        transition: color 0.3s;
+        color: $link-color;
+        cursor: pointer;
+      }
+
+      &.underline-dotted-effect::before {
+        position: relative;
+        top:13px;
+        left: 50%;
+        color: transparent;
+        content: '·';
+        text-shadow: 0 0 transparent;
+        transition: text-shadow 0.3s, color 0.3s;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+
+      &.underline-dotted-effect:hover::before,
+      &.underline-dotted-effect:focus::before {
+        color: $underline-color;
+        text-shadow: 10px 0 $underline-color, -10px 0 $underline-color;
+      }
+
+      &.underline-dotted-effect:hover,
+      &.underline-dotted-effect:focus {
+        color: $underline-color;
+      }
+
+}
+
+
+/*************************************************************************************
+* Hover Effect zittern
+*
+*/
+@mixin swing-effect($bg-color) {
+
+  &.swing-effect{
+    display: inline-block;
+    padding: 0px 4px 0px 4px;
+    background-color: $bg-color;
+    margin-right: 4px;
+    margin-left: 2px;
+    font-size: 0.95em;
+
+    &:hover {
+      animation: swing 1s ease;
+      animation-iteration-count: 1;
+    }
+
+  }
+
+
+  @keyframes swing
+  {
+    15%
+    {
+      -webkit-transform: translateX(5px);
+      transform: translateX(5px);
+    }
+    30%
+    {
+      -webkit-transform: translateX(-5px);
+      transform: translateX(-5px);
+    }
+    50%
+    {
+      -webkit-transform: translateX(3px);
+      transform: translateX(3px);
+    }
+    65%
+    {
+      -webkit-transform: translateX(-3px);
+      transform: translateX(-3px);
+    }
+    80%
+    {
+      -webkit-transform: translateX(2px);
+      transform: translateX(2px);
+    }
+    100%
+    {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+}
+
+
+
+
+/*************************************************************************************
+* Hover Effect Pulse
+*
+*/
+
+@mixin pulse-effect() {
+
+    @keyframes pulse {
+      25% {
+        transform: scale(1.1);
+      }
+
+      75% {
+        transform: scale(.9);
+      }
+    }
+
+    &.pulse-effect {
+      display: inline-block;
+      cursor: pointer;
+      &:hover {
+        animation-name: pulse;
+        animation-duration: 2.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+
+}
+

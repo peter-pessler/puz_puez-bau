@@ -1,0 +1,19 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+<section class="wl-wrapper">
+
+    {% set formularId = block.formularAuswahl.id %}
+    {% set formularAntwortUrl = block.antwortSeite.one().getUrl() %}
+    {% set formTempl = 'id-' ~ formularId %}
+
+    {% switch formularId %}
+    {% case 1 %}
+        {% include '_include-form-template/formular_' ~ formTempl with {formularId: formularId, formularAntwortUrl: formularAntwortUrl} %}
+    {% case 2 %}
+        {% include '_include-form-template/formular_default'  with {formularId: formularId, formularAntwortUrl: formularAntwortUrl} %}
+    {% default %}
+        {% include '_include-form-template/formular_default'  with {formularId: formularId, formularAntwortUrl: formularAntwortUrl} %}
+    {% endswitch %}
+
+</section>
+{% endif %}

@@ -1,0 +1,52 @@
+{% extends '_layouts/main' %}
+
+{% block headerimage %}
+    {% set detailHeaderImage = entry.keyvisualImageSingle.one()  %}
+    {% if detailHeaderImage is defined %}
+        {% include '_include-atoms/headerimage' with {detailbild: detailHeaderImage} %}
+    {% endif %}
+{% endblock %}
+
+{% block karrieredetail %}
+  <section class="wl-wrapper">
+
+      {% set matrixElemente = entry.karriereDetailMatrix.all() %}
+      {% if matrixElemente is defined and matrixElemente %}
+          {% for block in matrixElemente %}
+              {% if block.type == "contentText" %}
+                  {{ block.text}}
+              {% elseif block.type == "bild" %}
+                  {% set settings = {
+                      '0-900' : {
+                          'size' : '400x249',
+                          'mode' : 'crop'
+                      },
+                      '1-800': {
+                          'size' : '600x374',
+                          'mode' : 'crop'
+                      },
+                      '2-500': {
+                          'size' : '400x249',
+                          'mode' : 'crop'
+                      }
+                  } %}
+                  {% include '_include-atoms/image-picture' with {class: 'wl-blog-image-detail', sourceMediaSettings: settings, image: block.bild.one(), imageSize: '550x343', imageMode: 'crop'} %}
+              {% endif %}
+          {% endfor %}
+      {% endif %}
+
+      {% set pageReferrer = craft.app.request.referrer %}
+      {% if pageReferrer is not empty  %}
+          {% set backLink = pageReferrer %}
+      {% else %}
+          {% set backLink = url('/karriere') %}
+      {% endif %}
+
+      <br />
+      <a href="{{ backLink }}#articles">zur Übersicht</a>
+      <br />
+
+  </section>
+{% endblock %}
+
+

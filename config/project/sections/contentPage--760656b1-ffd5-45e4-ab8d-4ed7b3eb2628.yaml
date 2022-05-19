@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: contentPage
+name: 'Content Page'
+propagationMethod: all
+siteSettings:
+  6157b38d-63cd-4083-ab51-fb3b6e148d08: # Entwicklung Dev Wunderlabs
+    enabledByDefault: true
+    hasUrls: true
+    template: _extends-elements/templ_contentpage
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 8ee94c42-78cc-4311-872f-2a30a06cb9b1
+type: structure

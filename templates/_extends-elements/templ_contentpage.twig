@@ -1,0 +1,45 @@
+{% extends '_layouts/main' %}
+
+{% block headerimage %}
+  {% include '_include-atoms/headerimage' with {detailbild: ''} %}
+{% endblock %}
+
+{% block module %}
+  <section>
+    {% set matrixElemente = entry.generalModules.all() %}
+    {% if matrixElemente is defined and matrixElemente %}
+      {% for block in matrixElemente %}
+        {% include ('_include-block-components/modul_' ~ block.type.handle) with {blockid: block.id, sectionname: entry.section.handle, pageid: entry.id }  %}
+      {% endfor %}
+    {% endif %}
+  </section>
+{% endblock %}
+
+{% block assetsHead %}
+  {% set assetsArr = {} %}
+  {% set matrixElemente = entry.generalModules.all() %}
+  {% if matrixElemente is defined and matrixElemente %}
+    {# ---------------------------------------------------------------------------------------------------------------------------------- #}
+    {% set counter = 0 %}
+    {% set logoleisteSlider = 0 %}
+    {% for block in matrixElemente %}
+      {# -------------------------------------------------------------------------------------------------------------------------------- #}
+      {% if block.type.handle == 'contentText' %}
+        {% set counter = counter + 1 %}
+        {% if logoleisteSlider == 0 %}
+          {% set assetsArr = assetsArr|merge({ (counter)  :  '<script src="/assets/js/jquery.flexisel-iconslider.min.js"></script>' }) %}
+        {% endif %}
+        {% set logoleisteSlider = logoleisteSlider + 1 %}
+      {% endif %}
+      {# -------------------------------------------------------------------------------------------------------------------------------- #}
+    {% endfor %}
+  {% endif %}
+  {# ===== AUSGABE ====================================================================================================================== #}
+  {% for element in assetsArr %}
+
+    {{ element|raw }}{% endfor %}
+  {# ==================================================================================================================================== #}
+{% endblock %}
+
+
+

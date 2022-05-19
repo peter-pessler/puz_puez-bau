@@ -1,0 +1,27 @@
+<section class="wl-header-wrapper">
+
+    <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo.png" alt="{{siteconfig.company}}" width="70">
+    </a>
+
+    {% include '_include-atoms/navigation' %}
+
+</section>
+
+<section class="wl-wrapper">
+
+    <div style="width:100%; background-color: gainsboro;height: 30px;margin-bottom: 20px;display:flex;">
+
+        {% set setTooltipClass = craft.app.request.isMobileBrowser() ? '' : 'simptip-position-top simptip-fade' %}
+        {% if siteconfig.phone is not empty %}
+            <span class="{{ setTooltipClass }}" data-tooltip="{{ siteconfig.phone }}">
+                {{ craft.wul.phone(siteconfig.phone,'telefonnummer','0')|raw }}
+                    <img class="telefonnummer-icn" src="/assets/images/icons/tel-icon.svg" alt="{{ siteconfig.phone }}" />{{ siteconfig.phone }}
+                </a>
+            </span>
+        {% endif %}
+
+    </div>
+</section>
+
+

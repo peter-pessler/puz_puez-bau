@@ -1,0 +1,38 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+{# -------------- Formular Antwortseite -------------- #}
+{% set submission = wheelform.lastSubmission %}
+
+
+{% set anrede = '' %}
+{% set name = '' %}
+{% if submission %}
+{% for field in submission.fields %}
+  {% if field.name == 'anrede' %}
+      {% set anrede = field.value %}
+  {% endif %}
+  {% if field.name == 'name' %}
+      {% set name = field.value %}
+  {% endif %}
+{% endfor %}
+{% else %}
+  {% set formReferrer = craft.app.request.referrer %}
+  {% if formReferrer is not null %}
+      {% redirect formReferrer %}
+  {% endif %}
+{% endif %}
+
+{% set antwortHeadline = craft.wul.findReplaceElementRemoveSpaces(block.headline) %}
+{% set antwortText = craft.wul.findReplaceElementRemoveSpaces(block.text) %}
+{% set antwortHeadline = antwortHeadline|replace({'[[anrede]]': anrede}) %}
+{% set antwortHeadline = antwortHeadline|replace({'[[name]]': name}) %}
+{% set antwortText = antwortText|replace({'[[anrede]]': anrede}) %}
+{% set antwortText = antwortText|replace({'[[name]]': name}) %}
+
+<section class="wl-wrapper">
+    <h2>{{ antwortHeadline|raw  }}</h2>
+    <div class="text">
+        {{ antwortText|raw }}
+    </div>
+</section>
+{% endif %}

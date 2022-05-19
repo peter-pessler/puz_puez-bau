@@ -1,0 +1,131 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+    <script>
+
+        $(document).ready(function(){
+
+            setTimeout(function() {
+                ajaxFeedback();
+            }, 50);
+
+            $(document).on('click', '.getMore-js', function(){
+                var ajaxUrlMore = $(this).attr("data-more"),
+                    resultContainer = $('.resultjob');
+
+                $(this).remove();
+                $.get(ajaxUrlMore, function(data){
+                    $(resultContainer).append(data);
+                    $('#getMoreBtn').html( $('.getMore').html());
+                    $('.getMore').remove();
+                });
+
+            });
+
+            $(document).on('click', '.jobBtn', function(){
+                var output = $(this).attr("data-output");
+                ajaxFeedback(output);
+            });
+
+            $(document).on('click', '.jobTagBtn', function(){
+                var output = $(this).attr("data-output");
+                ajaxFeedback(output);
+            });
+
+        });
+
+        function ajaxFeedback(output = '') {
+
+            var ajaxUrl='/feedback-ajax?template=karriere&blockid={{ blockid }}&output=' + output + '&sectionname={{ sectionname }}' + '&pageid={{ pageid }}',
+                resultContainer = $('.resultjob');
+
+            $.get(ajaxUrl, function(data){
+                $(resultContainer).html(data);
+                $('#getMoreBtn').html( $('.getMore').html());
+                $('.getMore').remove();
+                $('.article-title-js').matchHeight();
+                $('.article-body-js').matchHeight();
+            });
+
+        };
+
+    </script>
+
+    <style>
+        .jobBtn{
+            padding: 10px;margin-bottom:15px;border: 1px solid #000000;
+            width: 250px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: stretch;
+        }
+    </style>
+
+    {% set allCategory = craft.categories().all() %}
+    {% set categoryStr = ''  %}
+    {% set counter = '1' %}
+    {% set buttonArr = {} %}
+
+    {% for elemente in allCategory %}
+        {% set categoryStr  = (counter == 1)? elemente.id : categoryStr  ~ ',' ~ elemente.id  %}
+        {% set buttonArr = buttonArr|merge({ (loop.index)  :  '<a class="jobBtn btn filter" data-output="' ~ elemente.id ~ '">' ~ elemente.title  ~ '</a>' }) %}
+        {% set counter = counter + 1 %}
+    {% endfor %}
+
+    {#  Schagwörter  #}
+    {% set entries = craft.entries()
+        .section('jobs')
+        .limit(null)
+        .all()
+    %}
+
+
+
+    <div class="wl-wrapper">
+
+
+        <div class="themenfilter" >
+            <a class="jobBtn btn all" data-output="{{ categoryStr }}">alle</a>
+            {% for btn in buttonArr %}
+                {{ btn|raw }}
+            {% endfor %}
+        </div>
+
+        <div class="themenfilter" style="margin-bottom: 50px">
+            <a class="jobTagBtn filter" data-output="" style="cursor: pointer;">[ alle ]</a>&nbsp;&nbsp;
+            {% for tag in craft.tags().relatedTo(entries).all() %}
+                <a class="jobTagBtn filter" data-output="{{ tag.id }}" style="cursor: pointer;">[ {{ tag.title }} ]</a>&nbsp;&nbsp;
+            {% endfor %}
+        </div>
+
+
+
+        <div id="articles">
+            <div class="wl-article-container resultjob"></div>
+        </div>
+
+        <br/><br/><br/>
+        <div id="getMoreBtn"></div>
+
+    </div>
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+

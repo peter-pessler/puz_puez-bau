@@ -1,0 +1,41 @@
+defaultPlacement: end
+fieldLayouts:
+  10f779d5-a91c-48fb-a9cd-9e8a7beb383a:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: jobs
+name: Jobs
+siteSettings:
+  6157b38d-63cd-4083-ab51-fb3b6e148d08: # Entwicklung Dev Wunderlabs
+    hasUrls: true
+    template: null
+    uriFormat: 'jobs/{slug}'
+structure:
+  maxLevels: null
+  uid: 448ca057-3559-4fad-96aa-c348d6073a4b

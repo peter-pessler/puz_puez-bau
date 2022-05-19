@@ -1,0 +1,277 @@
+dateModified: 1652878032
+email:
+  fromEmail: peter@wunderlabs.io
+  fromName: 'wunderlabs Website Formular'
+  replyToEmail: peter@wunderlabs.io
+  template: null
+  transportSettings:
+    encryptionMethod: tls
+    host: mail.your-server.de
+    password: 1V6U5br3P3s3Q88d
+    port: '587'
+    timeout: '10'
+    useAuthentication: '1'
+    username: post@dev-wunderlabs.io
+  transportType: craft\mail\transportadapters\Smtp
+meta:
+  __names__:
+    0a143773-bd1e-4894-a6b0-d77ea1cf6f98: 'Keyvisual Images Slider' # Keyvisual Images Slider
+    0e1e9900-3992-4dca-89c6-99150bb250c5: 'Modul ausblenden' # Modul ausblenden
+    0e16d806-7693-4ee1-9db7-c82e2a88d0ec: 'Modul ausblenden' # Modul ausblenden
+    00ee73b5-d332-4b63-8cd4-32b063d1ea0d: 'Abstand Trenner' # Abstand Trenner
+    1e6d88c9-7a5d-4542-b620-f49819a44467: single # single
+    1faf768e-a3e7-44d8-96fb-9384984c32eb: 'Link Liste' # Link Liste
+    2a6d8e6b-ffa1-4e93-9bd5-e51c6e600f58: 'Blog Arikel' # Blog Arikel
+    02b5eadd-181d-44f8-9717-c1d3a9c30b7e: Text # Text
+    2bba1e80-3ceb-4598-a38c-eb16b7a1acaf: ButtonText # ButtonText
+    2c725a42-f319-497c-b31f-a4290d555430: Bild # Bild
+    2e4dc8a3-4dcf-430c-b4bc-9cc47bff1bf9: 'Seite aus Navigation ausschließen' # Seite aus Navigation ausschließen
+    3a9fc3fb-aa87-431a-9706-643f86fa063e: 'Formular Auswahl' # Formular Auswahl
+    3a338d70-4dfc-4ea5-b2c9-32494fcd7f60: 'Media Liste Link' # Media Liste Link
+    3c7d7e60-a496-4ded-9d67-17c8c92c1d06: 'Headline (H2)' # Headline (H2)
+    3c42ac08-1d1f-45e4-b73a-070050f03df6: Liste # Liste
+    3ce9e77b-5b04-4678-a633-58827f84519a: Common # Common
+    4ade9959-165d-46c7-8053-b22070538ce5: images # images
+    4bf9855c-ef1d-44c8-a13a-6d2add7efbb0: Text # Text
+    04c1254a-9e0e-4e41-94e7-9422d9b350f2: Text # Text
+    4d4a7cdf-7cf5-4ffa-b23c-3693707cbac8: Headline # Headline
+    4d7697ee-c74a-4f6c-9918-65b5609945f0: Jobs # Jobs
+    5eff674b-5f53-431f-b584-7108fe69fdd4: 'Antwort Seite' # Antwort Seite
+    5fb5bf2a-0b15-4777-a41f-4e9cbc93598c: footer # footer
+    6b5b50c4-8958-4c99-a6e3-8838995eb6c3: 'Bild Unterschrift' # Bild Unterschrift
+    6f27e1f5-a12b-4ee5-bab0-0d6a93cb109f: 'Text Button back' # Text Button back
+    7cfd4aab-4b91-4a1d-a678-6691dc41ae25: 'List Eintrag' # List Eintrag
+    07fa066a-4b43-44cf-a5f0-e5118f935cb3: Formular # Formular
+    7fd956ab-cc81-45a1-9446-b3fc682b2c52: 'Image Item' # Image Item
+    8d7cfef4-c97f-40e8-ac76-d20f27b7fe68: Headline # Headline
+    8e7fd78c-2eee-4934-9e7d-c25856d963bd: 'Scripts Body End' # Scripts Body End
+    8e8052ce-bbfa-415e-816f-f14f408f72eb: 'Modul ausblenden' # Modul ausblenden
+    9b83da8f-780d-46e9-a5bb-043c770ace17: Unternehmen # Unternehmen
+    9fecac78-3a25-40cf-89d9-43bcc282c9f2: 'Webapp Icon' # Webapp Icon
+    12b09f63-0061-48ce-8ec5-40b02676205d: 'Bild Detail Seite' # Bild Detail Seite
+    19c62d2b-8e57-449f-9d62-c9b63185973b: 'Submit Button  Text' # Submit Button  Text
+    25df0d12-287b-4ba9-86e5-e301204d1a05: 'Feedback Ajax' # Feedback Ajax
+    32abce78-aa7e-4add-bddc-7772d184dd2c: pdf # pdf
+    033f4bca-a56d-43b9-9bd9-1154dc7b53f8: 'Modul ausblenden' # Modul ausblenden
+    39d5f329-97c6-46c9-b40d-b19536684d7e: Module # Module
+    42aad0c2-080e-43a9-91a3-48883ff503a9: 'Feedback Ajax' # Feedback Ajax
+    44b969cd-d287-4fd3-b072-6ebeb615927a: Items # Items
+    45bde3f7-927b-4780-9504-a3daed7ba8f6: Headline # Headline
+    67a499e7-1b90-4d37-90cd-a7c3cc47fbe0: 'Info text' # Info text
+    67f553d8-602a-49f3-a4ef-8910c7034fa9: 'Karriere Detail Matrix' # Karriere Detail Matrix
+    76c3a0f2-68f9-46f6-a5f5-d60d957855ee: Abstand # Abstand
+    083e850e-5c91-4f70-9b00-cecdb7b675c7: 'Content Text' # Content Text
+    90c193fb-5906-4768-9378-5df216a29907: 'Button Text' # Button Text
+    94d2bab3-273b-4641-b23c-94b6533884fd: Sortierung # Sortierung
+    97c92a4d-6011-455f-a7c2-1f8752e0c8b7: 'Preview Image' # Preview Image
+    103f5e50-1b5b-4a7c-a42d-a6f98261624c: 'Image Gallery' # Image Gallery
+    259d3b3c-2946-45c5-955b-c96f1d34e90f: 'Social Media Liste' # Social Media Liste
+    369b82b2-671c-4c1a-80da-f8c573740193: 'Startertesting Dev Wunderlabs' # Startertesting Dev Wunderlabs
+    457b88a8-df91-4984-bd97-0f2a7c0c86bb: 'Blog Detail Matrix' # Blog Detail Matrix
+    0458d3b7-a558-4b0d-888b-44dbdab9c75b: Sortierung # Sortierung
+    504c2068-558e-42cb-85dd-d457605fef2e: 'Gallery Image' # Gallery Image
+    519c5877-0163-4300-aeea-fa724ef490fa: 'Media Liste Text' # Media Liste Text
+    565b7b6d-5cb8-45fd-a375-b61fa1c27d28: Karriere # Karriere
+    715a774e-6aaf-4384-8972-22d8465c91b7: E-Mail # E-Mail
+    778a5331-c234-4e7d-889d-00f5ae7ad167: 'anzahl Artikel' # anzahl Artikel
+    828d9906-d50c-490a-a2e9-5536e4301dd3: 'Navigation Level' # Navigation Level
+    920bec4e-4a52-4b7a-b938-664855c1f936: HTML # HTML
+    948d8467-7751-498d-bcd0-2f065c24bbc9: Home # Home
+    954fe14a-c55a-4e73-a45c-f7ecc03828c6: Bild # Bild
+    998c1a3e-e846-42ce-95f6-4dfa3fdf6503: 'Body Text' # Body Text
+    1329cd4b-ccf5-4a7a-a6c0-37751686bd9c: pager # pager
+    1442b3cd-db1d-4c6c-bfa2-c61becab09ee: 'HTML Code' # HTML Code
+    1684de4e-b760-4e4f-9fd5-8a8bbb03c692: Text # Text
+    3321bdee-7175-4a72-b863-9a4886732ac5: 'Button  Text  mehr' # Button  Text  mehr
+    6157b38d-63cd-4083-ab51-fb3b6e148d08: 'Entwicklung Dev Wunderlabs' # Entwicklung Dev Wunderlabs
+    9001f387-6795-436c-a19a-5d676701074f: 'Content Text' # Content Text
+    9372a2de-5d70-472d-af3b-b66258aed082: jobs # jobs
+    9771e323-7b83-4df4-abda-b13be0d95dec: 'karriere Detail Headline' # karriere Detail Headline
+    61092de6-430d-4771-ac3d-881ea36e706e: Logos # Logos
+    90065eb5-9fa8-457d-b9e4-b22802c1b826: 'Info Text Image' # Info Text Image
+    91842fdf-3636-4bcf-8cd5-c49abfb0b583: 'Headline (H1)' # Headline (H1)
+    455930b7-c0ed-41e1-9c19-08d3c9ea3788: 'Text Button next' # Text Button next
+    678244d1-b4f4-4b44-b7c9-00892e5028d0: Straße # Straße
+    717770fa-d135-4cad-b0f3-a9bb9eba3abb: 'scroll to top Pages' # scroll to top Pages
+    760656b1-ffd5-45e4-ab8d-4ed7b3eb2628: 'Content Page' # Content Page
+    2031484f-2837-419b-b3aa-984941cb7431: 'Media Liste Icon' # Media Liste Icon
+    16495839-85d3-4f8b-90e7-e58d1504b7be: SiteConfig # SiteConfig
+    16969340-1f3c-4516-a01d-6bbb97573171: 'Logoleiste Slider' # Logoleiste Slider
+    25560228-ffa2-4821-8bad-ca07ac3eb4d7: 'Button Text' # Button Text
+    37530743-48c9-4e74-9f7c-e4978570f618: Telefon # Telefon
+    a15f1392-6db0-41ef-b5c9-44dbfcab1444: 'anzahl Artikel' # anzahl Artikel
+    a499f89b-6184-4b1f-aaa7-6bbeefa2f8ee: 'Scripts Head End' # Scripts Head End
+    a5611a50-5db3-4573-8d10-2d943c3dad6f: Standard # Standard
+    a6097f74-119e-4561-8018-495a37c010dd: 'Bild Format' # Bild Format
+    a86449d2-c219-43c8-991c-b4e56ff954e3: Text # Text
+    abefc379-7da5-45c5-8820-6a847ec19e59: 'Auswahl Tag Job' # Auswahl Tag Job
+    ac9b5bd3-9285-400c-9a81-a8f5b6c63af6: 'HTML Code' # HTML Code
+    b7c06b7d-6baa-4433-967d-d1501e174952: 'Datenschutz Checkbox Label Text' # Datenschutz Checkbox Label Text
+    b35d5043-f418-487c-9dc6-fcb6fb2c15fe: 'Bild Unterschrift' # Bild Unterschrift
+    bacee905-430b-4af8-ab1a-4a1c81669c0e: Standard # Standard
+    bc5ea38e-325e-4908-aca2-715a2e6c3fa1: Text # Text
+    bdb3307a-c609-43bc-88ad-c997b23b7c29: 'Keyvisual Image Single' # Keyvisual Image Single
+    bf433f0c-f5b5-4941-a2c7-e47924cd7a50: Fax # Fax
+    c0a74b7c-15be-479e-a2b9-93efdedf8325: SEO # SEO
+    c075e260-b4c7-4620-9aa6-798d8ea46ac5: info # info
+    c6669f8b-698a-4a60-89a6-73deb1dfe344: 'DSGVO / Kontakt Liste' # DSGVO / Kontakt Liste
+    c5461070-080b-4b5b-9dfd-747d1c79ba01: Home # Home
+    cc3a1df0-4ca7-4697-bc85-a0e5afb2ea8d: Blog # Blog
+    cc710618-bcae-48f4-9b78-591bdca3bccf: 'Auswahl Kategorie Jobs' # Auswahl Kategorie Jobs
+    cebbeb25-2a8a-4de4-b189-091888e45444: Bild # Bild
+    cf094fa0-aec3-459e-a67b-5531e87438fb: global # global
+    cf679b62-c673-4360-b487-1d4e0216a5ea: Accordion # Accordion
+    d0779365-4dc9-43f2-aee6-20049ba91ed1: Standard # Standard
+    d2f06505-a993-4495-adc2-ab3aaf1bcf9d: 'Modul ausblenden' # Modul ausblenden
+    d65de783-92f4-4e4c-a273-b819f2826efb: 'Modul ausblenden' # Modul ausblenden
+    d931a85a-ee43-4872-bf5e-28b0de797213: 'Modul ausblenden' # Modul ausblenden
+    de85b71b-2cb1-49c7-bd76-55e1a420c7ff: 'PLZ / Ort' # PLZ / Ort
+    e5ec2db8-4ae1-47a6-ac37-0bc64d1afb2a: Bild # Bild
+    e8fa8dff-5594-4a2a-8d33-6223d39d042d: 'Headline (H2)' # Headline (H2)
+    e6037a50-7ad3-4320-9231-69474af1acd6: 'Scripts Body Start' # Scripts Body Start
+    e70198b9-cee9-4fb7-9d60-cd5ae8bf182b: 'Site Verification ID' # Site Verification ID
+    eaec0d50-777b-4e2d-a8f2-196367bbfeec: Text # Text
+    eb1f8a0c-76c5-48cc-9672-7044f646159e: Default # Default
+    ec7b3b33-fcf5-4118-a75d-f3b406b97ae1: 'Formular Antwort' # Formular Antwort
+    ee8da723-4e26-4b2b-ba5f-5d2f20972f49: Headline # Headline
+    f23dc60b-6eb1-4b00-84b8-9f3f8b0feeba: Redirect # Redirect
+    f73f12cc-bd69-4749-81f5-7515ae32d0cd: 'Text Detail Seite' # Text Detail Seite
+    f732c6a1-bddf-4e8c-9e25-479605650856: 'Karriere Artikel' # Karriere Artikel
+    f100491a-941d-47fb-9b5f-c1f5aae3df1a: 'Modul ausblenden' # Modul ausblenden
+    fcd61453-5bfc-4d91-a08f-086d7d34db11: Bild # Bild
+plugins:
+  category-groups-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  child-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cp-nav:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.7
+    settings:
+      originalNavHash:
+        __assoc__:
+          -
+            - da48b131-91cf-4eed-bbd7-2941519945fb
+            - W3sibGFiZWwiOiLDnGJlcnNpY2h0IiwidXJsIjoiZGFzaGJvYXJkIiwiZm9udEljb24iOiJnYXVnZSJ9LHsibGFiZWwiOiJFaW50csOkZ2UiLCJ1cmwiOiJlbnRyaWVzIiwiZm9udEljb24iOiJzZWN0aW9uIn0seyJsYWJlbCI6Ikdsb2JhbGUgSW5oYWx0ZSIsInVybCI6Imdsb2JhbHMiLCJmb250SWNvbiI6Imdsb2JlIn0seyJsYWJlbCI6IkthdGVnb3JpZW4iLCJ1cmwiOiJjYXRlZ29yaWVzIiwiZm9udEljb24iOiJjYXRlZ29yaWVzIn0seyJsYWJlbCI6IkRhdGVpZW4iLCJ1cmwiOiJhc3NldHMiLCJmb250SWNvbiI6ImFzc2V0cyJ9LHsibGFiZWwiOiJGaWVsZCBNYW5hZ2VyIiwidXJsIjoiZmllbGQtbWFuYWdlciIsImljb24iOiIvdXNyL3d3dy91c2Vycy9kZXZzd3Uvc3RhcnRlci9zdGFydGVyLWVudHdpY2tsdW5nL3ZlbmRvci92ZXJiYi9maWVsZC1tYW5hZ2VyL3NyYy9pY29uLW1hc2suc3ZnIn0seyJsYWJlbCI6IlNFTyIsInVybCI6InNlbyIsImljb24iOiIvdXNyL3d3dy91c2Vycy9kZXZzd3Uvc3RhcnRlci9zdGFydGVyLWVudHdpY2tsdW5nL3ZlbmRvci9ldGhlci9zZW8vc3JjL2ljb24tbWFzay5zdmciLCJzdWJuYXYiOnsiZGFzaGJvYXJkIjp7ImxhYmVsIjoiRGFzaGJvYXJkIiwidXJsIjoic2VvIn0sInNpdGVtYXAiOnsibGFiZWwiOiJTaXRlbWFwIiwidXJsIjoic2VvL3NpdGVtYXAifSwicmVkaXJlY3RzIjp7ImxhYmVsIjoiUmVkaXJlY3RzIiwidXJsIjoic2VvL3JlZGlyZWN0cyJ9LCJzZXR0aW5ncyI6eyJsYWJlbCI6IlNldHRpbmdzIiwidXJsIjoic2VvL3NldHRpbmdzIn19fSx7ImxhYmVsIjoiVGFncyIsInVybCI6InRhZ3MiLCJpY29uIjoiL3Vzci93d3cvdXNlcnMvZGV2c3d1L3N0YXJ0ZXIvc3RhcnRlci1lbnR3aWNrbHVuZy92ZW5kb3IvZXRoZXIvdGFncy9zcmMvaWNvbi1tYXNrLnN2ZyIsImlkIjoidGFnLW1hbmFnZXIifSx7ImxhYmVsIjoiRm9ybXMiLCJ1cmwiOiJ3aGVlbGZvcm0iLCJiYWRnZUNvdW50IjoiMCIsImljb24iOiIvdXNyL3d3dy91c2Vycy9kZXZzd3Uvc3RhcnRlci9zdGFydGVyLWVudHdpY2tsdW5nL3ZlbmRvci94cGVydGJvdC9jcmFmdC13aGVlbGZvcm0vc3JjL2ljb24tbWFzay5zdmcifSx7InVybCI6InV0aWxpdGllcyIsImxhYmVsIjoiV2Vya3pldWdlIiwiZm9udEljb24iOiJ0b29sIiwiYmFkZ2VDb3VudCI6MTF9LHsidXJsIjoic2V0dGluZ3MiLCJsYWJlbCI6IkVpbnN0ZWxsdW5nZW4iLCJmb250SWNvbiI6InNldHRpbmdzIn0seyJ1cmwiOiJwbHVnaW4tc3RvcmUiLCJsYWJlbCI6IlBsdWctaW4tU3RvcmUiLCJmb250SWNvbiI6InBsdWdpbiJ9XQ==
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  redactor-custom-styles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor-tweaks:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.2.0
+    settings:
+      description: ''
+      facebookAppId: ''
+      metaTemplate: ''
+      removeAlternateUrls: ''
+      robots:
+        - noindex
+        - ''
+        - ''
+        - ''
+        - ''
+        - noimageindex
+      robotsTxt: "{# Sitemap URL #}\r\nSitemap: {{ url(seo.sitemapName ~ '.xml') }}\r\n\r\n{# Disallows #}\r\n{% if craft.app.config.env != 'production' %}\r\n\r\n{# Disallow access to everything when NOT in production #}\r\nUser-agent: *\r\nDisallow: /\r\n\r\n{% else %}\r\n\r\n{# Disallow access to cpresources/ when live #}\r\nUser-agent: *\r\nDisallow: /cpresources/\r\n\r\n{% endif %}"
+      sitemapLimit: '1000'
+      sitemapName: sitemap
+      socialImage: ''
+      title:
+        -
+          __assoc__:
+            -
+              - key
+              - '1'
+            -
+              - locked
+              - '0'
+            -
+              - template
+              - '{title}'
+        -
+          __assoc__:
+            -
+              - key
+              - '2'
+            -
+              - locked
+              - '1'
+            -
+              - template
+              - ' - {{ siteName }}'
+      titleSuffix: null
+      twitterHandle: ''
+  smith:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+  supersort:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.0.0
+  tag-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  wheelform:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      cp_label: Forms
+      disabled_fields: ''
+      from_email: peter@wunderlabs.io
+      from_name: peter@wunderlabs.io
+      recaptcha_min_score: '0.5'
+      recaptcha_public: ''
+      recaptcha_secret: ''
+      recaptcha_version: '2'
+      success_message: 'Danke! Wir werden Ihre Nachricht in Kürze bearbeiten.'
+      volume_id: ''
+  wordsmith:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.0.0
+system:
+  edition: solo
+  live: true
+  name: "Starter wunderlabs GmbH\t"
+  retryDuration: null
+  schemaVersion: 3.7.33
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

@@ -1,0 +1,89 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  96942f38-3616-4d51-8f4f-b64d76b14d8e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 033f4bca-a56d-43b9-9bd9-1154dc7b53f8 # Modul ausblenden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7fd956ab-cc81-45a1-9446-b3fc682b2c52 # Image Item
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7fd956ab-cc81-45a1-9446-b3fc682b2c52: # Image Item
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageItem
+    instructions: "<br />Preview Image ist optional!\r\nWird kein Bild hinzugefügt, wird das Galerie Bild benutzt.<br /><br />\r\nBild Formate:\r\n---------------\r\nPreview Image: 300 x 300 Pixel | Gallery Image: 1400 Pixel breit<br />"
+    name: 'Image Item'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 97c92a4d-6011-455f-a7c2-1f8752e0c8b7 # Preview Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - '33,333%'
+          -
+            - 504c2068-558e-42cb-85dd-d457605fef2e # Gallery Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - '33,333%'
+          -
+            - 90065eb5-9fa8-457d-b9e4-b22802c1b826 # Info Text Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - '33,333%'
+      contentTable: '{{%stc_14_imageitem}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  033f4bca-a56d-43b9-9bd9-1154dc7b53f8: # Modul ausblenden
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: modulAusblenden
+    instructions: ''
+    name: 'Modul ausblenden'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: imageGallery
+name: 'Image Gallery'
+sortOrder: 9

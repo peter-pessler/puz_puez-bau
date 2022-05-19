@@ -1,0 +1,56 @@
+field: 67f553d8-602a-49f3-a4ef-8910c7034fa9 # Karriere Detail Matrix
+fieldLayouts:
+  08115e6b-6465-4029-91b8-311c12ca43d0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 954fe14a-c55a-4e73-a45c-f7ecc03828c6 # Bild
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  954fe14a-c55a-4e73-a45c-f7ecc03828c6: # Bild
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: bild
+    instructions: ''
+    name: Bild
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:4ade9959-165d-46c7-8053-b22070538ce5' # images
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: bild
+name: Bild
+sortOrder: 2

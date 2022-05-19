@@ -1,0 +1,41 @@
+{
+  "buttons": ["html", "bold", "lists", "link", "file", "video"],
+  "plugins": ["customstyles"],
+  "paragraphize": false,
+  "linebreaks": true,
+  "customStyles": {
+    "Formatierung": {
+      "dropdown": {
+        "H2": {
+          "args": {
+            "tag": "h2",
+            "type": "toggle"
+          }
+        },
+        "H3": {
+          "args": {
+            "tag": "h3",
+            "type": "toggle"
+          }
+        },
+        "Button": {
+          "args": {
+            "tag": "a",
+            "class": "btn",
+            "type": "toggle"
+          }
+        },
+        "spanFormat": {
+          "args": {
+            "tag": "span",
+            "class": "formatSpan",
+            "type": "toggle"
+          }
+        },
+        "clearStyles": {
+          "api": "module.inline.clearformat"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{% set outputAbstand = '' %}
+{% set outputAbstand = block.abstandTrenner|number  %}
+{% set abstand = (outputAbstand == '')? '30' : outputAbstand %}
+{% set prefix = loop.index %}
+<style>
+
+    .abstand-{{ prefix }}{
+        margin-bottom: 80px;
+        height: 0px;
+    }
+    @media (max-width: 2400px) {
+        .abstand-{{ prefix }}{
+            margin-bottom: calc({{ abstand }}px + 3vw);
+        }
+    }
+    @media (max-width: 1000px) {
+        .abstand-{{ prefix }}{
+            margin-bottom: calc({{ abstand }}px + 4vw);
+        }
+    }
+
+</style>
+<section class="wl-wrapper">
+    <div class="abstand-{{ prefix }}"></div>
+</section>

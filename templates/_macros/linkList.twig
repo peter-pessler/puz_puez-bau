@@ -1,0 +1,22 @@
+{% macro linkList(element) %}
+    {% set type = element.type %}{# asset, email, entry, tel, url, custom #}{% if type == 'email' %}
+    <a href="mailto:{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+{% elseif  type == 'entry' %}
+    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+{% elseif  type == 'tel' %}
+    {% set phonenumber = element.getUrl()|replace({'tel:': ''}) %}
+    {% if phonenumber != '' %}{% set cleanPhonenumber = craft.wul.phone(phonenumber,'','','','','1')|raw  %}{% endif %}
+    {% if element.getCustomText() == 'Learn More' %}{# Learn More wird ausgegeben, wenn das Feld leer ist #}
+        {% set phoneText = element.getCustomText() ~ ' ' ~ phonenumber %}
+    {% else %}
+        {% set phoneText = phonenumber %}
+    {% endif %}
+    <a href="tel:{{cleanPhonenumber}}">{{ phoneText }}</a>
+{% elseif  type == 'url' %}
+    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+{% elseif  type == 'custom' %}
+    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+{% elseif  type == 'asset' %}
+    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+{% endif %}
+{% endmacro %}

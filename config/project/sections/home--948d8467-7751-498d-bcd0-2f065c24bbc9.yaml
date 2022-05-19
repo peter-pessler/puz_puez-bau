@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: home
+name: Home
+propagationMethod: all
+siteSettings:
+  6157b38d-63cd-4083-ab51-fb3b6e148d08: # Entwicklung Dev Wunderlabs
+    enabledByDefault: true
+    hasUrls: true
+    template: _extends-elements/templ_contentpage
+    uriFormat: __home__
+type: single

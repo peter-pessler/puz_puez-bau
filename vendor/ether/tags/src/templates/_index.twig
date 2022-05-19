@@ -1,0 +1,12 @@
+{% extends "_layouts/elementindex" %}
+
+{% set title = "Tags"|t %}
+{% set elementType = 'ether\\tagManager\\elements\\Tag' %}
+{% set showStatusMenu = false %}
+
+{% if groupHandle is defined %}
+	{% js %}
+		window.defaultGroupHandle = '{{ groupHandle }}';
+		window.editableTagGroups = {{ groups|json_encode|raw }};
+	{% endjs %}
+{% endif %}

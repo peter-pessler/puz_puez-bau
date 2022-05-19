@@ -1,0 +1,14 @@
+columnSuffix: pfuitgfg
+contentColumnType: boolean
+fieldGroup: 3ce9e77b-5b04-4678-a633-58827f84519a # Common
+handle: excludeNavigation
+instructions: ''
+name: 'Seite aus Navigation ausschließen'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -1,0 +1,111 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  16752e2f-3629-41b1-8b35-03a698dcac66:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 8e8052ce-bbfa-415e-816f-f14f408f72eb # Modul ausblenden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8d7cfef4-c97f-40e8-ac76-d20f27b7fe68 # Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 44b969cd-d287-4fd3-b072-6ebeb615927a # Items
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  8d7cfef4-c97f-40e8-ac76-d20f27b7fe68: # Headline
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: Headline
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8e8052ce-bbfa-415e-816f-f14f408f72eb: # Modul ausblenden
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: modulAusblenden
+    instructions: '<img src="/assets/images/logo.png" style="width:150px;" />'
+    name: 'Modul ausblenden'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  44b969cd-d287-4fd3-b072-6ebeb615927a: # Items
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: items
+    instructions: ''
+    name: Items
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - ee8da723-4e26-4b2b-ba5f-5d2f20972f49 # Headline
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 1684de4e-b760-4e4f-9fd5-8a8bbb03c692 # Text
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_7_items}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: accordion
+name: Accordion
+sortOrder: 4

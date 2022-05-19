@@ -1,0 +1,19 @@
+columnSuffix: jmkpvtjm
+contentColumnType: text
+fieldGroup: cf094fa0-aec3-459e-a67b-5531e87438fb # global
+handle: scrollToTopPages
+instructions: "Alle Seiten wie z.B. Formulare die per Anker an eine Position scrollen, bitte eintragen.\r\nSeiten ID Komma getrennt eintragen!"
+name: 'scroll to top Pages'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,12 @@
+currLabel: 'Globale Inhalte'
+customIcon: null
+enabled: true
+handle: globals
+icon: globe
+layout: eb1f8a0c-76c5-48cc-9672-7044f646159e # Default
+newWindow: false
+order: 2
+prevLabel: 'Globale Inhalte'
+prevUrl: globals
+type: ''
+url: globals

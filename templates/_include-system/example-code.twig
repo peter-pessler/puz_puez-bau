@@ -1,0 +1,101 @@
+Entry ID:    {{ entry.id }} <br />
+Parent ID:   {{ entry.getParent().id ?? 'none' }} <br />
+Prev ID:     {{ craft.entries.prevSiblingOf(entry).one().id ?? 'none' }} <br />
+Next ID:     {{ craft.entries.nextSiblingOf(entry).one().id ?? 'none' }} <br />
+Sibling IDs: {{ craft.entries.siblingOf(entry).ids()|join(', ') }} <br />
+
+
+{% set children = craft.entries.descendantOf(entry.getParent()).ids() %}
+    {% set position = children|indexOf(entry.id) %}
+
+    {% set prevId = position > 0 ? children[position - 1] : null %}
+    {% set nextId = position < (children|length - 1) ? children[position + 1] : null %}
+
+    {% set prevEntry = prevId ? craft.entries.id(prevId).one() : null %}
+    {% set nextEntry = nextId ? craft.entries.id(nextId).one() : null %}
+
+############################################################################
+
+{% if pageId == 2 %}
+
+    {% set entrySingleImage = entry.keyvisualImageSingle.first|default(false) %}
+    {% set entrySliderImages = entry.keyvisualImagesSlider.first|default(false) %}
+
+    {% set entryKeyvisualImagesSlider = entry.keyvisualImagesSlider %}
+
+    {% if entrySingleImage %}{% set headerImageSingle = entry.keyvisualImageSingle[0] %}{% endif %}
+
+{% else %}
+
+    {% set keyvisualImageHome = craft.entries()
+        .id(2)
+        .one()
+    %}
+
+    {% set entrySingleImage = entry.keyvisualImageHome.keyvisualImageSingle.first|default(false) %}
+    {% set entrySliderImages = entry.keyvisualImageHome.keyvisualImagesSlider.first|default(false) %}
+
+    {% set entryKeyvisualImagesSlider = keyvisualImageHome.keyvisualImagesSlider %}
+    {% if entrySingleImage %}{% set headerImageSingle = entry.keyvisualImagesSlider.keyvisualImageSingle[0] %}{% endif %}
+
+
+{% endif %}
+
+############################################################################
+
+{% set value = craft.entries.section('contentPage').id(18).all() %}
+
+Ergebnis: <br />
+{% for output in value %}
+    {{ output.headline }}
+{% endfor %}
+
+############################################################################
+
+{% if pageId == 2 %}
+    Home
+{% else %}
+    Content
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% set entryHome = craft.entries.section('home').id('2').first() %}
+
+    {# Single Image --------------------------------------------------------------- #}
+    {% set entrySingleImage = entryHome.keyvisualImageSingle.first|default(false) %}
+
+    {% if entrySingleImage %}
+        {% set headerImageSingle = entryHome.keyvisualImageSingle[0] %}
+    {% endif %}
+
+    {# Slider Image --------------------------------------------------------------- #}
+    {% set entrySliderImages = entryHome.keyvisualImagesSlider.first|default(false) %}
+
+    {% if entrySliderImages %}
+        {% set headerImageSlider =  entryHome.keyvisualImagesSlider %}
+    {% endif %}

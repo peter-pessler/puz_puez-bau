@@ -1,0 +1,69 @@
+body {
+
+  color: $base-font-color;
+  background: $wl-bgcolor-body;
+}
+
+main, details { display: block; }
+
+a { background-color: transparent; }
+
+b, .b, strong, .strong { font-weight: $base-strong-attribut; }
+
+em, .em { font-style: italic; }
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+small, .small { font-size: .8125rem; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+
+img { border-style: none; }
+
+template, [hidden] { display: none; }
+
+
+
+/*****************************************************************************************************************
+HEADLINES
+*****************************************************************************************************************/
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+
+h1, .h1 {
+  @include responsive-font(40px, 60px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
+  @include margin-headline-top(32, 20, 46, 80);
+  @include margin-headline-bottom(32, 20, 26, 40);
+}
+h2, .h2 {
+  @include responsive-font(30px, 44px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h2-font-family, $base-line-height-h2);
+}
+h3, .h3 {
+  @include responsive-font(25px, 32px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h3-font-family, $base-line-height-h3);
+}
+h4, .h4 {
+  @include responsive-font(22px, 29px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h4-font-family, $base-line-height-h4);
+}
+
+

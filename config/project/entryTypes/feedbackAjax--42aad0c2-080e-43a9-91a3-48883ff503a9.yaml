@@ -1,0 +1,42 @@
+fieldLayouts:
+  7752d5bf-4559-4da0-a60f-bb4224d17bae:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            style: warning
+            tip: "ACHTUNG!\r\nDiese Seite bitte nicht löschen!\r\n"
+            type: craft\fieldlayoutelements\Tip
+        name: Inhalt
+        sortOrder: 1
+handle: feedbackAjax
+hasTitleField: false
+name: 'Feedback Ajax'
+section: 25df0d12-287b-4ba9-86e5-e301204d1a05 # Feedback Ajax
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,52 @@
+field: 457b88a8-df91-4984-bd97-0f2a7c0c86bb # Blog Detail Matrix
+fieldLayouts:
+  3b626a3b-b66d-42c5-9cd2-045cf8d61465:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f73f12cc-bd69-4749-81f5-7515ae32d0cd # Text Detail Seite
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  f73f12cc-bd69-4749-81f5-7515ae32d0cd: # Text Detail Seite
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: textDetailSeite
+    instructions: ''
+    name: 'Text Detail Seite'
+    searchable: false
+    settings:
+      availableTransforms: ''
+      availableVolumes:
+        - 4ade9959-165d-46c7-8053-b22070538ce5 # images
+        - 32abce78-aa7e-4add-bddc-7772d184dd2c # pdf
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Wunderlab.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: text
+name: Text
+sortOrder: 2

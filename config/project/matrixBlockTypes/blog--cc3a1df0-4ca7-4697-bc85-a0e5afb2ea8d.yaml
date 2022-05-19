@@ -1,0 +1,346 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  9f2b51c7-f0f1-4b15-be5b-e2ff2443c46d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0e16d806-7693-4ee1-9db7-c82e2a88d0ec # Modul ausblenden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0458d3b7-a558-4b0d-888b-44dbdab9c75b # Sortierung
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1329cd4b-ccf5-4a7a-a6c0-37751686bd9c # pager
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a15f1392-6db0-41ef-b5c9-44dbfcab1444 # anzahl Artikel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 455930b7-c0ed-41e1-9c19-08d3c9ea3788 # Text Button next
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 6f27e1f5-a12b-4ee5-bab0-0d6a93cb109f # Text Button back
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 90c193fb-5906-4768-9378-5df216a29907 # Button Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+fields:
+  0e16d806-7693-4ee1-9db7-c82e2a88d0ec: # Modul ausblenden
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: modulAusblenden
+    instructions: '<img src="/assets/images/logo.png" style="width:150px;" />'
+    name: 'Modul ausblenden'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  6f27e1f5-a12b-4ee5-bab0-0d6a93cb109f: # Text Button back
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: textButtonBack
+    instructions: ''
+    name: 'Text Button back'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  90c193fb-5906-4768-9378-5df216a29907: # Button Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonText
+    instructions: 'Bechriftung weiter in Übersichts Teaser'
+    name: 'Button Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  0458d3b7-a558-4b0d-888b-44dbdab9c75b: # Sortierung
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: sortierung
+    instructions: ''
+    name: Sortierung
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'nach Datum absteigend '
+            -
+              - value
+              - desc
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'nach Datum aufsteigend '
+            -
+              - value
+              - asc
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'nach CMS Struktur (drag and drop)'
+            -
+              - value
+              - structure
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  1329cd4b-ccf5-4a7a-a6c0-37751686bd9c: # pager
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: pager
+    instructions: 'Soll ein Pager angezeigt werden ? (Erst ab 3 Artikel)'
+    name: pager
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Ja
+            -
+              - value
+              - '1'
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Nein
+            -
+              - value
+              - '0'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  455930b7-c0ed-41e1-9c19-08d3c9ea3788: # Text Button next
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: textButtonNext
+    instructions: ''
+    name: 'Text Button next'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a15f1392-6db0-41ef-b5c9-44dbfcab1444: # anzahl Artikel
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: anzahlArtikel
+    instructions: 'Wenn Pager aktiv, bitte Anzahl der angezeigten Artikel Teaser pro Seite angeben.'
+    name: 'anzahl Artikel'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '2'
+            -
+              - value
+              - '2'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '3'
+            -
+              - value
+              - '3'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '4'
+            -
+              - value
+              - '4'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '5'
+            -
+              - value
+              - '5'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '6'
+            -
+              - value
+              - '6'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '7'
+            -
+              - value
+              - '7'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '8'
+            -
+              - value
+              - '8'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '9'
+            -
+              - value
+              - '9'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '10'
+            -
+              - value
+              - '10'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: blog
+name: Blog
+sortOrder: 3

@@ -1,0 +1,19 @@
+columnSuffix: fnzrygvd
+contentColumnType: text
+fieldGroup: 5fb5bf2a-0b15-4777-a41f-4e9cbc93598c # footer
+handle: city
+instructions: ''
+name: 'PLZ / Ort'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

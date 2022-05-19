@@ -1,0 +1,43 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 5fb5bf2a-0b15-4777-a41f-4e9cbc93598c # footer
+handle: socialMediaListe
+instructions: ''
+name: 'Social Media Liste'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 2031484f-2837-419b-b3aa-984941cb7431 # Media Liste Icon
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 519c5877-0163-4300-aeea-fa724ef490fa # Media Liste Text
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 3a338d70-4dfc-4ea5-b2c9-32494fcd7f60 # Media Liste Link
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_socialmedialiste}}'
+  fieldLayout: table
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

@@ -1,0 +1,19 @@
+columnSuffix: duriglhj
+contentColumnType: text
+fieldGroup: 3ce9e77b-5b04-4678-a633-58827f84519a # Common
+handle: karriereDetailHeadline
+instructions: ''
+name: 'karriere Detail Headline'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

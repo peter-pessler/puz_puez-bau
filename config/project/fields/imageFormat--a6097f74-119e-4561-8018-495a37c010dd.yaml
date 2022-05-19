@@ -1,0 +1,35 @@
+columnSuffix: zsugpcyp
+contentColumnType: string
+fieldGroup: 5fb5bf2a-0b15-4777-a41f-4e9cbc93598c # footer
+handle: imageFormat
+instructions: 'Ausgabe Format der Bilder / Thumbnails'
+name: 'Bild Format'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - webp
+        -
+          - value
+          - webp
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - jpg
+        -
+          - value
+          - jpg
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

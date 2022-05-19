@@ -1,0 +1,110 @@
+<section class="wl-header-image">
+
+{% set checkEntrySingleImage = '' %}
+{% if pageId == 2 %}{# Home #}
+
+    {# Single Image ------------------------------------------------------------------------ #}
+    {% set entrySingleImage = entry.keyvisualImageSingle.one()|default(false) %}
+    {% if entrySingleImage %}
+        {% set headerImageSingle = entry.keyvisualImageSingle[0] %}
+    {% endif %}
+
+    {# Slider Image ------------------------------------------------------------------------ #}
+    {% set entrySliderImages = entry.keyvisualImagesSlider.one()|default(false) %}
+    {% if entrySliderImages %}
+        {% set headerImageSlider =  entry.keyvisualImagesSlider %}
+    {% endif %}
+
+{% elseif detailbild is defined and detailbild %}{# Wenn Blog Image drfiniert ist #}
+
+    {% set entrySingleImage = detailbild|default(false) %}
+    {% set headerImageSingle = detailbild %}
+
+{% else %}{# Pages => wenn leer Vererbung von Home #}
+
+        {# Single Image Page --------------------------------------------------------------- #}
+        {% set entrySingleImage = entry.keyvisualImageSingle.one()|default(false) %}
+        {% set checkEntrySingleImage = entrySingleImage %}
+        {% if entrySingleImage %}
+                 {% set headerImageSingle = entry.keyvisualImageSingle[0] %}
+        {% else %}
+                {% set entryHome = craft.entries.section('home').id('2').one() %}
+                {# Single Image Page-------------------------------------------------------- #}
+                {% set entrySingleImage = entryHome.keyvisualImageSingle.one()|default(false) %}
+
+                {% if entrySingleImage %}
+                    {% set headerImageSingle = entryHome.keyvisualImageSingle[0] %}
+                {% endif %}
+        {% endif %}
+
+        {# Slider Image Page -------------------------------------------------------------- #}
+        {% set entrySliderImages = entry.keyvisualImagesSlider.one()|default(false) %}
+
+        {% if entrySliderImages %}
+            {% set headerImageSlider =  entry.keyvisualImagesSlider %}
+        {% else %}
+
+            {# Slider Image Home ---------------------------------------------------------- #}
+            {% set entrySliderImages = entryHome.keyvisualImagesSlider.one()|default(false) %}
+
+            {% if entrySliderImages %}
+                {% set headerImageSlider =  entryHome.keyvisualImagesSlider %}
+            {% endif %}
+
+        {% endif %}
+
+    {% if entrySliderImages == true and checkEntrySingleImage == false %}
+        {% set entrySingleImage = false %}
+    {% endif %}
+
+{% endif %}
+
+{# ###################################################################################################### #}
+    {% set settings = {
+        '0-1300': {
+            'size' : '725x',
+            'mode' : 'crop'
+        },
+        '1-1000' : {
+            'size' : '540x',
+            'mode' : 'crop'
+        },
+        '2-700': {
+            'size' : '350x',
+            'mode' : 'crop'
+        },
+        '3-350': {
+            'size' : '280x',
+            'mode' : 'crop'
+        },
+    } %}
+{# ###################################################################################################### #}
+
+    {% if entrySingleImage %}
+
+        <section class="wl-keyvisual">
+            <div class="wl-outerbox">
+                <div class="wl-innerbox">
+                    {% include '_include-atoms/image-picture' with {class: 'header-single', sourceMediaSettings: settings, image: headerImageSingle, imageSize: '2400x', imageMode: 'crop'} %}
+                </div>
+            </div>
+        </section>
+
+    {% elseif entrySliderImages %}
+
+        <script src="/assets/js/slick.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/assets/css/slick.min.css"/>
+
+        <section class="wl-keyvisual">
+            {% for sliderImage in headerImageSlider.all() %}
+                        <div class="wl-outerbox">
+                            <div class="wl-innerbox">
+                                {% include '_include-atoms/image-picture' with {class: 'header-slider', sourceMediaSettings: settings, image: sliderImage, imageSize: '2400x', imageMode: 'crop'} %}
+                            </div>
+                        </div>
+            {% endfor %}
+        </section>
+
+    {% endif %}
+
+</section>

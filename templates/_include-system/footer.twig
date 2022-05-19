@@ -1,0 +1,38 @@
+<section class="wl-wrapper">
+
+  <p>&copy; {{ 'now'|date('Y') }} {{siteconfig.company}}</p>
+
+    {# -------------- Macro -------------- #}
+    {% import "_macros/linkList.twig" as _self %}
+    <ul class="footer-liste-dsgvo">
+        {% set showListe = siteconfig.dsgvoListe.one()|default(false) %}{% if showListe %}
+            {% for item in siteconfig.dsgvoListe.all() %}{% set element = item.linkListe %}
+
+                <li>{{ _self.linkList( element ) | trim | raw  }}</li>
+            {% endfor %}
+        {% endif %}
+
+    </ul>
+
+  <br /><br />
+  <ul class="footer-liste-kontakt">
+    {% if siteconfig.company is not empty %}<li>{{siteconfig.company}}</li>{% endif %}
+    {% if siteconfig.street is not empty %}<li>{{siteconfig.street}}</li>{% endif %}
+    {% if siteconfig.city is not empty %}<li>{{siteconfig.city}}</li>{% endif %}
+    {% if siteconfig.phone is not empty %}<li>{{ craft.wul.phone(siteconfig.phone,'wl-phone',siteconfig.phone)|raw }}</li>{% endif %}
+    {% if siteconfig.fax is not empty %}<li>{{siteconfig.fax}}</li>{% endif %}
+    {% if siteconfig.mail is not empty %}<li><a class="wl-mail" href="mailto:{{siteconfig.mail}}" target="_blank">{{siteconfig.mail}}</a></li>{% endif %}
+  </ul>
+  <br /><br />
+    <ul class="social-media-list">
+        {% for item in siteconfig.socialMediaListe.all() %}
+            <li>
+                {% if item.mediaListeIcon.one()|default(false) %}
+                    <a href="{{ item.mediaListeLink }}" target="_blank">
+                        <img src="{{ item.mediaListeIcon.one().getUrl() }}" alt="{{ item.mediaListeText }}" title="{{ item.mediaListeText }}" />{{ item.mediaListeText }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</section>

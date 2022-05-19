@@ -1,0 +1,191 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  26087cc5-4f11-4e58-adf0-346fb818b9f7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d931a85a-ee43-4872-bf5e-28b0de797213 # Modul ausblenden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3a9fc3fb-aa87-431a-9706-643f86fa063e # Formular Auswahl
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5eff674b-5f53-431f-b584-7108fe69fdd4 # Antwort Seite
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 19c62d2b-8e57-449f-9d62-c9b63185973b # Submit Button  Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 75
+          -
+            fieldUid: b7c06b7d-6baa-4433-967d-d1501e174952 # Datenschutz Checkbox Label Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 67a499e7-1b90-4d37-90cd-a7c3cc47fbe0 # Info text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3a9fc3fb-aa87-431a-9706-643f86fa063e: # Formular Auswahl
+    columnSuffix: null
+    contentColumnType: integer
+    fieldGroup: null
+    handle: formularAuswahl
+    instructions: ''
+    name: 'Formular Auswahl'
+    searchable: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: wheelform\fields\FormField
+  5eff674b-5f53-431f-b584-7108fe69fdd4: # Antwort Seite
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: antwortSeite
+    instructions: ''
+    name: 'Antwort Seite'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:760656b1-ffd5-45e4-ab8d-4ed7b3eb2628' # Content Page
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  19c62d2b-8e57-449f-9d62-c9b63185973b: # Submit Button  Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: submitButtonText
+    instructions: ''
+    name: 'Submit Button  Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  67a499e7-1b90-4d37-90cd-a7c3cc47fbe0: # Info text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: infoText
+    instructions: 'z.B.: Alle Felder mit * sind Pflichtfelder!'
+    name: 'Info text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Wunderlab-ohne-p.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  b7c06b7d-6baa-4433-967d-d1501e174952: # Datenschutz Checkbox Label Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: datenschutzCheckboxLabelText
+    instructions: ''
+    name: 'Datenschutz Checkbox Label Text'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Wunderlab-ohne-p.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  d931a85a-ee43-4872-bf5e-28b0de797213: # Modul ausblenden
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: modulAusblenden
+    instructions: '<img src="/assets/images/logo.png" style="width:150px;" />'
+    name: 'Modul ausblenden'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: formular
+name: Formular
+sortOrder: 5

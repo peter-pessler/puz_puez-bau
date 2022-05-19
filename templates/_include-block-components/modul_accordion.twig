@@ -1,0 +1,21 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+<div class="wl-wrapper">
+  <div class="accordion-container">
+        <h3>{{block.headline}}</h3>
+        <ul class="accordion-list">
+            {% if block.items is not empty %}
+            {% for item in block.items.all() %}
+                <li>
+                    <label>{{ item.headline }}</label>
+                    <div class="accordion-content">
+                        {{ item.text }}
+                    </div>
+                </li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+  </div>
+</div>
+{% endif %}
+

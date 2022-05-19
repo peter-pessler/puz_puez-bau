@@ -1,0 +1,12 @@
+currLabel: Werkzeuge
+customIcon: null
+enabled: true
+handle: utilities
+icon: tool
+layout: eb1f8a0c-76c5-48cc-9672-7044f646159e # Default
+newWindow: false
+order: 8
+prevLabel: Werkzeuge
+prevUrl: utilities
+type: ''
+url: utilities

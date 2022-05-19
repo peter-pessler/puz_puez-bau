@@ -1,0 +1,98 @@
+// Import SCSS-Files
+
+/**
+*  A C H T U N G !  Block-Reihenfolge nicht ändern!
+*/
+
+/***** (1) **********************************
+Fonts
+*/
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Overpass:wght@300&display=swap');
+
+// Fonts vom eigenen Webspace
+/* =================================================== */
+$font-name-karlaBold: "karla-bold";
+$font-family-karlaBold: $font-name-karlaBold, Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", Arial, sans-serif;
+@include font-face($font-name-karlaBold, 'karla/karla-bold', '' , '');
+/* =================================================== */
+$font-name-karlaRegular: "karla-regular";
+$font-family-karlaRegular: $font-name-karlaRegular, Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", Arial, sans-serif;
+@include font-face($font-name-karlaRegular, 'karla/karla-regular', '' , '');
+/* =================================================== */
+
+$form-font-family: $font-family-karlaRegular;
+$h1-font-family: $font-family-karlaBold;
+$h2-font-family: $font-family-karlaBold;
+$h3-font-family: $font-family-karlaBold;
+$h4-font-family: $font-family-karlaBold;
+$h5-font-family: $font-family-karlaBold;
+
+
+
+/***** (2) **********************************
+Farben der Website
+*/
+$wl-color-black: #000000;
+$wl-color-white: #fff;
+$wl-color-grey: #bbb;
+$wl-color-red: red;
+$wl-color-dunkelrot: #8A171F;
+$wl-color-orange: #EC8500;
+$wl-color-blue: #0094C3;
+$wl-bgcolor-html: $wl-color-white;
+$wl-bgcolor-body: $wl-color-white;
+$wl-color-accordion-label: #718393;
+$wl-color-accordion-label-hover: #768834;
+
+
+/***** (3) **********************************
+Einstellungen
+*/
+
+// Wrapper-Breite der Website
+//$page-width: 2400;
+$page-width: 2000;
+$wrapper: 2140px; // $page-width -260 (130px links/130px rechts)
+$wrapperheader: 2400px;
+
+$telefonnummer-breakpoint: 600;
+
+// Geschwindigkeit der Transitions | Für alle Animationen
+$transition: all 0.15s ease-in-out;
+
+// Config allgemein
+$breakpoint-navigation: 800; /* Achtung Breakpoint auch in responsive-menu.js anpassen */
+$base-background-color: $wl-bgcolor-html;
+
+// Config Formular
+$wl-form-font-family: $font-family-karlaRegular;
+$wl-form-color-border: $wl-color-grey;
+$wl-form-color-fields: $wl-color-white;
+$wl-form-color-text: $wl-color-black;
+$wl-form-color-error: red;
+
+/* =================================================== */
+// Default Font Attribute
+// Default Font scale bounding for responsive Font in mixin responsive-font
+/* =================================================== */
+$base-font-family-bold: $font-family-karlaBold;
+$base-font-family: $font-family-karlaRegular;
+$base-font-size-min: 20px;
+$base-font-size-max: 25px;
+$base-font-breakpoint-min: 400px;
+$base-font-breakpoint-max: 1500px;
+$base-hl-font-breakpoint-min: 400px;
+$base-hl-font-breakpoint-max: 1500px;
+/* =================================================== */
+$navigation-font-family: $font-family-karlaBold;
+/* =================================================== */
+$base-line-height: 1.7;
+$base-line-height-h1: 1.7;
+$base-line-height-h2: 1.7;
+$base-line-height-h3: 1.7;
+$base-line-height-h4: 1.7;
+$base-font-color: $wl-color-black;
+$base-strong-attribut: 700;
+
+
+

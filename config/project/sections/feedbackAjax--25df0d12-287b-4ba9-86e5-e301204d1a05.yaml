@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: feedbackAjax
+name: 'Feedback Ajax'
+propagationMethod: all
+siteSettings:
+  6157b38d-63cd-4083-ab51-fb3b6e148d08: # Entwicklung Dev Wunderlabs
+    enabledByDefault: true
+    hasUrls: true
+    template: _ajax-feedback/get-ajax-feedback.twig
+    uriFormat: '{parent.uri}/{slug}'
+type: single

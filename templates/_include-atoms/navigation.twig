@@ -1,0 +1,166 @@
+<div class="navigation">
+
+    <div class="humburger" id="hambuger_menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <div id="myNav">
+        {#  slide-down-from-the-top / slide-in-from-the-side / without-animation  #}
+        {#  {% set pages = craft.entries().section('contentPage').id('not 2').level(1).excludeNavigation(0).all() %}  #}
+        {#  {% set pages = craft.entries.section('contentPage').id('not 2').excludeNavigation(0).all() %}  #}
+        {% set pages = craft.entries().section('contentPage').level('<= ' ~ siteconfig.navigationLevel).excludeNavigation(0).all() %}
+        {% set firstLevelID = "" %}
+        {% set firstLevelActiveID = "" %}
+        {% nav page in pages %}
+            {% if page.level == 1 %}
+               {% set firstLevelID = page.id  %}
+            {% endif %}
+            {% if page.id  == pageId %}
+                {% set firstLevelActiveID = firstLevelID  %}
+            {% endif %}
+        {% endnav %}
+
+        {% set showHrefFirstLevel = true %}
+        {% if siteconfig.navigationLevel == '1' %}
+            {% set showHrefFirstLevel = true %}
+        {% else %}
+            {% set showHrefFirstLevel = false %}
+        {% endif %}
+
+        <nav class="wl-navigation wl-navi-overlay-content" style="display: inline-block">
+            <ul id="nav" class="responsive-menu" data-menu-style="accordion">
+                {% nav page in pages %}
+                    {% set outputUrl = page.getUrl() %}
+                    {% set outputTitle = page.title %}
+                    {% set setActiveClass = "" %}
+                    {% set setActiveClassMain = "" %}
+                    {% set parentEntry = page.getParent(entry) %}
+
+                    {% set pageUrlSegs = (page.url|split('//'))[1]|split('/') %}
+                    {% if craft.app.request.segments|last == pageUrlSegs|last %}
+                        {% set setActiveClass = " active" %}
+                    {% endif %}
+
+                    {% if page.id == firstLevelActiveID %}
+                        {% set setActiveClass = " active" %}
+                        {% set setActiveClassMain = ' active-level1' %}
+                    {% endif %}
+
+                    {% if page.level == 1 and page.children.excludeNavigation(0)|length and showHrefFirstLevel == false %}
+                        {% set output = '<a data-level="' ~ page.level ~ '" class="level-' ~ page.level ~' navi' ~ setActiveClass ~'"><span>' ~ outputTitle ~ '</span></a>' %}
+                    {% elseif page.level == 1 and page.children.excludeNavigation(0)|length and showHrefFirstLevel == true %}
+                        {% set output = '<a data-level="' ~ page.level ~ '" class="level-' ~ page.level ~' navi' ~ setActiveClass ~'" href="' ~ outputUrl ~ '"><span>' ~ outputTitle ~ '</span></a>' %}
+                    {% else %}
+                        {% set output = '<a data-level="' ~ page.level ~ '" class="level-' ~ page.level ~' navi' ~ setActiveClass ~'" href="' ~ outputUrl ~ '"><span>' ~ outputTitle ~ '</span></a>' %}
+                    {% endif %}
+
+                    {% set redirect = page.redirect %}
+                    {% if redirect is defined and redirect is not null %}
+                        {% set redirectLink = redirect.getUrl() %}
+                        {% if redirectLink is not null %}
+                            {% if redirect.getTarget() == '_blank' %}
+                                {% set output = '<a class="navi" href="' ~ outputUrl ~ '" target="_blank"><span>' ~ outputTitle ~ '</span></a>' %}
+                            {% else %}
+                                {% set output = '<a class="navi" href="' ~ redirectLink ~ '"><span>' ~ outputTitle ~ '</span></a>' %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+
+                    <li class="level-{{ page.level }} {{ setActiveClassMain }} {{ setActiveClass }}">{{ output|raw}}{% ifchildren %}
+
+                            <ul class="child">{% children %}
+                            </ul>{% endifchildren %}</li>
+                {% endnav %}</ul>
+        </nav>
+
+    </div>
+</div>
+
+{#
+<script>
+
+    $( document ).ready(function() {
+
+        $( "#nav" ).each(function( index ) {
+            $(this).find('ul.child').parent().children("a").removeAttr("href");
+            $(this).find('ul.child').parent().children("a").addClass('hasChild');
+            $(this).find('ul.child').parent().children("a").parent().addClass('hasChild');
+        });
+
+
+        setTimeout(function() {
+            menue_width($('#nav  .level-1 li'));
+        }, 100);
+
+
+        $(window).resize(function() {
+
+            setTimeout(function() {
+                menue_clear($('#nav  .level-1 li'));
+                menue_width($('#nav  .level-1 li'));
+            }, 50);
+
+        })
+
+    });
+
+
+    function menue_width(element) {
+        var widest_element = 0;
+
+        $( "#nav" ).css("overflow", "hidden");
+
+
+        // Lösche die Breite
+        element.each(function () {
+            $(this).removeAttr('style');
+            $(this).parent().show();
+        });
+
+        // Prüfe, welches Element am breitesten ist
+        element.each(function () {
+            if ($(this).outerWidth(true) > widest_element) {
+                widest_element = $(this).outerWidth(true);
+            }
+        });
+
+        // Weise diese Breite allen Elementen zu / zum Berechnen ist ul auf block und wird danach auf none gesetzt.
+
+        var width ;
+        width = $(window).width();
+        width = parseInt( width );
+        if( width <= 800){
+            element.each(function () {
+                $(this).css("width",  "100%");
+                $(this).parent().hide();
+            });
+        } else {
+            element.each(function () {
+                $(this).css("width", widest_element + "px");
+                $(this).parent().hide();
+            });
+        }
+
+        $( "#nav" ).removeAttr('style');
+
+    };
+
+    function menue_clear(element) {
+
+        // Entfernt alle Styles von aufgeklappten Elementen
+
+        $('#nav li').each(function () {
+            $(this).removeClass('menu-active');
+        });
+
+        element.each(function () {
+            $(this).hide();
+        });
+
+    }
+
+
+</script>
+     #}

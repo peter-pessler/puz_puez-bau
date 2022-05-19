@@ -1,0 +1,41 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  83d55e94-f874-45ee-af47-1ff3148607e4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 920bec4e-4a52-4b7a-b938-664855c1f936 # HTML
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  920bec4e-4a52-4b7a-b938-664855c1f936: # HTML
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: html
+    instructions: ''
+    name: HTML
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '6'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: htmlCode
+name: 'HTML Code'
+sortOrder: 7

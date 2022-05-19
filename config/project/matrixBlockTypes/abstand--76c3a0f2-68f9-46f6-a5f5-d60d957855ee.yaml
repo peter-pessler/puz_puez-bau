@@ -1,0 +1,42 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  05ababf4-fda3-4004-b2be-2db0a811e8f0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 00ee73b5-d332-4b63-8cd4-32b063d1ea0d # Abstand Trenner
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  00ee73b5-d332-4b63-8cd4-32b063d1ea0d: # Abstand Trenner
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: abstandTrenner
+    instructions: "Wenn keine Eigabe, wird der Default Wert ausgegeben.\r\nBitte Abstand Höhe in Pixel eingeben."
+    name: 'Abstand Trenner'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 30
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+handle: abstand
+name: Abstand
+sortOrder: 2

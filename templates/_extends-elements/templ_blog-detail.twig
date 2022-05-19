@@ -1,0 +1,59 @@
+{% extends '_layouts/main' %}
+
+{% block headerimage %}
+    {% set detailHeaderImage = entry.keyvisualImageSingle.one()  %}
+    {% if detailHeaderImage is defined %}
+        {% include '_include-atoms/headerimage' with {detailbild: detailHeaderImage} %}
+    {% endif %}
+{% endblock %}
+
+{% block blogdetail %}
+  <section class="wl-wrapper">
+      {# ###################################################################################################### #}
+      {% set settings = {
+          '0-1300': {
+              'size' : '725x',
+              'mode' : 'crop'
+          },
+          '1-1000' : {
+              'size' : '540x',
+              'mode' : 'crop'
+          },
+          '2-700': {
+              'size' : '350x',
+              'mode' : 'crop'
+          },
+          '3-350': {
+              'size' : '280x',
+              'mode' : 'crop'
+          },
+      } %}
+      {# ###################################################################################################### #}
+      {% set matrixElemente = entry.blogDetailMatrix.all() %}
+      {% if matrixElemente is defined and matrixElemente %}
+          {% for block in matrixElemente %}
+              {% if block.type == "text" %}
+                  {{ block.textDetailSeite }}
+              {% elseif block.type == "bild" %}
+                  {% include '_include-atoms/image-picture' with {class: 'content-bild', sourceMediaSettings: settings, image: block.bildDetailSeite.one(), imageSize: '920x', imageMode: 'crop'} %}
+                  <br />
+                  {{ block.bildUnterschrift }}
+              {% endif %}
+          {% endfor %}
+      {% endif %}
+
+      {% set pageReferrer = craft.app.request.referrer %}
+      {% if pageReferrer is not empty  %}
+          {% set backLink = pageReferrer %}
+      {% else %}
+          {% set backLink = url('/blog') %}
+      {% endif %}
+
+      <br />
+      <a href="{{ backLink }}#articles">zur Übersicht</a>
+      <br />
+
+  </section>
+{% endblock %}
+
+

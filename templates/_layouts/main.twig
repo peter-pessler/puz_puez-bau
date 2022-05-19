@@ -1,0 +1,124 @@
+{# -------------- Neuer Passwort-Hash zu rendern -------------- #}
+{# -------------- meineDomain?craftpasswort=demo1234 -------------- #}
+{% if craft.app.request.getParam('craftpasswort') %}
+    {% set craftpasswort = craft.app.request.getParam('craftpasswort') %}
+    {% if craftpasswort != '' %}{{ craft.app.security.hashPassword(craftpasswort) }}{% endif %}
+{% endif %}
+{# ------------------------------------------------------------------- #}
+{% set pageId = entry.id %}
+{% set pageIdParent = entry.getParent().id ?? 0  %}
+{% set imgFormat = siteconfig.imageFormat %}
+{% set imgQuality = 85 %}
+{% set doNotTrack = craft.wul.doNotTrack() %}{# output: true/false #}
+{# -------------- Blogübersicht -------------- #}
+{% if pageId != 397 %}{# Id 397 = Blogübersicht #}
+ {% set redirect = entry.redirect %}
+ {% if redirect is defined and redirect is not null %}
+     {% set redirectLink = redirect.getUrl() %}
+     {% if redirectLink is not null %}
+         {% redirect redirectLink %}
+     {% endif %}
+ {% endif %}
+{% endif %}
+<!DOCTYPE HTML>
+<html{% if doNotTrack %} data-doNotTrack="on"{% else %} data-doNotTrack="off"{% endif %} lang="{{ currentSite.language }}" dir="{{craft.app.i18n.getLocaleById(currentSite.id).getOrientation()}}">
+<head>
+{% hook 'seo' %}
+
+{% include '_include-system/meta' %}
+
+{% include '_include-system/favicons' %}
+
+{% if not craft.app.config.general.devMode and doNotTrack == false %}
+    {% include '_include-system/tracking-code-head-end' %}
+{% endif %}
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="/assets/js/scripts.min.js"></script>
+    {# <script src="https://kit.fontawesome.com/f7d5330d63.js" crossorigin="anonymous"></script> #}
+
+    <link href="/assets/css/styles.min.css" rel="stylesheet">
+
+    {% block assetsHead %}{% endblock %}
+
+</head>
+
+<body class="{% if pageId == 2%}startseite{% else %}contentseite{% endif %} {{body_class ?? null}} {{craft.app.request.isMobileBrowser() ? 'is-mobile' : 'is-desktop'}}">
+
+{% if not craft.app.config.general.devMode %}
+    {% include '_include-system/tracking-code-body-start' %}
+{% endif %}
+
+{# Startanimation #}
+{% include '_include-atoms/preloader.twig' %}
+
+  <header>
+      {% include '_include-system/header' %}
+      {% block headerimage %}{% endblock %}
+  </header>
+
+  <main>
+      <section class="wl-wrapper">
+
+       {# START | Zum Test füt Headline marging (Wenn erfolgreich angewandt, bitte löschen) #}
+
+          <div style="width: 580px">
+              <h1>Ich bin eine H1 Überschrift | ygj ÄÜÖ</h1>
+          </div>
+
+          <div style="width: 400px">
+              <h2>Ich bin eine H2 Überschrift | ygj ÄÜÖ</h2>
+          </div>
+
+          <div style="width: 350px">
+              <h3>Ich bin eine H3 Überschrift | ygj ÄÜÖ</h3>
+          </div>
+
+          <div style="width: 300px">
+              <h4>Ich bin eine H4 Überschrift | ygj ÄÜÖ</h4>
+          </div>
+
+       {# ENDE ____________________________________________________________________________ #}
+
+
+      {% set headline = entry.headline %}
+      {% set entryHeadline = entry.headline|default(false) %}
+      {% if entryHeadline %}
+          <h1>{{ headline }}</h1>
+      {% endif %}
+      </section>
+
+      {% block module %}{% endblock %}
+      {% block blogdetail %}{% endblock %}
+      {% block karrieredetail %}{% endblock %}
+      {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+      {% include '_include-system/footer' %}
+  </footer>
+
+{% set scrollToTopPagesArr = siteconfig.scrollToTopPages|split(',') %}
+{% if scrollToTopPagesArr is array %}
+    {% if pageId not in scrollToTopPagesArr %}{# löscht Formular-Cookie => scrollen zum Formularanfang #}
+
+    <script>
+        $(document).ready(function() {
+            setCookie('scrollTo','',-1);
+        });
+    </script>
+
+    {% endif %}
+{% endif %}
+
+  {% block assetsEndBody %}{% endblock %}
+
+  {% if not craft.app.config.general.devMode and doNotTrack == false %}
+      {% include '_include-system/tracking-code-body-end' %}
+  {% endif %}
+
+
+</body>
+
+</html>

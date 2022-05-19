@@ -1,0 +1,19 @@
+columnSuffix: ujnsnhin
+contentColumnType: text
+fieldGroup: cf094fa0-aec3-459e-a67b-5531e87438fb # global
+handle: bodystartscripts
+instructions: 'Code-Schnipsel, welches nach Body Anfang Tag in die Webseite eingebaut wird'
+name: 'Scripts Body Start'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: '1'
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

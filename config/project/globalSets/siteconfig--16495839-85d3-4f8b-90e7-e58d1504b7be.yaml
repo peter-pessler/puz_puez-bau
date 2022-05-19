@@ -1,0 +1,206 @@
+fieldLayouts:
+  589c6e6c-5f06-4add-b796-7530b00881f2:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 91842fdf-3636-4bcf-8cd5-c49abfb0b583 # Headline (H1)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Allgemein
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: a499f89b-6184-4b1f-aaa7-6bbeefa2f8ee # Scripts Head End
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e6037a50-7ad3-4320-9231-69474af1acd6 # Scripts Body Start
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8e7fd78c-2eee-4934-9e7d-c25856d963bd # Scripts Body End
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Tracking
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 717770fa-d135-4cad-b0f3-a9bb9eba3abb # scroll to top Pages
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: e70198b9-cee9-4fb7-9d60-cd5ae8bf182b # Site Verification ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 9fecac78-3a25-40cf-89d9-43bcc282c9f2 # Webapp Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: a6097f74-119e-4561-8018-495a37c010dd # Bild Format
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 828d9906-d50c-490a-a2e9-5536e4301dd3 # Navigation Level
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Einstellungen
+        sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: c6669f8b-698a-4a60-89a6-73deb1dfe344 # DSGVO / Kontakt Liste
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            heading: 'Social Media Icons'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 259d3b3c-2946-45c5-955b-c96f1d34e90f # Social Media Liste
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            heading: 'Standard Felder Unternehmen'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 9b83da8f-780d-46e9-a5bb-043c770ace17 # Unternehmen
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 678244d1-b4f4-4b44-b7c9-00892e5028d0 # Straße
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: de85b71b-2cb1-49c7-bd76-55e1a420c7ff # PLZ / Ort
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 37530743-48c9-4e74-9f7c-e4978570f618 # Telefon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bf433f0c-f5b5-4941-a2c7-e47924cd7a50 # Fax
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 715a774e-6aaf-4384-8972-22d8465c91b7 # E-Mail
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Footer
+        sortOrder: 4
+      -
+        elements:
+          -
+            fieldUid: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: '404 Seite'
+        sortOrder: 5
+handle: siteconfig
+name: SiteConfig
+sortOrder: 1

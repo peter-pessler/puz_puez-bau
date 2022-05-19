@@ -1,0 +1,28 @@
+columnSuffix: fcsakiyn
+contentColumnType: text
+fieldGroup: 3ce9e77b-5b04-4678-a633-58827f84519a # Common
+handle: karriereTeaserText
+instructions: ''
+name: Text
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes:
+    - 32abce78-aa7e-4add-bddc-7772d184dd2c # pdf
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showHtmlButtonForNonAdmins: ''
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

@@ -1,0 +1,59 @@
+{
+    "name": "mmikkel/child-me",
+    "description": "Easily create child elements",
+    "type": "craft-plugin",
+    "version": "1.3.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "child me"
+    ],
+    "support": {
+        "docs": "https://github.com/mmikkel/ChildMe-Craft/blob/master/README.md",
+        "issues": "https://github.com/mmikkel/ChildMe-Craft/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mats Mikkel Rummelhoff",
+            "homepage": "https://vaersaagod.no"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.7.0|^4.0.0-beta.3",
+        "php": "^7.2.5|^8.0"
+    },
+    "require-dev": {
+        "craftcms/rector": "dev-main"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "mmikkel\\childme\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Child Me!",
+        "handle": "child-me",
+        "schemaVersion": "1.0.0",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/mmikkel/ChildMe-Craft/master/CHANGELOG.md",
+        "class": "mmikkel\\childme\\ChildMe"
+    }
+}

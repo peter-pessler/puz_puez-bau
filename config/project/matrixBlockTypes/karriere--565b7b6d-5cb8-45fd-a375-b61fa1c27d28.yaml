@@ -1,0 +1,261 @@
+field: 39d5f329-97c6-46c9-b40d-b19536684d7e # Module
+fieldLayouts:
+  06a20e18-e6bf-4452-800f-6de1a81064c8:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 94d2bab3-273b-4641-b23c-94b6533884fd # Sortierung
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 778a5331-c234-4e7d-889d-00f5ae7ad167 # anzahl Artikel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 25560228-ffa2-4821-8bad-ca07ac3eb4d7 # Button Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 3321bdee-7175-4a72-b863-9a4886732ac5 # Button  Text  mehr
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: d2f06505-a993-4495-adc2-ab3aaf1bcf9d # Modul ausblenden
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  94d2bab3-273b-4641-b23c-94b6533884fd: # Sortierung
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: sortierung
+    instructions: ''
+    name: Sortierung
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'nach Datum absteigend '
+            -
+              - value
+              - desc
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'nach Datum aufsteigend '
+            -
+              - value
+              - asc
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'nach CMS Struktur (drag and drop)'
+            -
+              - value
+              - structure
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  778a5331-c234-4e7d-889d-00f5ae7ad167: # anzahl Artikel
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: anzahlArtikel
+    instructions: ''
+    name: 'anzahl Artikel'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '3'
+            -
+              - value
+              - '3'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '4'
+            -
+              - value
+              - '4'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '5'
+            -
+              - value
+              - '5'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '6'
+            -
+              - value
+              - '6'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '7'
+            -
+              - value
+              - '7'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '8'
+            -
+              - value
+              - '8'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '9'
+            -
+              - value
+              - '9'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '10'
+            -
+              - value
+              - '10'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  3321bdee-7175-4a72-b863-9a4886732ac5: # Button  Text  mehr
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonTextMehr
+    instructions: 'Bechriftung Button weitere Jobs'
+    name: 'Button  Text  mehr'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  25560228-ffa2-4821-8bad-ca07ac3eb4d7: # Button Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonText
+    instructions: 'Bechriftung Button zur Detailseite'
+    name: 'Button Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d2f06505-a993-4495-adc2-ab3aaf1bcf9d: # Modul ausblenden
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: modulAusblenden
+    instructions: '<img src="/assets/images/logo.png" style="width:150px;" />'
+    name: 'Modul ausblenden'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: karriere
+name: Karriere
+sortOrder: 8
