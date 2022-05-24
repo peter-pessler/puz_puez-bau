@@ -1,36 +1,481 @@
-body{
-
-  &.startseite{
-
-  }
-
-  &.contentseite{
-
-  }
-
-}
-
-/* ******************************************************* */
-
 header {
 
-  .wl-header-wrapper{
+  .header-nav-container{
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
+    margin-top: 47px;
   }
+
+
+  .nav-item-header-left{
+
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+
+    height: 79px;
+    width: 270px;
+    @include wl-breakpoint($page-width) {
+      width: 17%;
+    }
+    @include wl-breakpoint(1500) {
+      width: 12%;
+    }
+    @include wl-breakpoint($breakpoint-navigation) {
+      width: 120px;
+    }
+    @include wl-breakpoint($breakpoint-navigation) {
+      width: 60px;
+    }
+
+
+    .navbar-brand{
+      .firmenlogo{
+        width: 79px;
+        @include wl-breakpoint(500) {
+          width: 60px;
+        }
+      }
+    }
+  }
+
+  .nav-item-header-center{
+    width: calc(100% - 460px);
+    @include wl-breakpoint($page-width) {
+      width: 71%;
+    }
+    @include wl-breakpoint(1500) {
+      width: 78%;
+    }
+    @include wl-breakpoint($breakpoint-navigation) {
+      width: calc(100% - 380px);
+    }
+    @include wl-breakpoint(500) {
+      width: calc(30px);
+    }
+    padding-bottom: 10px;
+  }
+
+  .nav-item-header-right{
+
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+
+    @include wl-breakpoint(800) {
+      justify-content: flex-end;
+    }
+
+
+    width: 190px;
+    @include wl-breakpoint($page-width) {
+      width: 12%;
+    }
+    @include wl-breakpoint(1500) {
+      width: 10%;
+    }
+    @include wl-breakpoint($breakpoint-navigation) {
+      width: 180px;
+    }
+
+    @include wl-breakpoint(500) {
+      width: calc(100% - 160px);
+    }
+
+  }
+
+  .nav-item-tel{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  }
+
+  .nav-item-mail{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    @include wl-breakpoint(800) {
+      margin-left: 25px;
+    }
+  }
+
+  .nav-item-language{
+    display: inline-block;
+    @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+    letter-spacing: 0.07em;
+
+    a{
+      color: $wl-color-black;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover{
+
+      }
+    }
+
+    &.home-nav{
+      a{
+        color: $wl-color-white;
+      }
+
+    }
+
+    @include wl-breakpoint(800) {
+      margin-left: 25px;
+    }
+
+  }
+
+  .tel-icn{
+    cursor: pointer;
+    display: block;
+    #phone-icn{
+      &:hover{
+        fill: $wl-color-blue;
+      }
+    }
+  }
+
+  .mail-icn{
+    cursor: pointer;
+    display: block;
+    #email-icn{
+      &:hover{
+        fill: $wl-color-blue;
+      }
+    }
+  }
+
+  .nav-item-language{
+    a{
+      &:hover{
+        color: $wl-color-blue;
+      }
+    }
+  }
+
+
 
 }
 
-.logo {
-  img {
-    width: 100%;
-    height: auto;
+
+body{
+  &.startseite{
+
+    h1{
+      display: inline-block;
+      @include wl-breakpoint($breakpoint-navigation) {
+       margin-top: 190px;
+      }
+    }
+
+
+    .header-body, .header-body-end {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+
+    }
+
+    .header-body-end {
+      @include wl-breakpoint(900) {
+        display: none;
+      }
+    }
+
+
+
+
+    .header-body{
+
+      @include wl-breakpoint(900) {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+
+      .sp1-text{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        align-content: stretch;
+
+        @include wl-breakpoint(600) {
+          flex-direction: column;
+        }
+
+        .links, .rechts{
+          width: 47%;
+          color: $wl-color-white;
+          @include wl-breakpoint(600) {
+            width: 100%;
+          }
+
+          a{
+            color: $wl-color-white;
+          }
+        }
+
+        .links{
+          @include wl-breakpoint(600) {
+            padding-top: 20px;
+          }
+        }
+        .rechts{
+          @include wl-breakpoint(600) {
+            padding-top: 25px;
+          }
+        }
+
+      }
+
+      .sp1{
+        @include wl-breakpoint(900) {
+          width: 100%;
+        }
+      }
+
+      .sp2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: stretch;
+
+        padding-left: 10vw;
+        padding-bottom: 80px;
+        @include wl-breakpoint($breakpoint-navigation) {
+          padding-left: 4vw;
+        }
+        @include wl-breakpoint(900) {
+          width: 100%;
+          justify-content: flex-start;
+          padding-left: 70px;
+          padding-top: 50px;
+
+          background-image: url("/assets/images/pfeilmuster_gross.svg");
+          background-repeat: no-repeat;
+          background-position: bottom 30px right 0px;
+          background-size: 30vw;
+        }
+
+        @include wl-breakpoint(600){
+          padding-left: 0px;
+        }
+
+        .sp2-content{
+          width: 100%;
+
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          align-content: stretch;
+
+
+          @include wl-breakpoint(1200) {
+            flex-direction: column;
+          }
+          @include wl-breakpoint(900) {
+            width: 47%;
+            flex-direction: row;
+          }
+          @include wl-breakpoint(700) {
+            width: 100%;
+          }
+
+          .icon{
+            max-width: 110px;
+            width: 100%;
+            .dakks{
+              width: 100%;
+            }
+          }
+
+          .description{
+
+            width: calc(100% - 110px);
+            padding-left: 30px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            color: $wl-color-white;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: stretch;
+
+            @include wl-breakpoint($breakpoint-navigation) {
+              width: 100%;
+            }
+
+            @include wl-breakpoint(1200) {
+              padding-top: 30px;
+              padding-left: 0;
+              justify-content: center;
+              text-align: center;
+            }
+
+            @include wl-breakpoint(900) {
+              width: calc(100% - 110px);
+              padding-top: 0;
+            }
+
+            @include wl-breakpoint(700) {
+              text-align: left;
+              padding-left: 30px;
+              justify-content: flex-start;
+            }
+
+          }
+
+
+        }
+
+
+
+      }
+
+    }
+
+    .sp1{
+      width: 62%;
+      padding-left: 136px;
+      @include wl-breakpoint($breakpoint-navigation) {
+        width: 70%;
+      }
+      @include wl-breakpoint(1200) {
+        padding-left: 70px;
+      }
+      @include wl-breakpoint(600){
+        padding-left: 0px;
+      }
+
+    }
+
+    .sp2{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      align-items: stretch;
+      align-content: stretch;
+
+      width: 38%;
+      @include wl-breakpoint($breakpoint-navigation) {
+        width: 30%;
+      }
+
+
+      .schmuckelement{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: stretch;
+        align-content: stretch;
+
+        margin-bottom: 50px;
+      }
+
+    }
+
+    header {
+
+      .tel-icn{
+        cursor: pointer;
+        display: block;
+        #phone-icn{
+          fill: $wl-color-white;
+          &:hover{
+            fill: $wl-color-blue-soft;
+          }
+        }
+      }
+
+      .mail-icn{
+        cursor: pointer;
+        display: block;
+        #email-icn{
+          fill: $wl-color-white;
+          &:hover{
+            fill: $wl-color-blue-soft;
+          }
+        }
+      }
+
+      .nav-item-language{
+        a{
+          color: $wl-color-white;
+          &:hover{
+            color: $wl-color-blue-soft;
+          }
+        }
+      }
+
+    }
+
+
   }
 }
 
 
+/*******************************************************
 
+********************************************************/
+
+
+.startseite-header-container{
+
+    background-image: url("/assets/images/firstview_bg.jpg");
+    margin-top: -130px;
+
+
+    min-height: 1080px;
+    background-size: cover;
+    background-position: center center;
+
+
+  @media (max-width: 1920px) {
+      min-height: calc(100vw/1.5);
+  }
+
+  @media (max-width: 900px) {
+      min-height: 600px;
+  }
+
+}

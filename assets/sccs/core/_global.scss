@@ -19,6 +19,11 @@ p {
   }
 }
 
+strong{
+  @include responsive-font($base-font-size-min, $base-font-size-max, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family, $base-line-height);
+  font-weight:$font-weight-strong;
+}
+
 header, main, footer {
   width: 100%;
   position: relative;
@@ -27,17 +32,19 @@ header, main, footer {
 
 header{
   @include responsive-font($base-font-size-min, $base-font-size-max, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family, $base-line-height);
+  font-weight:$font-weight-normal;
   overflow: hidden;
 }
 
 main{
   @include responsive-font($base-font-size-min, $base-font-size-max, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family, $base-line-height);
+  font-weight:$font-weight-normal;
   overflow-y: visible;
 }
 
 footer{
   @include responsive-font($base-font-size-min, $base-font-size-max, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family, $base-line-height);
-
+  font-weight:$font-weight-normal;
 }
 img {
   max-width: 100%;
@@ -119,11 +126,12 @@ main {
   a {
     @include responsive-font($base-font-size-min, $base-font-size-max, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family, $base-line-height);
     //@include animatedLink($wl-color-red, $wl-color-blue);
-    @include link($wl-color-red, $wl-color-orange, $wl-color-dunkelrot, $base-font-color);
+    @include link($wl-color-red, $wl-color-blue, $wl-color-blue, $base-font-color);
   }
 
   strong{
-    @include responsive-font($base-font-size-min, $base-font-size-max, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family-bold, $base-line-height);
+    @include responsive-font($base-font-size-min, $base-font-size-max, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family, $base-line-height);
+    font-weight:$font-weight-strong;
   }
 
   ul{

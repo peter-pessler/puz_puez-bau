@@ -8,7 +8,7 @@ main, details { display: block; }
 
 a { background-color: transparent; }
 
-b, .b, strong, .strong { font-weight: $base-strong-attribut; }
+b, .b, strong, .strong { font-weight: $font-weight-strong; }
 
 em, .em { font-style: italic; }
 
@@ -50,20 +50,50 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-
 h1, .h1 {
-  @include responsive-font(40px, 60px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
-  @include margin-headline-top(32, 20, 46, 80);
-  @include margin-headline-bottom(32, 20, 26, 40);
+  @include responsive-font(50px, 72px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
+  @include wl-breakpoint(900) {
+    @include responsive-font(40px, 72px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
+  }
+  @include wl-breakpoint(500) {
+    @include responsive-font(30px, 72px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
+  }
+  @include margin-headline-top(32, 21, 48, 280);
+  @include margin-headline-bottom(32, 21, 48, 90);
+  @include wl-breakpoint(800) {
+    @include margin-headline-top(32, 21, 100, 280);
+  }
+  color: $wl-color-black;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 h2, .h2 {
-  @include responsive-font(30px, 44px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h2-font-family, $base-line-height-h2);
+  @include responsive-font(25px, 40px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h2-font-family, $base-line-height-h2);
+  @include margin-headline-top(17, 11, 45, 65);
+  @include margin-headline-bottom(17, 11, 45, 50);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 h3, .h3 {
-  @include responsive-font(25px, 32px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h3-font-family, $base-line-height-h3);
+  @include responsive-font(20px, 35px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h3-font-family, $base-line-height-h3);
+  @include margin-headline-top(15, 8, 25, 45);
+  @include margin-headline-bottom(15, 8, 25, 30);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 h4, .h4 {
   @include responsive-font(22px, 29px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h4-font-family, $base-line-height-h4);
+  @include margin-headline-top(15, 8, 25, 45);
+  @include margin-headline-bottom(15, 8, 25, 30);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 
 
+body{
+  &.startseite{
+    h1, .h1 {
+      color: $wl-color-white;
+    }
+  }
+}

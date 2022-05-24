@@ -1,4 +1,5 @@
-// @codekit-prepend  "_jquery.imageGallery.js", "_jquery.matchHeight.js", "_formular-button.js", "_responsive-menu.js";
+// @codekit-prepend  "_jquery.imageGallery.js", "_jquery.matchHeight.js", "_formular-button.js";
+
 
 /**
  * Welches Js ist für was?
@@ -260,10 +261,11 @@ $(document).ready(function() {
     /* *********************************************************************************************************************** */
 
     // Font-Tester | Boxen zwischen allen Tags für Bestimmen des Minus-Margins (Settings) – nach erfolgreichem Testen löschen
-
+    /*
     $('main').children().each(function () {
         $(this).find('*').before("<div style='background: #eee; height: 50px'></div>");
     });
+    */
 
 
     /* *********************************************************************************************************************** */
@@ -342,7 +344,7 @@ function resizeMenue() {
     var width ;
     width = $(window).width();
     width = parseInt( width );
-    if( width <= 1600){
+    if( width <= 1300){
         $('#myNav').addClass( "overlay" ).css('display', '');
         $('#myNav').removeClass('open');
         $('#hambuger_menu').removeClass('open');

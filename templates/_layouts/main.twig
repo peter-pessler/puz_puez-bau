@@ -55,7 +55,7 @@
 
   <header>
       {% include '_include-system/header' %}
-      {% block headerimage %}{% endblock %}
+      {% block intro %}{% endblock %}
   </header>
 
   <main>
@@ -63,24 +63,23 @@
 
        {# START | Zum Test füt Headline marging (Wenn erfolgreich angewandt, bitte löschen) #}
 
-          <div style="width: 580px">
-              <h1>Ich bin eine H1 Überschrift | ygj ÄÜÖ</h1>
+          <div>
+              <h1>H1 Leistungen</h1>
           </div>
 
-          <div style="width: 400px">
-              <h2>Ich bin eine H2 Überschrift | ygj ÄÜÖ</h2>
+          <div>
+              <h2>H2 Leistungen</h2>
           </div>
 
-          <div style="width: 350px">
-              <h3>Ich bin eine H3 Überschrift | ygj ÄÜÖ</h3>
+          <div>
+              <h3>H3 Leistungen</h3>
           </div>
 
-          <div style="width: 300px">
-              <h4>Ich bin eine H4 Überschrift | ygj ÄÜÖ</h4>
+          <div>
+              <h4>H4 Leistungen</h4>
           </div>
 
        {# ENDE ____________________________________________________________________________ #}
-
 
       {% set headline = entry.headline %}
       {% set entryHeadline = entry.headline|default(false) %}

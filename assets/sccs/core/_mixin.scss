@@ -65,7 +65,7 @@ x { @include font-size(16px, 24px, 320px, 960px); }
 	$min,                        			// font-size
     $max: null,                  			// optional maximum font size
     $lock-min: $base-font-breakpoint-min,  	// optional minimum viewport width
-    $lock-max: $base-font-breakpoint-max,   		// optional maximum viewport width
+    $lock-max: $base-font-breakpoint-max,   // optional maximum viewport width
 	$font-family: $base-font-family,		// opional font family
 	$line-height: $base-line-height
 ){
@@ -201,7 +201,7 @@ x { @include font-size(16px, 24px, 320px, 960px); }
 	display: inline-block;
 	color: $textColor;
 	text-decoration: none;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 	background: linear-gradient(to right, $lineColor 0%, $lineColor 98%);
 	background-size: 100% 2px;
 	background-repeat: no-repeat;
