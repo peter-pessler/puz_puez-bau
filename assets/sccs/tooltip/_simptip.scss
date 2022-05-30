@@ -15,7 +15,7 @@ $tooltipHeight: 26px;
 $arrowSize: 10px;
 
 //tooltip's default box color
-$tooltipColor: $wl-color-grey;
+$tooltipColor: $wl-color-darkblue;
 
 //tooltip's default text color
 $tooltipTextColor: #ecf0f1;
@@ -44,7 +44,7 @@ $c-warning: #e67e22;
   }
 }
 
-@mixin border-radius($radius: 4px) {
+@mixin border-radius($radius: 30px) {
   -webkit-border-radius: $radius;
           border-radius: $radius;
 }

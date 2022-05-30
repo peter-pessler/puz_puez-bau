@@ -1,19 +1,47 @@
 footer {
+  background-color: $wl-color-black;
+  background-image: url("/assets/images/footer_oben_rechts_logografik.svg");
+  background-repeat: no-repeat;
+  background-position: top 0px right 0;
+  @include wl-breakpoint(1000) {
+    background-size: 42%;
+  }
 
-  /**
-  Start nur Demo
-   */
-  background-color: #e7e4de;
-  margin-top:50px;
-  /**
- Ende nur Demo
-   */
 
-  padding-top: 50px;
-  padding-bottom: 50px;
+  .footer-container{
 
-  ul {
-    &.footer-liste-kontakt,&.footer-liste-dsgvo{
+    background-image: url("/assets/images/footer_unten_links_logografik.svg");
+    background-repeat: no-repeat;
+    background-position: bottom 0px left 0;
+    @include wl-breakpoint(1000) {
+      background-size: 42%;
+    }
+
+
+    padding-top: 100px;
+    @include wl-breakpoint($page-width) {
+      padding-top: calc(50px + 2.5vw);
+    }
+    @include wl-breakpoint(1000) {
+      padding-top: calc(40px + 3vw);
+    }
+    @include wl-breakpoint(600) {
+      padding-top: 65px;
+    }
+
+    padding-bottom: 100px;
+    @include wl-breakpoint($page-width) {
+      padding-bottom: calc(50px + 2.5vw);
+    }
+    @include wl-breakpoint(1000) {
+      padding-bottom: calc(40px + 3vw);
+    }
+    @include wl-breakpoint(600) {
+      padding-bottom: 65px;
+    }
+
+    ul {
+
       margin: 0;
       padding: 0;
       list-style: none;
@@ -24,77 +52,355 @@ footer {
         list-style-type: none;
         position: relative;
         padding: 0px;
-        margin-left: 15px;
 
-        &::before {
-          //content: "•";
-          //content: "❖";
-          //content: "✶";
-          //content: "▶";
-          content: "✿";
-          font-size: 0.7em;
-          background-image: none;
-          position: absolute;
-          top: 3px;
-          left:-15px;
-          width: auto;
-          height: auto;
-        }
+      }
 
-        a {
-          color: $wl-color-black;
-        }
+    }
+
+
+    .footer-container-inner{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+
+      @include wl-breakpoint(900) {
+        flex-direction: column;
       }
     }
-  }
 
 
-  ul.social-media-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    .links{
+      width: 40%;
 
-    li{
+      @include wl-breakpoint(1600) {
+        width: 38%;
+      }
+      @include wl-breakpoint(900) {
+        width: 97%;
+      }
 
-      margin-bottom: 7px;
+      @include wl-breakpoint(600) {
+        width: 100%;
+      }
 
-      a{
-        display: inline-block;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        align-content: stretch;
-        text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: stretch;
+      align-content: stretch;
 
-        color: $wl-color-black;
-        outline-offset: 2px;
+      @include wl-breakpoint(450) {
+        flex-direction: column;
+      }
 
-        &:hover{
-          text-decoration: underline;
-          img{
-              background-color: #b7e591;
+
+      .foo-logo{
+        width: 84px;
+      }
+
+      .foo-body-adresse{
+
+        padding-top: 5px;
+
+        @include wl-breakpoint(450) {
+          width: 100%;
+          margin-top: 40px;
+        }
+
+        ul{
+          &.footer-liste-kontakt{
+            li{
+
+              &.adresse {
+                color: $wl-color-white;
+                line-height: 1.3;
+                a{
+                  color: $wl-color-white;
+                  line-height: 1.3;
+                  text-decoration: none;
+                }
+              }
+
+              &.kontakt {
+                color: $wl-color-blue;
+                text-transform: uppercase;
+                text-decoration: none;
+                margin-bottom: 6px;
+                @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+                @include wl-breakpoint(1100) {
+                  @include responsive-font(15px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+                }
+                letter-spacing: 0.07em;
+
+                a{
+                  color: $wl-color-blue;
+                  text-decoration: none;
+                }
+
+                &.icon-tel{
+
+                  padding-left: 35px;
+
+                  &::before {
+                    content: '' !important;
+                    background-image: url(/assets/images/icons/tel-icon-footer.svg);
+                    background-size: cover;
+                    display: inline-block;
+                    position: absolute;
+                    height: 21px;
+                    width: 21px;
+                    margin-top: 3px;
+                    margin-left: -35px;
+                  }
+
+                }
+
+                &.icon-mail{
+
+                  padding-left: 35px;
+
+                  &::before {
+                    content: '' !important;
+                    background-image: url(/assets/images/icons/mail-icon-footer.svg);
+                    background-size: cover;
+                    display: inline-block;
+                    position: absolute;
+                    height: 16px;
+                    width: 21px;
+                    margin-top: 3px;
+                    margin-left: -35px;
+                  }
+
+                }
+
+              }
+
+
+
+              &.abstandBottom{
+                margin-bottom: 8px;
+              }
+
+            }
+
           }
         }
+      }
 
-        img{
-          margin-right: 8px;
-        }
+    }
 
+
+
+
+    .rechts{
+      width: 60%;
+      @include wl-breakpoint(1600) {
+        width: 62%;
+      }
+      @include wl-breakpoint(900) {
+        width: 100%;
+      }
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+
+      @include wl-breakpoint(600) {
+        flex-direction: column-reverse;
+      }
+
+
+    }
+
+
+
+    .foo-body-trenner{
+      width: 30%;
+      @include wl-breakpoint(1600) {
+        width: 20%;
+      }
+      @include wl-breakpoint(1100) {
+        width: 10%;
+      }
+      @include wl-breakpoint(900) {
+        display: none;
+      }
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      align-items: stretch;
+      align-content: stretch;
+
+      .trenner{
+        width:3px;
+        background-color: $wl-color-blue;
       }
     }
 
-    img {
-      padding: 5px;
-      border-radius: 5px;
-      background-color: lightblue;
-      width: 36px;
-      height: 36px;
+    .foo-body{
+      width: 62%;
+      @include wl-breakpoint(1600) {
+        width: 72%;
+      }
+      @include wl-breakpoint(1100) {
+        width: 82%;
+      }
+      @include wl-breakpoint(900) {
+        width: 92%;
+        margin-top: 60px;
+      }
+      @include wl-breakpoint(600) {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+
+      @include wl-breakpoint(600) {
+        flex-direction: column;
+      }
+
+
+      .foo-body-liste-1{
+        width:50%;
+        @include wl-breakpoint(600) {
+          width:100%;
+        }
+      }
+
+      .foo-body-liste-2{
+        width: 50%;
+        @include wl-breakpoint(600) {
+          width:100%;
+        }
+      }
+
+      .foo-body-liste-1, .foo-body-liste-2{
+        li {
+          margin-bottom: 6px;
+          a {
+            color: $wl-color-white;
+            text-transform: uppercase;
+            text-decoration: none;
+            @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+            @include wl-breakpoint(1100) {
+              @include responsive-font(15px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+            }
+            letter-spacing: 0.07em;
+            &:hover{
+              color: $wl-color-blue;
+            }
+
+          }
+        }
+      }
+
     }
+
+
+    .foo-body-socialList{
+      width: 8%;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      align-items: stretch;
+      align-content: stretch;
+
+      @include wl-breakpoint(900) {
+        margin-top: 55px;
+      }
+
+      @include wl-breakpoint(600) {
+        width: 120px;
+        margin-top: 35px;
+        margin-bottom: 40px;
+      }
+
+    }
+
+
+
+
+        ul.social-media-list {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          align-content: stretch;
+
+          @include wl-breakpoint(600) {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: stretch;
+          }
+
+          li{
+
+            margin-bottom: 10px;
+            @include wl-breakpoint(600) {
+              margin-bottom: 0px;
+            }
+
+            img{
+              transform: scale(1.0);
+              transition: all ease 500ms;
+
+              &:hover{
+                transform: scale(1.6);
+                transition: all ease 500ms;
+              }
+
+              &.icn-1{
+                width: 14px;
+              }
+
+              &.icn-2{
+                width: 25px;
+              }
+
+              &.icn-3{
+                width: 26px;
+              }
+            }
+
+          }
+
+        }
+
+
+
+
+
+
+
   }
 
-
-
-
-
 }
+
+
+

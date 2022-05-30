@@ -1,0 +1,40 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+
+{% set wechselStatus = block.layoutWechsel.value %}
+{% switch wechselStatus %}
+    {% case "textBild" %}
+        {% set statusA = 'text-bild' %}
+        {% set statusB = 'bild-text' %}
+    {% case "bildText" %}
+        {% set statusA = 'bild-text' %}
+        {% set statusB = 'text-bild' %}
+{% endswitch %}
+
+<section class="wrapper-outer">
+    <section class="wl-wrapper">
+
+        <div class="modul-textBildImWechsel">
+
+            {% if block.textBildElement is not empty %}
+                {% set count = 0 %}
+                {% set anzahlElemente = block.textBildElement.count() %}
+                {% for item in block.textBildElement.all() %}
+                    {% set count = count + 1 %}
+                    {% set abstand = (count < anzahlElemente )? ' abstand-bottom' : '' %}
+
+                    {% if count is odd %}
+                        {% include '_include-atoms/wechsel-' ~ statusA  with {status: statusA, item: item, abstand:abstand} %}
+                    {% else %}
+                        {% include '_include-atoms/wechsel-' ~ statusB   with {status: statusB, item: item, abstand:abstand} %}
+                    {% endif %}
+
+                {% endfor %}
+            {% endif %}
+
+        </div>
+
+
+    </section>
+</section>
+{% endif %}

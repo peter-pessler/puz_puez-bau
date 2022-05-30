@@ -26,6 +26,7 @@
 {{ form.honeypot() }}
 {% set errorArray = [] %}
 
+
 {% for field in form.fields %}
     {% switch field.type %}
     {% case "checkbox" %}
@@ -41,7 +42,7 @@
                         {% endif %}
                         <span class="checkmark"></span>
                         <span class="mandatory{% if field.required %} required{% endif %}"><em></em></span>
-                        <span class="labletext{% if field.required %} required{% endif %}">{{labletext }}</span>
+                        <span class="labletext{% if field.required %} required{% endif %}">{{ labletext }}</span>
                     </div>
                 </label>
             {% endfor %}
@@ -83,7 +84,32 @@
     {% default %}
         <div class="form-group form-item-wrapper InputfieldText{{ wheelformErrors[field.name] is defined ? ' formStateError'}}">
             <label{% if field.required %} class="required"{% endif %}>{{field.label}}<em></em></label>
-            <input class="form-control {{field.name}} {{field.fieldClass}}" type="{{field.type}}" value="{{ values[field.name] ?? '' }}" name="{{field.name}}" id="form-{{field.name}}"/>
+            {% set valueResult = '' %}
+            {% if field.name == 'telefon' %}
+                    {% set postTel = craft.request.getPost('quick_tel') %}
+                    {% if postTel|length  %}
+                        {% set valueResult = postTel %}
+                    {% else %}
+                        {% set valueResult = craft.request.getPost('telefon') %}
+                    {% endif %}
+            {% elseif field.name == 'email' %}
+                    {% set postMail = craft.request.getPost('quick_mail') %}
+                    {% if postMail|length  %}
+                        {% set valueResult = postMail %}
+                    {% else %}
+                        {% set valueResult = craft.request.getPost('email') %}
+                    {% endif %}
+            {% elseif field.name == 'name' %}
+                    {% set postName = craft.request.getPost('quick_name') %}
+                    {% if postName|length  %}
+                        {% set valueResult = postName %}
+                    {% else %}
+                        {% set valueResult = craft.request.getPost('name') %}
+                    {% endif %}
+            {% else %}
+                {% set valueResult = values[field.name] ?? '' %}
+            {% endif %}
+            <input class="form-control {{field.name}} {{field.fieldClass}}" type="{{field.type}}" value="{{ valueResult }}" name="{{field.name}}" id="form-{{field.name}}"/>
         </div>
     {% endswitch %}
 

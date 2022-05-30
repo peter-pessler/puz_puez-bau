@@ -207,6 +207,21 @@
       "pg" : 0,
       "sct" : 1
     },
+    "\/assets\/sccs\/components\/_footer-kontakt.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/web\/assets\/css\/_footer-kontakt.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 1
+    },
     "\/assets\/sccs\/components\/_footer.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -267,6 +282,21 @@
       "pg" : 0,
       "sct" : 1
     },
+    "\/assets\/sccs\/components\/_lastElement.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/web\/assets\/css\/_lastElement.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 1
+    },
     "\/assets\/sccs\/components\/_modul-iconSlider.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -292,6 +322,21 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/web\/assets\/css\/_modul-imageGallery.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/assets\/sccs\/components\/_modul-textBildImWechsel.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/web\/assets\/css\/_modul-textBildImWechsel.min.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -5315,6 +5360,14 @@
       "oAP" : "\/templates\/_include-atoms\/image.twig",
       "oF" : 0
     },
+    "\/templates\/_include-atoms\/imgRoundWithBorder.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_include-atoms\/imgRoundWithBorder.twig",
+      "oF" : 0
+    },
     "\/templates\/_include-atoms\/link.twig" : {
       "cB" : 0,
       "ft" : 8192,
@@ -5345,6 +5398,22 @@
       "hM" : 0,
       "oA" : 2,
       "oAP" : "\/templates\/_include-atoms\/title.twig",
+      "oF" : 0
+    },
+    "\/templates\/_include-atoms\/wechsel-bild-text.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_include-atoms\/wechsel-bild-text.twig",
+      "oF" : 0
+    },
+    "\/templates\/_include-atoms\/wechsel-text-bild.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_include-atoms\/wechsel-text-bild.twig",
       "oF" : 0
     },
     "\/templates\/_include-block-components\/intro.twig" : {
@@ -5451,6 +5520,14 @@
       "oAP" : "\/templates\/_include-block-components\/modul_logoleisteSlider.twig",
       "oF" : 0
     },
+    "\/templates\/_include-block-components\/modul_textBildImWechsel.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_include-block-components\/modul_textBildImWechsel.twig",
+      "oF" : 0
+    },
     "\/templates\/_include-form-template\/fieldErrors.twig" : {
       "cB" : 0,
       "ft" : 8192,
@@ -5523,6 +5600,14 @@
       "oAP" : "\/templates\/_include-system\/header.twig",
       "oF" : 0
     },
+    "\/templates\/_include-system\/lastElement.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_include-system\/lastElement.twig",
+      "oF" : 0
+    },
     "\/templates\/_include-system\/meta.twig" : {
       "cB" : 0,
       "ft" : 8192,
@@ -5569,6 +5654,14 @@
       "hM" : 0,
       "oA" : 2,
       "oAP" : "\/templates\/_macros\/linkList.twig",
+      "oF" : 0
+    },
+    "\/templates\/_macros\/switcherLinks.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_macros\/switcherLinks.twig",
       "oF" : 0
     },
     "\/templates\/.gitkeep" : {
@@ -102714,6 +102807,19 @@
       "plM" : 3758088159,
       "prP" : 0
     },
+    "\/web\/assets\/images\/demo-horstzimmermann.jpg" : {
+      "ft" : 16384,
+      "iS" : 141505,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/web\/assets\/images\/demo-horstzimmermann.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/web\/assets\/images\/firstview_bg.jpg" : {
       "ft" : 16384,
       "iS" : 486256,
@@ -102726,16 +102832,6 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
-    },
-    "\/web\/assets\/images\/footer_oben_links_logografik.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/web\/assets\/images\/footer_oben_links_logografik.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 3758088159,
-      "prP" : 0
     },
     "\/web\/assets\/images\/footer_oben_rechts_logografik.svg" : {
       "ft" : 2097152,
@@ -102752,6 +102848,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/web\/assets\/images\/footer_unten_links_logografik.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/button-arrow.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/button-arrow.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 3758088159,
@@ -102810,6 +102916,46 @@
       "plM" : 3758088159,
       "prP" : 0
     },
+    "\/web\/assets\/images\/icons\/firmmenlogo-footer.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/firmmenlogo-footer.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/footer-icn-facebook.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/footer-icn-facebook.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/footer-icn-instagram.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/footer-icn-instagram.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/footer-icn-mail.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/footer-icn-mail.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
     "\/web\/assets\/images\/icons\/icon_phone.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -102830,6 +102976,46 @@
       "plM" : 3758088159,
       "prP" : 0
     },
+    "\/web\/assets\/images\/icons\/mail-icon-footer.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/mail-icon-footer.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/mail-icon-info.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/mail-icon-info.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/peil-text-icn.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/peil-text-icn.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/schmuckelement-icn-logomuster.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/schmuckelement-icn-logomuster.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
     "\/web\/assets\/images\/icons\/tel-haeder-icn-dunkel.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -102845,6 +103031,26 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/web\/assets\/images\/icons\/tel-haeder-icn-weiss.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/tel-icon-footer.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/tel-icon-footer.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/icons\/tel-icon-info.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/tel-icon-info.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 3758088159,
@@ -102872,6 +103078,16 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
+    },
+    "\/web\/assets\/images\/nav_oben_links_logografik.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/nav_oben_links_logografik.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
     },
     "\/web\/assets\/images\/navigation\/arrow.png" : {
       "ft" : 32768,
@@ -102914,6 +103130,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/web\/assets\/images\/pfeilmuster_klein.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/zertifikat.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/zertifikat.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 3758088159,

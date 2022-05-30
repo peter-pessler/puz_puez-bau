@@ -45,10 +45,10 @@
                     </a>
                 </div>
 
-
                 {% set homeNavClass = (pageId == 2 )?' home-nav' : '' %}{# *** HOME => pageId  2 *** #}
                 <div class="nav-item-language{{homeNavClass}}">
-                    <a href="#">EN</a>
+                    {% import "_macros/switcherLinks.twig" as _self %}
+                    {{ _self.switcherLinks() | trim | raw  }}
                 </div>
 
             </div>
@@ -59,14 +59,12 @@
 </section>
 
 
-
-
-
-
 {% if pageId == 2 %}
-{# *** HOME *** #}
+    {# *** HOME *** #}
     {% include '_include-system/header-body-home.twig' %}
 {% else %}
     {# *** CONTENT PAGES *** #}
     {% include '_include-system/header-body-contentpages.twig' %}
 {% endif %}
+
+

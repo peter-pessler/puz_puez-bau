@@ -1,8 +1,24 @@
-{% macro linkList(element) %}
+{% macro linkList(element,className = '') %}
+
+    {#
+    ========================================================
+    AUFRUF:
+        {% import "_macros/linkList.twig" as _self %}
+        {{ _self.linkList(my Link Element) | trim | raw  }}
+    #}
+
+    {% set class = (className != '')? ' class="' ~ className ~ '"' : '' %}
+   
+
     {% set type = element.type %}{# asset, email, entry, tel, url, custom #}{% if type == 'email' %}
-    <a href="mailto:{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+    <a href="mailto:{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}{{ class|raw }}>{{ element.getCustomText()}}</a>
 {% elseif  type == 'entry' %}
-    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+    {% if element.getCustomText() == 'Learn More' %}
+        {% set entryText = element.text %}
+    {% else %}
+        {% set entryText = element.getCustomText() %}
+    {% endif %}
+    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}{{ class|raw }}>{{ entryText }}</a>
 {% elseif  type == 'tel' %}
     {% set phonenumber = element.getUrl()|replace({'tel:': ''}) %}
     {% if phonenumber != '' %}{% set cleanPhonenumber = craft.wul.phone(phonenumber,'','','','','1')|raw  %}{% endif %}
@@ -11,12 +27,12 @@
     {% else %}
         {% set phoneText = phonenumber %}
     {% endif %}
-    <a href="tel:{{cleanPhonenumber}}">{{ phoneText }}</a>
+    <a href="tel:{{cleanPhonenumber}}"{{ class|raw }}>{{ phoneText }}</a>
 {% elseif  type == 'url' %}
-    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}{{ class|raw }}>{{ element.getCustomText()}}</a>
 {% elseif  type == 'custom' %}
-    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}{{ class|raw }}>{{ element.getCustomText()}}</a>
 {% elseif  type == 'asset' %}
-    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}>{{ element.getCustomText()}}</a>
+    <a href="{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}{{ class|raw }}>{{ element.getCustomText()}}</a>
 {% endif %}
 {% endmacro %}

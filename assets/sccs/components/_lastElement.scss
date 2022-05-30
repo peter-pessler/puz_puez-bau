@@ -1,0 +1,340 @@
+.last-element{
+  background-color: $wl-color-blue;
+}
+
+.last-element-kontakt{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+
+
+  @include wl-breakpoint(1100) {
+    flex-direction: column;
+  }
+
+  &.abstand-top {
+    padding-top: 100px;
+    @include wl-breakpoint($page-width) {
+      padding-top: calc(50px + 2.5vw);
+    }
+  }
+
+  &.abstand-bottom{
+    padding-bottom: 100px;
+    @include wl-breakpoint($page-width) {
+      padding-bottom: calc(50px + 2.5vw);
+    }
+  }
+
+  .info{
+    width: 34%;
+
+    @include wl-breakpoint(1100) {
+      width: 50%;
+    }
+    @include wl-breakpoint(800) {
+      width: 75%;
+    }
+    @include wl-breakpoint(600) {
+      width: 100%;
+    }
+    padding-right: 2.5vw;
+
+    h2{
+      margin-top: -16px;
+      @include wl-breakpoint(1500) {
+        margin-top: -10px;
+      }
+      color: $wl-color-white;
+    }
+
+    .infotext {
+      color: $wl-color-white;
+      margin-bottom: 50px;
+
+    }
+
+    .infokontakt{
+      ul {
+
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+
+        &.info-liste-kontakt{
+          li{
+
+            &.kontaktList {
+              color: $wl-color-white;
+              text-transform: uppercase;
+              text-decoration: none;
+              margin-bottom: 6px;
+              @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+              @include wl-breakpoint(1100) {
+                @include responsive-font(15px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+              }
+              letter-spacing: 0.07em;
+
+              a,i{
+                color: $wl-color-darkblue;
+                text-decoration: none;
+              }
+
+              &.icon-tel{
+
+                padding-left: 35px;
+
+                &::before {
+                  content: '' !important;
+                  background-image: url(/assets/images/icons/tel-icon-info.svg);
+                  background-size: cover;
+                  display: inline-block;
+                  position: absolute;
+                  height: 21px;
+                  width: 21px;
+                  margin-top: 3px;
+                  margin-left: -35px;
+                }
+
+              }
+
+              &.icon-mail{
+
+                padding-left: 35px;
+
+                &::before {
+                  content: '' !important;
+                  background-image: url(/assets/images/icons/mail-icon-info.svg);
+                  background-size: cover;
+                  display: inline-block;
+                  position: absolute;
+                  height: 16px;
+                  width: 21px;
+                  margin-top: 3px;
+                  margin-left: -35px;
+                }
+
+              }
+
+            }
+
+
+
+            &.abstandBottom{
+              margin-bottom: 8px;
+            }
+
+          }
+
+        }
+
+        li {
+          margin: 0;
+          display: block;
+          list-style-type: none;
+          position: relative;
+          padding: 0px;
+        }
+
+      }
+
+
+    }
+  }
+
+
+  .info-wrapper{
+
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    @include wl-breakpoint(1100) {
+      width: 100%;
+      margin-top: 80px;
+      @include wl-breakpoint($page-width) {
+        margin-top: calc(30px + 2.5vw);
+      }
+    }
+
+    @include wl-breakpoint(900) {
+      justify-content: space-between;
+    }
+
+    @include wl-breakpoint(600) {
+      flex-direction: column;
+    }
+
+      .formular {
+        width: 40%;
+        @include wl-breakpoint(1500) {
+          width: 35%;
+        }
+        @include wl-breakpoint(900) {
+          width: 47%;
+        }
+        @include wl-breakpoint(600) {
+          width: 100%;
+        }
+
+      }
+
+      .ansprechpartner {
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        align-content: stretch;
+
+        width: 60%;
+        @include wl-breakpoint(1500) {
+          width: 65%;
+        }
+
+        @include wl-breakpoint(900) {
+          flex-direction: column;
+          justify-content: flex-start;
+          width: 47%;
+        }
+        @include wl-breakpoint(600) {
+          margin-top: 50px;
+          width: 100%;
+        }
+
+        .li, .re {
+          @include wl-breakpoint(900) {
+            width: 100%;
+          }
+        }
+
+        .li{
+          width: 56%;
+          @include wl-breakpoint(1600) {
+            width: 50%;
+          }
+          @include wl-breakpoint(900) {
+            width: 200px;
+          }
+          @include wl-breakpoint(600) {
+            width: 255px;
+            margin-top: 30px;
+          }
+
+          padding-left: 100px;
+          @include wl-breakpoint($page-width) {
+            padding-left: 5.5vw;
+          }
+          @include wl-breakpoint(900) {
+            padding-left: 0;
+          }
+
+          @include imgRoundWithBorder($wl-color-white, 0.35);
+
+        }
+
+        .re{
+          width: 40%;
+
+          @include wl-breakpoint(1600) {
+            width: 46%;
+          }
+
+          @include wl-breakpoint(900) {
+            margin-top: 40px;
+            width: 100%;
+          }
+
+          span{
+            &.headline{
+              display: inline-block;
+              @include responsive-font(18px, 22px, $base-hl-font-breakpoint-min, $base-font-breakpoint-max, $h3-font-family, $base-line-height-h3);
+              @include margin-headline-bottom(15, 8, 25, 30);
+              margin-top: -8px;
+              letter-spacing: 0.07em;
+              color: $wl-color-white;
+            }
+          }
+
+        }
+
+
+        .ansprechpartnerBody {
+          margin-top: 15px;
+          @include wl-breakpoint(1500) {
+            margin-top: 0px;
+          }
+          @include wl-breakpoint(600) {
+            margin-top: 10px;
+          }
+          width: 100%;
+          @include responsive-font($base-font-size-min, 22px, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family, $base-line-height);
+          font-weight:500;
+          color: $wl-color-white;
+        }
+
+      }
+
+  }
+
+
+
+
+}
+
+#quickForm{
+  width: 90%;
+
+  @include wl-breakpoint(1500) {
+    width: 90%;
+  }
+
+  @include wl-breakpoint(900) {
+    width: 100%;
+  }
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+
+
+  input[type=text]{
+    background-color: $wl-color-blue;
+    border: 2px solid $wl-color-white;
+    margin-bottom: 25px;
+    border-radius: 18px;
+    padding-right: 22px;
+    padding-left: 22px;
+    padding-top: 19px;
+    padding-bottom: 18px;
+    @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+    letter-spacing: 0.07em;
+    color:$wl-color-white;
+    text-transform: uppercase;
+
+    &::placeholder {
+      color: rgba($wl-color-white, 0.60);
+    }
+  }
+
+  .InputfieldSubmit{
+    @include btn($wl-color-blue, $wl-color-darkblue, $wl-color-darkblue, $wl-color-white, $wl-color-darkblue, $wl-color-darkblue);
+  }
+
+
+
+
+}

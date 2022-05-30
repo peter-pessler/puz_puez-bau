@@ -1,5 +1,6 @@
 // Mixin
 @import "core/mixin";
+@import "core/effects";
 
 // Variables
 @import "core/vars";
@@ -14,13 +15,14 @@
 @import "components/navigation-burger-1";
 @import "components/header";
 @import "components/footer";
+@import "components/lastElement";
 @import "components/keyvisual";
 @import "components/pagination";
 @import "components/accordion";
 @import "components/formular";
 @import "components/preloader";
-@import "components/modul-imageGallery";
-@import "components/modul-iconSlider";
+@import "components/modul-textBildImWechsel";
+
 
 // Tools
 @import "tooltip/simptip";

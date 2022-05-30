@@ -99,6 +99,10 @@ header {
       width: calc(100% - 160px);
     }
 
+    .is-active{
+      display: none;
+    }
+
   }
 
   .nav-item-tel{

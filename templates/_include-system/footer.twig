@@ -1,38 +1,90 @@
-<section class="wl-wrapper">
+<section class="wrapper-outer footer-container">
+    <section class="wl-wrapper">
 
-  <p>&copy; {{ 'now'|date('Y') }} {{siteconfig.company}}</p>
 
-    {# -------------- Macro -------------- #}
-    {% import "_macros/linkList.twig" as _self %}
-    <ul class="footer-liste-dsgvo">
-        {% set showListe = siteconfig.dsgvoListe.one()|default(false) %}{% if showListe %}
-            {% for item in siteconfig.dsgvoListe.all() %}{% set element = item.linkListe %}
+        <div class="footer-container-inner">
 
-                <li>{{ _self.linkList( element ) | trim | raw  }}</li>
-            {% endfor %}
-        {% endif %}
+            <div class="links">
 
-    </ul>
+                    <div class="foo-logo">
+                        <div class="foo-logo-container">
+                            <img class="firmenlogo-foo" src="/assets/images/icons/firmmenlogo-footer.svg" alt="{{siteconfig.company}}">
+                        </div>
+                    </div>
 
-  <br /><br />
-  <ul class="footer-liste-kontakt">
-    {% if siteconfig.company is not empty %}<li>{{siteconfig.company}}</li>{% endif %}
-    {% if siteconfig.street is not empty %}<li>{{siteconfig.street}}</li>{% endif %}
-    {% if siteconfig.city is not empty %}<li>{{siteconfig.city}}</li>{% endif %}
-    {% if siteconfig.phone is not empty %}<li>{{ craft.wul.phone(siteconfig.phone,'wl-phone',siteconfig.phone)|raw }}</li>{% endif %}
-    {% if siteconfig.fax is not empty %}<li>{{siteconfig.fax}}</li>{% endif %}
-    {% if siteconfig.mail is not empty %}<li><a class="wl-mail" href="mailto:{{siteconfig.mail}}" target="_blank">{{siteconfig.mail}}</a></li>{% endif %}
-  </ul>
-  <br /><br />
-    <ul class="social-media-list">
-        {% for item in siteconfig.socialMediaListe.all() %}
-            <li>
-                {% if item.mediaListeIcon.one()|default(false) %}
-                    <a href="{{ item.mediaListeLink }}" target="_blank">
-                        <img src="{{ item.mediaListeIcon.one().getUrl() }}" alt="{{ item.mediaListeText }}" title="{{ item.mediaListeText }}" />{{ item.mediaListeText }}
-                    </a>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+                    <div class="foo-body-adresse">
+                <ul class="footer-liste-kontakt">
+                    {% if siteconfig.street is not empty %}<li class="adresse">{{siteconfig.street}}</li>{% endif %}
+                    {% if siteconfig.city is not empty %}<li class="adresse abstandBottom">{{siteconfig.city}}</li>{% endif %}
+                    {% if siteconfig.phone is not empty %}<li class="kontakt icon-tel">{{ craft.wul.phone(siteconfig.phone,'foo-phone',siteconfig.phone)|raw }}</li>{% endif %}
+                    {% if siteconfig.mail is not empty %}<li class="kontakt icon-mail"><a class="foo-mail" href="mailto:{{siteconfig.mail}}" target="_blank">{{siteconfig.mail}}</a></li>{% endif %}
+                </ul>
+            </div>
+
+            </div>
+
+            <div class="rechts">
+
+                        <div class="foo-body-trenner">
+                            <div class="trenner"></div>
+                        </div>
+
+                        <div class="foo-body">
+
+                                <div class="foo-body-liste-1">
+                                    {# -------------- Macro -------------- #}
+                                    {% import "_macros/linkList.twig" as _self %}
+                                    <ul class="footer-liste-1">
+                                        {% set showListe = siteconfig.footerListe1.one()|default(false) %}
+                                        {% if showListe %}
+                                            {% for item in siteconfig.footerListe1.all() %}
+                                                {% set element = item.linkListe %}
+
+                                                <li>{{ _self.linkList( element ) | trim | raw  }}</li>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </ul>
+                                </div>
+
+                                <div class="foo-body-liste-2">
+                                    {# -------------- Macro -------------- #}
+                                    {% import "_macros/linkList.twig" as _self %}
+                                    <ul class="footer-liste-2">
+                                        {% set showListe = siteconfig.footerListe2.one()|default(false) %}
+                                        {% if showListe %}
+                                            {% for item in siteconfig.footerListe2.all() %}
+                                                {% set element = item.linkListe %}
+
+                                                <li>{{ _self.linkList( element ) | trim | raw  }}</li>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </ul>
+                                </div>
+
+                        </div>
+
+                        <div class="foo-body-socialList">
+                            <ul class="social-media-list">
+                                <li>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ craft.app.request.absoluteUrl }}" target="_blank">
+                                        <img class="icn-1" src="/assets/images/icons/footer-icn-facebook.svg" alt="share Icon">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:?subject={{ siteconfig.subject }}&amp;body={{ siteconfig.mailBody }} {{ craft.app.request.absoluteUrl }}" target="_blank">
+                                        <img class="icn-2" src="/assets/images/icons/footer-icn-mail.svg" alt="mail Icon">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/puetz_galabau/?hl=de" target="_blank">
+                                        <img class="icn-3" src="/assets/images/icons/footer-icn-instagram.svg" alt="Instagram Icon"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+            </div>
+
+
+    </section>
 </section>

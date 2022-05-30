@@ -10,6 +10,8 @@
 {% set imgFormat = siteconfig.imageFormat %}
 {% set imgQuality = 85 %}
 {% set doNotTrack = craft.wul.doNotTrack() %}{# output: true/false #}
+{# -------------- Sprache-------------- #}
+{% set lg = currentSite.language %}
 {# -------------- Blogübersicht -------------- #}
 {% if pageId != 397 %}{# Id 397 = Blogübersicht #}
  {% set redirect = entry.redirect %}
@@ -61,26 +63,6 @@
   <main>
       <section class="wl-wrapper">
 
-       {# START | Zum Test füt Headline marging (Wenn erfolgreich angewandt, bitte löschen) #}
-
-          <div>
-              <h1>H1 Leistungen</h1>
-          </div>
-
-          <div>
-              <h2>H2 Leistungen</h2>
-          </div>
-
-          <div>
-              <h3>H3 Leistungen</h3>
-          </div>
-
-          <div>
-              <h4>H4 Leistungen</h4>
-          </div>
-
-       {# ENDE ____________________________________________________________________________ #}
-
       {% set headline = entry.headline %}
       {% set entryHeadline = entry.headline|default(false) %}
       {% if entryHeadline %}
@@ -92,6 +74,8 @@
       {% block blogdetail %}{% endblock %}
       {% block karrieredetail %}{% endblock %}
       {% block content %}{% endblock %}
+
+      {% include '_include-system/lastElement' %}
   </main>
 
   <footer>

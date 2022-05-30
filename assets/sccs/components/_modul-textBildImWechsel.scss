@@ -1,0 +1,270 @@
+.modul-textBildImWechsel{
+
+
+  .modul-textBildImWechsel-item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+
+    &.abstand-bottom{
+      margin-bottom: 100px;
+      @include wl-breakpoint($page-width) {
+        margin-bottom: calc(50px + 2.5vw);
+      }
+      @include wl-breakpoint(600) {
+        margin-bottom: calc(80px + 2.5vw);
+      }
+
+    }
+
+  }
+
+  .spalte-text, .spalte-bild{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    @include wl-breakpoint(600) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+      align-content: stretch;
+      padding-right: 13vw;
+      padding-left: 13vw;
+    }
+    @include wl-breakpoint(450) {
+      padding-right: 8vw;
+      padding-left: 8vw;
+    }
+    @include wl-breakpoint(450) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .spalte-text{
+
+    .text-container{
+      width: 67%;
+      @include wl-breakpoint(900) {
+        width: 87%;
+      }
+
+      @include wl-breakpoint(650) {
+        width: 100%;
+      }
+
+      @include wl-breakpoint(600) {
+        margin-top: 30px;
+      }
+
+      .icn-arrow{
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      h2{
+        margin-top: 0;
+        margin-bottom: -15px;
+      }
+
+      .button{
+        margin-top: 20px;
+        a{
+          &.btn{
+            @include btn($wl-color-white, $wl-color-darkblue, $wl-color-darkblue, $wl-color-white, $wl-color-darkblue, $wl-color-darkblue);
+          }
+        }
+      }
+
+
+    }
+
+
+
+    .wrapper-container{
+
+      width: 33%;
+      @include wl-breakpoint(900) {
+        width: 13%;
+      }
+      @include wl-breakpoint(650) {
+        display: none;
+      }
+      @include wl-breakpoint(650) {
+        display: none;
+      }
+
+    }
+
+  }
+
+  .spalte-bild{
+
+    .bild-container{
+      width: 67%;
+      @include wl-breakpoint(900) {
+        width: 87%;
+      }
+
+      @include wl-breakpoint(650) {
+        width: 100%;
+      }
+
+      @include imgRoundWithBorder($wl-color-blue, 0.35);
+    }
+
+    .schmuckelement-container{
+
+      width: 33%;
+      @include wl-breakpoint(900) {
+        width: 13%;
+      }
+      @include wl-breakpoint(650) {
+        display: none;
+      }
+      img{
+        width: 100%;
+      }
+
+    }
+
+  }
+
+  .item-text-bild{
+
+
+        .spalte-text{
+
+        }
+
+        .spalte-bild{
+
+          .bild-container{
+            padding-left: 7vw;
+            @include wl-breakpoint(600) {
+              padding-left: 0;
+            }
+          }
+        }
+
+
+        .schmuckelement-container-changePoint{
+          width: 100%;
+          margin-top: 35px;
+
+          img{
+            width: 70%;
+            float: right;
+            @include wl-breakpoint(600) {
+              width: 40%;
+            }
+          }
+
+          display: none;
+          @include wl-breakpoint(900) {
+            display: block;
+          }
+        }
+
+
+        @include wl-breakpoint(600) {
+          display: flex;
+          flex-direction: column-reverse;
+          flex-wrap: nowrap;
+          justify-content: flex-end;
+          align-items: center;
+          align-content: stretch;
+        }
+
+
+
+  }
+
+  .item-bild-text{
+
+    .spalte-text{
+    }
+
+    .spalte-bild{
+      .bild-container{
+        padding-right: 7vw;
+        @include wl-breakpoint(600) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .schmuckelement-container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+      align-content: stretch;
+
+      @include wl-breakpoint(650) {
+        display: none;
+      }
+    }
+
+    .schmuckelement-container-changePoint{
+      width: 100%;
+      margin-top: 35px;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+
+      img{
+        width: 70%;
+        @include wl-breakpoint(600) {
+          width: 40%;
+          float: right;
+        }
+      }
+
+      display: none;
+      @include wl-breakpoint(900) {
+        display: block;
+      }
+
+    }
+
+
+    @include wl-breakpoint(600) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: stretch;
+    }
+
+
+  }
+
+
+  .schmuckelement{
+    display: block;
+    @include wl-breakpoint(900) {
+      display: none;
+    }
+  }
+
+
+}

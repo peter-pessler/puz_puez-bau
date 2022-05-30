@@ -1,0 +1,67 @@
+{% set showModul = (entry.kontaktAbschlussleisteAusblenden)? false : true %}
+{% if showModul %}
+<section class="wrapper-outer last-element">
+    <section class="wl-wrapper">
+
+        <div class="last-element-kontakt abstand-bottom abstand-top">
+
+                <div class="info">
+                    <h2>{{siteconfig.introHeadline | nl2br }}</h2>
+                    <div class="infotext">
+                        {{siteconfig.bodyText }}
+                    </div>
+                    <div class="infokontakt">
+                        <ul class="info-liste-kontakt">
+                            {% if siteconfig.abschlussKontaktTelefon is not empty %}<li class="kontaktList icon-tel">{{ craft.wul.phone(siteconfig.abschlussKontaktTelefon,'foo-phone',siteconfig.abschlussKontaktTelefon)|raw }}</li>{% endif %}
+                            {% if siteconfig.abschlussKontaktMail is not empty %}<li class="kontaktList icon-mail"><a class="foo-mail" href="mailto:{{siteconfig.abschlussKontaktMail}}" target="_blank">{{siteconfig.abschlussKontaktMail}}</a></li>{% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+            <div class="info-wrapper">
+
+                <div class="formular">
+                    <form id="quickForm" action="/kontakt" method="post">
+                        <input type="text" name="quick_name" placeholder="{{siteconfig.placeholderName }}"/>
+                        <input type="text" name="quick_mail" placeholder="{{siteconfig.placeholderMail }}"/>
+                        <input type="text" name="quick_tel" placeholder="{{siteconfig.placeholderTelefon }}"/>
+                        <div class="submit-container">
+                            <div id="quickSubmit" class="InputfieldSubmit">{{siteconfig.buttontext }}</div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="ansprechpartner">
+                    <div class="li">
+                        {% set entrySingleImage = siteconfig.imagesingle.one()|default(false) %}
+                        {% if entrySingleImage %}
+                            {% set imageSingle = siteconfig.imagesingle.one() %}
+                            {% include '_include-atoms/imgRoundWithBorder' with {image: imageSingle, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
+                        {% endif %}
+                    </div>
+                    <div class="re">
+                        <span class="headline">{{siteconfig.abschlussKontaktHeadline | nl2br }}</span>
+                        <div class="ansprechpartnerBody">
+                            {{siteconfig.abschlussKontaktText | nl2br }}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                $('#quickSubmit').click(function(){
+                    $('#quickForm').submit();
+                });
+
+            });
+        </script>
+
+
+    </section>
+</section>
+{% endif %}

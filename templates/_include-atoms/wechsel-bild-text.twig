@@ -1,0 +1,44 @@
+<div class="modul-textBildImWechsel-item item-{{ status }}{{abstand}}">
+
+    <div class="spalte-bild">
+        <div class="schmuckelement-container">
+            <img class="schmuckelement" src="/assets/images/zertifikat.svg" alt="Zertifikat"/>
+        </div>
+        <div class="bild-container">
+            {% set checkImage = item.bild.one()|default(false) %}
+            {% if checkImage %}
+                {% set image = item.bild.one() %}
+                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
+            {% endif %}
+            <div class="schmuckelement-container-changePoint">
+                <img src="/assets/images/zertifikat.svg" alt="Zertifikat"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="spalte-text">
+
+        <div class="text-container">
+
+            <div class="icn-arrow">
+                <img src="/assets/images/icons/peil-text-icn.svg" alt="Pfeil Icon"/>
+            </div>
+
+            <div class="text-body text">
+                <h2>{{ item.headline }}</h2>
+                {{ item.text }}
+            </div>
+
+            <div class="button">
+                {% import "_macros/linkList.twig" as _self %}
+                {{ _self.linkList(item.button, 'btn') | trim | raw  }}
+            </div>
+
+        </div>
+
+        <div class="wrapper-container"></div>
+
+    </div>
+
+</div>
+

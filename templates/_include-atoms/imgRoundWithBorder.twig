@@ -1,0 +1,38 @@
+{% if image is defined %}
+
+    {% set imgQuality = 85 %}
+
+    {% set imgSmallSrc = image.getUrl({
+        format: (siteconfig.imageFormat),
+        quality: (imgQuality),
+        width: sizeSmall,
+        height: sizeSmall,
+        mode: 'crop',
+        position: 'center-center',
+    })  %}
+
+    {% set imgMediumSrc = image.getUrl({
+        format: (siteconfig.imageFormat),
+        quality: (imgQuality),
+        width: sizeMedium,
+        height: sizeMedium,
+        mode: 'crop',
+        position: 'center-center',
+    })  %}
+
+    {% set imgLargeSrc = image.getUrl({
+        format: (siteconfig.imageFormat),
+        quality: (imgQuality),
+        width: sizeLarge,
+        height: sizeLarge,
+        mode: 'crop',
+        position: 'center-center',
+    })  %}
+
+    <div class="square-box">
+        <div class="square-content">
+            <img src="{{ imgSmallSrc }}" srcset="{{ imgSmallSrc }} {{ changePointSmall }}w, {{ imgMediumSrc }} {{ changePointMedium }}w, {{ imgLargeSrc }}  {{ changePointLarge }}w" alt="{{ image.title }}" />
+        </div>
+    </div>
+
+{% endif %}

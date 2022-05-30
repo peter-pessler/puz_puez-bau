@@ -8,6 +8,8 @@ Aufruf Beispiel:
 ********************************************************
 #}{% if image is defined and image and imageSize and imageMode %}
 
+    {% set imgFormat = siteconfig.imageFormat %}
+    {% set imgQuality = 85 %}
     {% set imgSizeArr = imageSize|split('x') %}
     {% set imgWidth = imgSizeArr[0] %}
     {% set imgHeight =  imgSizeArr[1] %}

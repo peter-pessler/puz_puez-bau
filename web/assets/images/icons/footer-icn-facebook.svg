@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10.497 22.596">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_322" data-name="Rechteck 322" width="10.497" height="22.595" fill="#61bfdb"/>
+    </clipPath>
+  </defs>
+  <g id="sm_facebook" clip-path="url(#clip-path)">
+    <path id="Pfad_4429" data-name="Pfad 4429" d="M2.313,11.387V22.311A.285.285,0,0,0,2.6,22.6H6.654a.285.285,0,0,0,.284-.285v-11.1H9.88a.285.285,0,0,0,.284-.26L10.446,7.6a.285.285,0,0,0-.284-.309H6.938V4.922A1.007,1.007,0,0,1,7.946,3.915h2.267A.284.284,0,0,0,10.5,3.63V.285A.284.284,0,0,0,10.213,0H6.382a4.07,4.07,0,0,0-4.07,4.07V7.295H.284A.285.285,0,0,0,0,7.579v3.345a.284.284,0,0,0,.284.284H2.313Z" transform="translate(0 0)" fill="#61bfdb" fill-rule="evenodd"/>
+  </g>
+</svg>
