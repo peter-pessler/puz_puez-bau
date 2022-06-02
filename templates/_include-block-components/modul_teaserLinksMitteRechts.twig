@@ -1,0 +1,73 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+
+  <section class="wrapper-outer teaserLinksMitteRechts">
+    <section class="wl-wrapper">
+
+      <div class="modul-teaserLinksMitteRechts">
+
+        <div class="teaser-links">
+
+          {% if block.teaserLinks is not empty %}
+            {% for item in block.teaserLinks.all() %}
+
+              <div class="teaser-image">
+              {% set checkImageLinks = item.bild.one()|default(false) %}
+              {% if checkImageLinks %}
+                {% set image = item.bild.one() %}
+                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
+              {% endif %}
+              </div>
+              <div class="teaser-text">
+              {{ item.text }}
+              </div>
+
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        <div class="teaser-mitte">
+          {% if block.teaserMitte is not empty %}
+            {% for item in block.teaserMitte.all() %}
+
+              <div class="teaser-image">
+              {% set checkImageMitte = item.bild.one()|default(false) %}
+              {% if checkImageMitte %}
+                {% set image = item.bild.one() %}
+                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
+              {% endif %}
+              </div>
+              <div class="teaser-text">
+                {{ item.text }}
+              </div>
+
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        <div class="teaser-rechts">
+          {% if block.teaserRechts is not empty %}
+            {% for item in block.teaserRechts.all() %}
+
+              <div class="teaser-image">
+              {% set checkImageRechts = item.bild.one()|default(false) %}
+              {% if checkImageRechts %}
+                {% set image = item.bild.one() %}
+                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
+              {% endif %}
+              </div>
+              <div class="teaser-text">
+              {{ item.text }}
+              </div>
+
+            {% endfor %}
+          {% endif %}
+        </div>
+
+
+
+      </div>
+
+    </section>
+  </section>
+{% endif %}

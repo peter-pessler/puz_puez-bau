@@ -176,30 +176,30 @@ main {
 
 
 .abstand-top-inner {
-  padding-top: 80px;
+  padding-top: 100px;
   @include wl-breakpoint($page-width) {
-    padding-top: calc(30px + 2.5vw);
+    padding-top: calc(50px + 3vw);
   }
 }
 
 .abstand-bottom-inner{
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   @include wl-breakpoint($page-width) {
-    padding-bottom: calc(30px + 2.5vw);
+    padding-bottom: calc(50px + 3vw);
   }
 }
 
 .abstand-top-outer {
-  margin-top: 80px;
+  margin-top: 100px;
   @include wl-breakpoint($page-width) {
-    margin-top: calc(30px + 2.5vw);
+    margin-top: calc(50px + 3vw);
   }
 }
 
 .abstand-bottom-outer{
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   @include wl-breakpoint($page-width) {
-    margin-bottom: calc(30px + 2.5vw);
+    margin-bottom: calc(50px + 3vw);
   }
 }
 

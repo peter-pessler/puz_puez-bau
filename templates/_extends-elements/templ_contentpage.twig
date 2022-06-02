@@ -1,11 +1,5 @@
 {% extends '_layouts/main' %}
 
-{% block intro %}
-  {% if pageId != 2 %}
-    {% include '_include-block-components/intro.twig' %}
-  {% endif %}
-{% endblock %}
-
 {% block module %}
   <section>
     {% set matrixElemente = entry.generalModules.all() %}

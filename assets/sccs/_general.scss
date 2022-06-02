@@ -1,1 +1,12 @@
 // Layoutbezogene Styles der Website
+
+.trenner-wrapper{
+    background-color: rgba($wl-color-darkblue, 0.5);
+    width: 100%;
+}
+
+.trenner{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,1 +1,34 @@
-Content
+<section class="wl-wrapper">
+    <div class="intro abstand-top-outer">
+
+        <div class="intro-spl-links">
+            {% set checkImage = entry.imagesingle.one()|default(false) %}
+            {% if checkImage %}
+                {% set image = entry.imagesingle.one() %}
+                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
+            {% endif %}
+        </div>
+
+        <div class="intro-spl-rechts">
+
+            <div class="text-element">
+
+                <div class="intro-text text">
+                    <h1>{{ entry.introHeadline }}</h1>
+                    <div class="intro-text-body text">
+                        {{ entry.introTextSpalteLinks }}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="schmuck-element">
+                <img src="/assets/images/schmuckelement-pfeile.svg" alt="Schmuckelement">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+

@@ -51,12 +51,12 @@ h1, h2, h3, h4 {
 }
 
 h1, .h1 {
-  @include responsive-font(50px, 72px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
+  @include responsive-font(50px, 70px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
   @include wl-breakpoint(900) {
-    @include responsive-font(40px, 72px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
+    @include responsive-font(40px, 70px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
   }
   @include wl-breakpoint(500) {
-    @include responsive-font(30px, 72px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
+    @include responsive-font(30px, 70px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h1-font-family, $base-line-height-h1);
   }
   @include margin-headline-top(32, 21, 48, 280);
   @include margin-headline-bottom(32, 21, 48, 90);

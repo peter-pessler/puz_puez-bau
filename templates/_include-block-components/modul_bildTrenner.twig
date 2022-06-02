@@ -1,0 +1,70 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+
+    {% set checkBgImage = block.bild.one()|default(false) %}
+    {% if checkBgImage %}
+
+        {% set bgImage = block.bild.one() %}
+
+        {% set bgImg400 = bgImage.getUrl({ format: (imgFormat), mode: 'crop', width: 400, height: 69, quality: (imgQuality) }) %}
+        {% set bgImg500 = bgImage.getUrl({ format: (imgFormat), mode: 'crop', width: 500, height: 87, quality: (imgQuality) }) %}
+        {% set bgImg900 = bgImage.getUrl({ format: (imgFormat), mode: 'crop', width: 900, height: 156, quality: (imgQuality) }) %}
+        {% set bgImg1200 = bgImage.getUrl({ format: (imgFormat), mode: 'crop', width: 1200, height: 208, quality: (imgQuality) }) %}
+        {% set bgImg1500 = bgImage.getUrl({ format: (imgFormat), mode: 'crop', width: 1500, height: 260, quality: (imgQuality) }) %}
+        {% set bgImg2000 = bgImage.getUrl({ format: (imgFormat), mode: 'crop', width: 2000, height: 447, quality: (imgQuality) }) %}
+        {% set bgImg2400 = bgImage.getUrl({ format: (imgFormat), mode: 'crop', width: 2400, height: 416, quality: (imgQuality) }) %}
+
+        {% set prefix = loop.index %}
+        <style>
+            .bg-{{ prefix }}{
+                 background-image: url('{{ bgImg2400 }}');
+            }
+            @media (max-width: 2000px) {
+                .bg-{{ prefix }}{
+                    background-image: url('{{ bgImg2000 }}');
+                }
+            }
+            @media (max-width: 1500px) {
+                .bg-{{ prefix }}{
+                    background-image: url('{{ bgImg1500 }}');
+                }
+            }
+            @media (max-width: 1200px) {
+                .bg-{{ prefix }}{
+                    background-image: url('{{ bgImg1200 }}');
+                }
+            }
+            @media (max-width: 900px) {
+                .bg-{{ prefix }}{
+                    background-image: url('{{ bgImg900 }}');
+                }
+            }
+            @media (max-width: 500px) {
+                .bg-{{ prefix }}{
+                    background-image: url('{{ bgImg500 }}');
+                }
+            }
+            @media (max-width: 400px) {
+                .bg-{{ prefix }}{
+                    background-image: url('{{ bgImg400 }}');
+                }
+            }
+
+
+        </style>
+        <section class="trenn-element">
+
+            <div class="trenner bg-{{ prefix }}">
+                <div class="trenner-wrapper">
+                    <div class="wl-wrapper">
+                         <img src="/assets/images/trennbild-wrapper.png" alt="Wrapper" style="width: 100%"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    {% endif %}
+
+{% endif %}
+

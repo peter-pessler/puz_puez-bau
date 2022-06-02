@@ -1,7 +1,20 @@
-.modul-textBildImWechsel{
+.textBildBg{
+  background-color: $wl-color-blue-soft;
+}
 
+.modul-textBildBgBlau{
 
-  .modul-textBildImWechsel-item{
+  padding-top: 100px;
+  @include wl-breakpoint($page-width) {
+    padding-top: calc(50px + 3vw);
+  }
+
+  padding-bottom: 100px;
+  @include wl-breakpoint($page-width) {
+    padding-bottom: calc(50px + 3vw);
+  }
+
+  .modul-textBildBgBlau-item{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -56,6 +69,9 @@
   .spalte-text{
 
     .text-container{
+
+      color: $wl-color-darkblue;
+
       width: 67%;
       @include wl-breakpoint(900) {
         width: 87%;
@@ -80,10 +96,27 @@
       }
 
       .button{
+
+        display: grid;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: stretch;
+
+
+
         margin-top: 20px;
         a{
-          &.btn{
-            @include btn($wl-color-white, $wl-color-darkblue, $wl-color-darkblue, $wl-color-blue-soft, $wl-color-darkblue, $wl-color-darkblue);
+          &.btn1{
+            margin-top: 25px;
+            @include btn($wl-color-blue-soft, $wl-color-darkblue, $wl-color-darkblue, $wl-color-blue, $wl-color-darkblue, $wl-color-darkblue);
+            //width: 17vw;
+          }
+          &.btn2{
+            margin-top: 25px;
+            @include btn($wl-color-blue-soft, $wl-color-darkblue, $wl-color-darkblue, $wl-color-blue, $wl-color-darkblue, $wl-color-darkblue);
+            //width: 17vw;
           }
         }
       }
@@ -126,6 +159,14 @@
     }
 
     .schmuckelement-container{
+
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      align-items: flex-end;
+      align-content: stretch;
 
       width: 33%;
       @include wl-breakpoint(900) {
@@ -192,74 +233,9 @@
 
   }
 
-  .item-bild-text{
-
-    .spalte-text{
-    }
-
-    .spalte-bild{
-      .bild-container{
-        padding-right: 7vw;
-        @include wl-breakpoint(600) {
-          padding-right: 0;
-        }
-      }
-    }
-
-    .schmuckelement-container{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      align-items: flex-end;
-      align-content: stretch;
-
-      @include wl-breakpoint(650) {
-        display: none;
-      }
-    }
-
-    .schmuckelement-container-changePoint{
-      width: 100%;
-      margin-top: 35px;
-
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      align-items: stretch;
-      align-content: stretch;
-
-      img{
-        width: 70%;
-        @include wl-breakpoint(600) {
-          width: 40%;
-          float: right;
-        }
-      }
-
-      display: none;
-      @include wl-breakpoint(900) {
-        display: block;
-      }
-
-    }
-
-
-    @include wl-breakpoint(600) {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      align-items: center;
-      align-content: stretch;
-    }
-
-
-  }
-
 
   .schmuckelement{
+    margin-bottom: -50px;
     display: block;
     @include wl-breakpoint(900) {
       display: none;

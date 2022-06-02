@@ -1,0 +1,61 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+{% set layout = block.auswahlLayout.value  %}
+
+  <section class="wrapper-outer liste2Spaltig">
+    <section class="wl-wrapper">
+
+      <div class="modul-liste2Spaltig">
+
+        <div class="list-links">
+          {% if block.listeLinks is not empty %}
+            {% set count = 0 %}
+            {% set anzahlElemente = block.listeLinks.count() %}
+            {% for item in block.listeLinks.all() %}
+              {% set count = count + 1 %}
+              {% set abstand = (count < anzahlElemente )? ' list-abstand-bottom' : '' %}
+              {% set listTypCounter = (count < 10)? 0 ~ count : count %}
+
+                {% if layout == 'listeMitZahlen' %}
+                    {% set listTyp = listTypCounter %}
+                {% else %}
+                    {% set listTyp = '<img class="list-icn" src="/assets/images/icons/list-icn.svg" alt"List Typ" />' %}
+                {% endif %}
+
+              <div class="list{{ abstand }}">
+                <div class="list-type">{{ listTyp|raw }}</div>
+                <div class="list-text">{{ item.text }}</div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        <div class="list-rechts">
+            {% if block.listeRechts is not empty %}
+              {% set countRechts = 0 %}
+              {% set anzahlElemente = block.listeRechts.count() %}
+              {% for item in block.listeRechts.all() %}
+                {% set count = count + 1 %}
+                {% set countRechts = countRechts + 1 %}
+                {% set abstand = (countRechts < anzahlElemente )? ' list-abstand-bottom' : '' %}
+                {% set listTypCounter = (count < 10)? 0 ~ count : count %}
+
+                  {% if layout == 'listeMitZahlen' %}
+                      {% set listTyp = listTypCounter %}
+                  {% else %}
+                      {% set listTyp = '<img class="list-icn" src="/assets/images/icons/list-icn.svg" alt"List Typ" />' %}
+                  {% endif %}
+
+                <div class="list{{ abstand }}">
+                  <div class="list-type">{{ listTyp|raw }}</div>
+                  <div class="list-text">{{ item.text }}</div>
+                </div>
+              {% endfor %}
+            {% endif %}
+        </div>
+
+      </div>
+
+    </section>
+  </section>
+{% endif %}

@@ -1,0 +1,57 @@
+{% set showModul = (block.modulAusblenden)? false : true %}
+{% if showModul %}
+
+
+<section class="wrapper-outer textBildBg">
+    <section class="wl-wrapper">
+
+        <div class="modul-textBildBgBlau">
+
+            {% if block.textBildElement is not empty %}
+                {% set item = block.textBildElement %}
+                <div class="modul-textBildBgBlau-item item-text-bild">
+
+                    <div class="spalte-text">
+                        <div class="wrapper-container"></div>
+                        <div class="text-container">
+
+                            <div class="text-body text">
+                                <h2>{{ item.headline }}</h2>
+                                {{ item.text }}
+                            </div>
+
+                            <div class="button">
+                                {% import "_macros/linkList.twig" as _self %}
+                                {{ _self.linkList(item.button1, 'btn1') | trim | raw  }}
+                                {{ _self.linkList(item.button2, 'btn2') | trim | raw  }}
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="spalte-bild">
+                        <div class="bild-container">
+                            {% set checkImage = item.bild.one()|default(false) %}
+                            {% if checkImage %}
+                                {% set image = item.bild.one() %}
+                                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
+                            {% endif %}
+                            <div class="schmuckelement-container-changePoint">
+                                <img src="/assets/images/icons/schmuckelement-icn-pfeilmuster.svg" alt="Muster Logos"/>
+                            </div>
+                        </div>
+                        <div class="schmuckelement-container">
+                            <img class="schmuckelement" src="/assets/images/icons/schmuckelement-icn-pfeilmuster.svg" alt="Muster Logos"/>
+                        </div>
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+    </section>
+</section>
+{% endif %}
