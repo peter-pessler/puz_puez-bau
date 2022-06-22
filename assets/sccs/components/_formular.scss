@@ -23,7 +23,7 @@ input {
 
 .wl-form-wrapper {
 
-	width: 450px;
+	width: 100%;
 
 	@include wl-breakpoint(600) {
 		width: 100%;
@@ -31,6 +31,10 @@ input {
 
 	.form-item-wrapper{
 		margin-bottom: 25px;
+	}
+
+	.form-group{
+		position: relative;
 	}
 
 	form{
@@ -42,9 +46,25 @@ input {
 			font-style: italic;
 		}
 
-		label {
-			display: block;
-			margin: 0;
+		.lableInputField{
+				position: absolute;
+				left: 18px;
+				top: 22px;
+				z-index: 10;
+				color: $wl-color-blue;
+			    @include responsive-font(17px, 17px, $base-font-breakpoint-min, $base-font-breakpoint-max, $font-family-orbitronBold, $base-line-height);
+			    letter-spacing: 0.1em;
+			    text-transform: uppercase;
+				display: inline-block;
+				padding: 4px 16px;
+				background-color: $wl-form-color-fields;
+				pointer-events: none;
+				transition: all 0.3s linear;
+				&.active{
+					top: -15px;
+					color: $wl-color-blue;
+					background-color: $wl-form-color-fields;
+				}
 		}
 
 
@@ -58,10 +78,27 @@ input {
 			outline: none;
 			background-color: $wl-form-color-fields;
 			color: $wl-form-color-text;
-			border: 1px solid $wl-form-color-border;
-			border-radius: 1px;
-			margin: 0;
-			padding: 9px 10px 7px;
+
+
+			padding-right: 31px;
+			padding-left: 31px;
+			padding-top: 25px;
+			padding-bottom: 25px;
+
+
+			border-radius: 16px;
+			text-decoration: none;
+			border: 2px solid $wl-color-blue;
+
+
+			margin-bottom: 0;
+			margin-left: 0;
+			margin-right: 0;
+			margin-bottom: 8px;
+
+
+
+
 			position: relative;
 		}
 
@@ -185,7 +222,7 @@ input {
 		// Bei fokussiertem oder validem Inhalt
 		input, textarea, select {
 			&:focus, &:valid, &.filled {
-				border: 1px solid darken($wl-form-color-border, 20);
+				border: 2px solid $wl-color-blue;
 			}
 		}
 
@@ -217,8 +254,18 @@ input {
 		}
 
 		input[type=text], input[type=email], textarea {
-			padding-right: 25px;
+			//padding-right: 25px;
 		}
+
+		label{
+			span{
+				&.labletext-dsgvo{
+					color: $wl-form-color-text;
+					font-size: 0.85em;
+				}
+			}
+		}
+
 
 		// Pflichtfelder
 		label.required, span.required{
@@ -237,14 +284,17 @@ input {
 
 					em{
 						font-style: normal;
-						position: relative;
+						position: absolute;
 						display: inline-block;
 
 						&::after {
 							content: "*";
+							position: relative;
+							top: -10px;
 							text-align: center;
 							font-size: 1.4rem;
-							color: red;
+							font-family: $font-family-altivo;
+							color: $wl-form-color-error;
 						}
 					}
 
@@ -256,8 +306,8 @@ input {
 			span {
 				&.checkmark {
 					&::before{
-						border: 1px solid rgba($wl-form-color-error, 0.45);
-						background-color: rgba($wl-form-color-error, 0.2);
+						border: 1px solid rgba($wl-form-color-error, 0.35);
+						background-color: rgba($wl-form-color-error, 0.05);
 					}
 				}
 			}
@@ -267,13 +317,20 @@ input {
 			}
 
 			input[type=text], input[type=email], textarea, select{
-				border: 1px solid rgba($wl-form-color-error, 0.45);
-				background-color: rgba($wl-form-color-error, 0.2);
+				border: 1px solid rgba($wl-form-color-error, 0.35);
+				background-color: rgba($wl-form-color-error, 0.05);
 				color: $wl-form-color-error;
 			}
 
 			label {
 				color: $wl-form-color-error;
+
+				span{
+					&.labletext-dsgvo{
+						color: $wl-form-color-text;
+						font-size: 0.85em;
+					}
+				}
 			}
 
 			&.InputfieldStateRequired {
@@ -289,15 +346,12 @@ input {
 		}
 
 		// Submit-Button
-		.InputfieldSubmit {
-
-			padding-bottom: 10px;
-
-			button {
-				margin-top: -1px;
-				float: right;
+		button {
+			margin-top: 10px;
+			&.submit-button {
+				@include btn($wl-color-white, $wl-color-darkblue, $wl-color-darkblue, $wl-color-blue-soft, $wl-color-darkblue, $wl-color-darkblue);
+				//float: right;
 			}
-
 		}
 
 	}
@@ -320,7 +374,8 @@ input {
 .form-info {
 	margin-top: 25px;
 	margin-bottom: 50px;
-	color: #ab1212;
+	color: $wl-form-color-error;
+	font-size: 0.85em;
 }
 
 
@@ -344,33 +399,6 @@ form .submit-button {
 	}
 }
 
-/**
-***********************************
- */
-
-
-.buttonStyle {
-	padding: 8px 20px 8px 20px ;
-	background-color: transparent;
-	border: 1px solid #d05c09;
-	color: #655b57 !important;
-	transition: .3s;
-}
-.buttonStyle:hover {
-	animation: pulse 1s infinite;
-	transition: .3s;
-}
-@keyframes pulse {
-	0% {
-		transform: scale(1);
-	}
-	70% {
-		transform: scale(.9);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
 
 /**
 ***********************************
@@ -379,7 +407,7 @@ form .submit-button {
 
 #lock-modal {
 	display: none;
-	background-color: #e0d8bc;
+	background-color: $wl-color-blue-soft;
 	opacity: 0.4;
 	overflow: hidden;
 	position: fixed;
@@ -401,19 +429,11 @@ form .submit-button {
 	left: 0;
 	right: 0;
 	margin: auto;
-	width: 40px;
-	height: 40px;
-	border: 4px solid #f3f3f3;
-	border-top: 4px solid #3498db;
-	border-radius: 50%;
-	animation: spin 0.6s ease-in infinite;
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+	width: 150px;
+	height: 150px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
 }

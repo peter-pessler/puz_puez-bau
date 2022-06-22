@@ -1,0 +1,133 @@
+.modul-team{
+
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+
+  @include wl-breakpoint(1000) {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  @include wl-breakpoint(750) {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  @include wl-breakpoint(500) {
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  grid-gap: 80px 40px; /* vertikal | Horizontal  */
+
+  .team-item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+
+    .teamImg{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+      align-content: stretch;
+
+      margin-bottom: 30px;
+
+      .mitarbeiter-bild{
+        width: 63%;
+        @include imgRoundWithBorder($wl-color-blue, 0.15);
+      }
+
+    }
+
+
+
+    .teamName{
+      text-align: center;
+      font-weight: $font-weight-strong;
+    }
+
+    .teamPosition{
+      text-align: center;
+    }
+
+    .teamTel{
+      margin-top: 20px;
+      text-align: center;
+      color: $wl-color-blue;
+
+      @include wl-breakpoint(1600) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: stretch;
+      }
+
+      a,i{
+        display: inline-block;
+        color: $wl-color-blue;
+        text-decoration: none;
+        @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $font-family-orbitronBold, $base-line-height);
+        letter-spacing: 0.1em;
+      }
+
+      .team-tel-icn{
+        position: relative;
+        top: 5px;
+        height: 20px;
+        margin-right: 3px;
+        @include wl-breakpoint(1600) {
+          top: 0;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+
+    }
+
+    .teamMail{
+      margin-top: 10px;
+      text-align: center;
+      color: $wl-color-blue;
+
+      @include wl-breakpoint(1600) {
+        margin-top: 17px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: stretch;
+      }
+
+      a,i{
+        display: inline-block;
+        color: $wl-color-blue;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include responsive-font(16px, 17px, $base-font-breakpoint-min, $base-font-breakpoint-max, $font-family-orbitronBold, $base-line-height);
+        letter-spacing: 0.1em;
+      }
+    }
+
+    .team-mail-icn{
+      position: relative;
+      top: 2px;
+      height: 17px;
+      margin-right: 3px;
+      @include wl-breakpoint(1600) {
+        top: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+
+
+}

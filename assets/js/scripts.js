@@ -249,9 +249,14 @@ $(document).ready(function() {
     });
 
 
+    /* *********************************************************************************************************************** */
 
 
 
+   $('.teamName').matchHeight();
+   $('.teamPosition').matchHeight();
+   $('.teamTel').matchHeight();
+   $('.teamMail').matchHeight();
 
 
 

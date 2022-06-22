@@ -1,19 +1,38 @@
 {% set showModul = (block.modulAusblenden)? false : true %}
 {% if showModul %}
-<section class="wl-wrapper">
 
-    {% set formularId = block.formularAuswahl.id %}
-    {% set formularAntwortUrl = block.antwortSeite.one().getUrl() %}
-    {% set formTempl = 'id-' ~ formularId %}
+    <section class="wrapper-outer kontakt">
+        <section class="wl-wrapper">
 
-    {% switch formularId %}
-    {% case 1 %}
-        {% include '_include-form-template/formular_' ~ formTempl with {formularId: formularId, formularAntwortUrl: formularAntwortUrl} %}
-    {% case 2 %}
-        {% include '_include-form-template/formular_default'  with {formularId: formularId, formularAntwortUrl: formularAntwortUrl} %}
-    {% default %}
-        {% include '_include-form-template/formular_default'  with {formularId: formularId, formularAntwortUrl: formularAntwortUrl} %}
-    {% endswitch %}
+            <div class="modul-kontakt">
 
-</section>
+                <div class="list-links">
+                    <div class="list-links-body">
+                        <h2>Keine Scheu, wir helfen gerne!</h2>
+                        <div class="adresse">
+                            Sitz + Büro München<br />
+                            PÜZ BAU GmbH<br />
+                            Beethovenstraße 8<br />
+                            D – 80336 München<br />
+                        </div>
+                        <div class="schmuckelement">
+                            <img src="/assets/images/icons/schmuckelement-icn-logomuster.svg" alt="Muster Logos"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-rechts">
+                    <div class="list-rechts-body">
+                        {% set formularId = block.formularAuswahl.id %}
+                        {% set formularAntwortUrl = block.antwortSeite.one().getUrl() %}
+                        {% set formTempl = 'id-' ~ formularId %}
+                        {% include '_include-form-template/formular_' ~ formTempl with {formularId: formularId, formularAntwortUrl: formularAntwortUrl} %}
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </section>
+
 {% endif %}

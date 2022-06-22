@@ -1,0 +1,110 @@
+.modul-kontakt{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+
+    @include wl-breakpoint(650) {
+      flex-direction: column;
+    }
+
+
+
+  .list-links-body, .list-rechts-body{
+
+    width: calc(100% - 230px);
+    @include wl-breakpoint($page-width) {
+      width: calc(100% - 12.5vw);
+    }
+    @include wl-breakpoint(1000) {
+      width: calc(100% - 11vw);
+    }
+    @include wl-breakpoint(800) {
+      width: calc(100% - 6vw);
+    }
+    @include wl-breakpoint(650) {
+      width: 100%;
+    }
+  }
+
+
+  .list-links{
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-content: stretch;
+
+    padding-right: 100px;
+
+    @include wl-breakpoint($page-width) {
+      padding-right: 7vw;
+    }
+    @include wl-breakpoint(650) {
+      width: 100%;
+      padding-left: 7vw;
+      padding-right: 7vw;
+    }
+    @include wl-breakpoint(400) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .schmuckelement{
+      width: 100%;
+
+      margin-top: 40px;
+      @include wl-breakpoint($page-width) {
+        margin-top: calc(25px + 1vw);
+      }
+
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+
+      img{
+        width: 50%;
+        @include wl-breakpoint(650) {
+          width: 35%;
+        }
+      }
+    }
+
+  }
+
+  .list-rechts{
+    width: 50%;
+
+    @include wl-breakpoint(650) {
+        width: 100%;
+        margin-top: 50px;
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+    @include wl-breakpoint(400) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: stretch;
+
+  }
+
+
+
+}

@@ -25,7 +25,7 @@
 
 {{ form.honeypot() }}
 {% set errorArray = [] %}
-
+{% set formError = 0 %}
 
 {% for field in form.fields %}
     {% switch field.type %}
@@ -42,7 +42,7 @@
                         {% endif %}
                         <span class="checkmark"></span>
                         <span class="mandatory{% if field.required %} required{% endif %}"><em></em></span>
-                        <span class="labletext{% if field.required %} required{% endif %}">{{ labletext }}</span>
+                        <span class="labletext{% if field.name == 'dsgvo' %}-dsgvo{% endif %}{% if field.required %} required{% endif %}">{{ labletext }}</span>
                     </div>
                 </label>
             {% endfor %}
@@ -72,7 +72,7 @@
         </div>
     {% case "textarea" %}
         <div class="form-group form-item-wrapper InputfieldTextarea{{ wheelformErrors[field.name] is defined ? ' formStateError'}}">
-            <label{% if field.required %} class="required"{% endif %}>{{field.label}}<em></em></label>
+            <label class="lableInputField{% if field.required %} required{% endif %}"> {{field.label}}<em></em></label>
             <textarea class="form-control {{field.name}} {{field.fieldClass}}" name="{{field.name}}" id="">{{ values[field.name] ?? '' }}</textarea>
         </div>
     {% case "list" %}
@@ -83,7 +83,7 @@
         </div>
     {% default %}
         <div class="form-group form-item-wrapper InputfieldText{{ wheelformErrors[field.name] is defined ? ' formStateError'}}">
-            <label{% if field.required %} class="required"{% endif %}>{{field.label}}<em></em></label>
+            <label class="lableInputField{% if field.required %} required{% endif %}"> {{field.label}}<em></em></label>
             {% set valueResult = '' %}
             {% if field.name == 'telefon' %}
                     {% set postTel = craft.request.getPost('quick_tel') %}
@@ -119,21 +119,24 @@
     {% if wheelformErrors[field.name] is defined %}
         {% set fieldNames = field.label %}
         {% set errorArray = errorArray|merge( [fieldNames] )  %}
+        {% set formError = 1 %}
     {% endif %}
 
 {% endfor %}
-
-    <div class="form-info">
-        {{ block.infoText }}
-    </div>
 
     {#
         <pre>{{ dump(errorArray) }}</pre>
         <div class="InputfieldSubmit"><button class="btn-form" id="submit">Send</button></div>
     #}
-    <button type="submit" class="submit-button buttonStyle" id="submit">{{ block.submitButtonText }}</button>
+    <button type="submit" class="submit-button" id="submit">{{ block.submitButtonText }}</button>
+
+    {% if formError == 1%}
+        <div class="form-info">
+            {{ block.infoText }}
+        </div>
+    {% endif %}
     <div id="lock-modal"></div>
-    <div id="loading-circle"></div>
+    <div id="loading-circle"><img src="/assets/images/loading-circle.svg" alt="loading-circle" /></div>
 
 </form>
 
@@ -147,7 +150,29 @@
         } else {
             setCookie('scrollTo','1',1);
         }
+
+        floatLabel(".form-control");
     });
+
+    /**
+     * Lables Interaktion
+     * @param inputType
+     */
+    function floatLabel(inputType){
+        $(inputType).each(function(){
+            var $this = $(this);
+            // on focus add cladd active to label
+            $this.focus(function(){
+                $this.parent().find('.lableInputField').addClass("active");
+            });
+            //on blur check field and remove class if needed
+            $this.blur(function(){
+                if($this.val() === '' || $this.val() === 'blank'){
+                    $this.parent().find('.lableInputField').removeClass("active");
+                }
+            });
+        });
+    }
 </script>
 
 </div>

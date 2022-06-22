@@ -10,7 +10,7 @@ $(document).ready(function() {
 
         // lock down the form
         lockModal.css("display", "block");
-        loadingCircle.css("display", "block");
+        loadingCircle.css("display", "flex");
 
         setTimeout(function() {
             // re-enable the form

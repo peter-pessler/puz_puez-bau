@@ -312,6 +312,21 @@
       "pg" : 0,
       "sct" : 1
     },
+    "\/assets\/sccs\/components\/_modul_formular.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/web\/assets\/css\/_modul_formular.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 1
+    },
     "\/assets\/sccs\/components\/_modul_liste2Spaltig.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -322,6 +337,21 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/web\/assets\/css\/_modul_liste2Spaltig.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/assets\/sccs\/components\/_modul_team.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/web\/assets\/css\/_modul_team.min.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -5516,14 +5546,6 @@
       "oAP" : "\/templates\/_include-block-components\/modul_formular.twig",
       "oF" : 0
     },
-    "\/templates\/_include-block-components\/modul_formularAntwort.twig" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 2,
-      "oAP" : "\/templates\/_include-block-components\/modul_formularAntwort.twig",
-      "oF" : 0
-    },
     "\/templates\/_include-block-components\/modul_htmlCode.twig" : {
       "cB" : 0,
       "ft" : 8192,
@@ -5546,6 +5568,14 @@
       "hM" : 0,
       "oA" : 2,
       "oAP" : "\/templates\/_include-block-components\/modul_liste2Spaltig.twig",
+      "oF" : 0
+    },
+    "\/templates\/_include-block-components\/modul_team.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_include-block-components\/modul_team.twig",
       "oF" : 0
     },
     "\/templates\/_include-block-components\/modul_teaserLinksMitteRechts.twig" : {
@@ -5578,14 +5608,6 @@
       "hM" : 0,
       "oA" : 2,
       "oAP" : "\/templates\/_include-form-template\/fieldErrors.twig",
-      "oF" : 0
-    },
-    "\/templates\/_include-form-template\/formular_default.twig" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 2,
-      "oAP" : "\/templates\/_include-form-template\/formular_default.twig",
       "oF" : 0
     },
     "\/templates\/_include-form-template\/formular_id-1.twig" : {
@@ -103010,6 +103032,16 @@
       "plM" : 3758088159,
       "prP" : 0
     },
+    "\/web\/assets\/images\/icons\/list-icn-default.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/icons\/list-icn-default.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
     "\/web\/assets\/images\/icons\/list-icn-plus-rot.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -103125,6 +103157,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/web\/assets\/images\/icons\/tel-icon.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
+    "\/web\/assets\/images\/loading-circle.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/web\/assets\/images\/loading-circle.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 3758088159,
@@ -103261,6 +103303,17 @@
       "oA" : 2,
       "oAP" : "\/web\/assets\/js\/jquery.flexisel-iconslider.min.js.map",
       "oF" : 0
+    },
+    "\/web\/assets\/js\/lottie-player.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 1,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/web\/assets\/js\/lottie-player.min.js",
+      "oF" : 0,
+      "sC" : 0,
+      "tS" : 0
     },
     "\/web\/assets\/js\/scripts.min.js" : {
       "bF" : 0,
