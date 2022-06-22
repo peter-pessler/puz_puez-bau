@@ -357,7 +357,7 @@ input {
 	}
 
 	// Honeypot für Spam-Prevention
-	.wf-bouncer-1{
+	input[name="bouncer"] {
 		display: none;
 	}
 
@@ -365,8 +365,6 @@ input {
 	.error{
 		display: none;
 	}
-
-
 
 }
 
