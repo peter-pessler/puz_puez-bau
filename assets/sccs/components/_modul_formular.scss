@@ -11,50 +11,58 @@
       flex-direction: column;
     }
 
-
-
-  .list-links-body, .list-rechts-body{
-
-    width: calc(100% - 230px);
+  .list-links-body{
+    padding-right: 80px;
     @include wl-breakpoint($page-width) {
-      width: calc(100% - 12.5vw);
-    }
-    @include wl-breakpoint(1000) {
-      width: calc(100% - 11vw);
-    }
-    @include wl-breakpoint(800) {
-      width: calc(100% - 6vw);
+      padding-right: 4vw;
     }
     @include wl-breakpoint(650) {
-      width: 100%;
+      padding-right: 0;
     }
   }
 
+  .list-rechts-body{
+    padding-top: 50px;
+  }
 
-  .list-links{
-    width: 50%;
+  .list-links-body, .list-rechts-body{
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-end;
-    align-content: stretch;
-
-    padding-right: 100px;
-
-    @include wl-breakpoint($page-width) {
-      padding-right: 7vw;
+    width: 67%;
+    @include wl-breakpoint(900) {
+      width: 87%;
     }
+
     @include wl-breakpoint(650) {
       width: 100%;
-      padding-left: 7vw;
-      padding-right: 7vw;
     }
-    @include wl-breakpoint(400) {
-      padding-left: 0;
-      padding-right: 0;
+
+  }
+
+
+  .list-links, .list-rechts{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    @include wl-breakpoint(650) {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+      align-content: stretch;
     }
+
+  }
+
+
+
+  .list-links{
 
     .schmuckelement{
       width: 100%;
@@ -64,47 +72,34 @@
         margin-top: calc(25px + 1vw);
       }
 
-
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      align-items: stretch;
-      align-content: stretch;
-
       img{
         width: 50%;
         @include wl-breakpoint(650) {
-          width: 35%;
+          width: 30%;
+        }
+        @include wl-breakpoint(450) {
+          width: 120px;
         }
       }
     }
 
   }
 
-  .list-rechts{
-    width: 50%;
 
+  .wrapper-container{
+
+    width: 33%;
+    @include wl-breakpoint(900) {
+      width: 13%;
+    }
     @include wl-breakpoint(650) {
-        width: 100%;
-        margin-top: 50px;
-        padding-left: 7vw;
-        padding-right: 7vw;
+      display: none;
     }
-    @include wl-breakpoint(400) {
-      padding-left: 0;
-      padding-right: 0;
+    @include wl-breakpoint(650) {
+      display: none;
     }
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: stretch;
 
   }
-
 
 
 }

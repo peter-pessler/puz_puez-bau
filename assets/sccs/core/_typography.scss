@@ -68,7 +68,7 @@ h1, .h1 {
   letter-spacing: 0.07em;
 }
 h2, .h2 {
-  @include responsive-font(25px, 39px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h2-font-family, $base-line-height-h2);
+  @include responsive-font(25px, 38px, $base-hl-font-breakpoint-min, $base-hl-font-breakpoint-max, $h2-font-family, $base-line-height-h2);
   @include margin-headline-top(17, 11, 45, 65);
   @include margin-headline-bottom(17, 11, 45, 50);
   text-transform: uppercase;

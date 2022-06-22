@@ -30,7 +30,7 @@ input {
 	}
 
 	.form-item-wrapper{
-		margin-bottom: 25px;
+		margin-bottom: 18px;
 	}
 
 	.form-group{
@@ -49,9 +49,9 @@ input {
 		.lableInputField{
 				position: absolute;
 				left: 18px;
-				top: 22px;
+				top: 17px;
 				z-index: 10;
-				color: $wl-color-blue;
+				color: rgba($wl-color-blue, 0.5);
 			    @include responsive-font(17px, 17px, $base-font-breakpoint-min, $base-font-breakpoint-max, $font-family-orbitronBold, $base-line-height);
 			    letter-spacing: 0.1em;
 			    text-transform: uppercase;
@@ -61,6 +61,11 @@ input {
 				pointer-events: none;
 				transition: all 0.3s linear;
 				&.active{
+					top: -15px;
+					color: $wl-color-blue;
+					background-color: $wl-form-color-fields;
+				}
+				&.isActive{
 					top: -15px;
 					color: $wl-color-blue;
 					background-color: $wl-form-color-fields;
@@ -80,10 +85,10 @@ input {
 			color: $wl-form-color-text;
 
 
-			padding-right: 31px;
-			padding-left: 31px;
-			padding-top: 25px;
-			padding-bottom: 25px;
+			padding-right: 30px;
+			padding-left: 30px;
+			padding-top: 20px;
+			padding-bottom: 20px;
 
 
 			border-radius: 16px;
@@ -141,7 +146,7 @@ input {
 		textarea {
 			line-height: 1.45;
 			width: 100%;
-			height: 200px;
+			height: 170px;
 			margin-bottom: 0;
 			resize: none;
 			overflow: auto;
@@ -282,21 +287,21 @@ input {
 				}
 			}
 
-					em{
-						font-style: normal;
-						position: absolute;
-						display: inline-block;
+			em{
+				font-style: normal;
+				position: absolute;
+				display: inline-block;
 
-						&::after {
-							content: "*";
-							position: relative;
-							top: -10px;
-							text-align: center;
-							font-size: 1.4rem;
-							font-family: $font-family-altivo;
-							color: $wl-form-color-error;
-						}
-					}
+				&::after {
+					content: "*";
+					position: relative;
+					top: -10px;
+					text-align: center;
+					font-size: 1.4rem;
+					font-family: $font-family-altivo;
+					color: $wl-color-blue;
+				}
+			}
 
 		}
 
@@ -317,9 +322,9 @@ input {
 			}
 
 			input[type=text], input[type=email], textarea, select{
-				border: 1px solid rgba($wl-form-color-error, 0.35);
-				background-color: rgba($wl-form-color-error, 0.05);
-				color: $wl-form-color-error;
+				border: 2px solid rgba($wl-form-color-error, 0.35);
+				//background-color: rgba($wl-form-color-error, 0.05);
+				//color: $wl-form-color-error;
 			}
 
 			label {
@@ -331,6 +336,15 @@ input {
 						font-size: 0.85em;
 					}
 				}
+
+				em{
+
+					&::after {
+						color: $wl-form-color-error;
+					}
+				}
+
+
 			}
 
 			&.InputfieldStateRequired {

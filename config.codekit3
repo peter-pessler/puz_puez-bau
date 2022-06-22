@@ -5570,6 +5570,14 @@
       "oAP" : "\/templates\/_include-block-components\/modul_liste2Spaltig.twig",
       "oF" : 0
     },
+    "\/templates\/_include-block-components\/modul_standorte.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_include-block-components\/modul_standorte.twig",
+      "oF" : 0
+    },
     "\/templates\/_include-block-components\/modul_team.twig" : {
       "cB" : 0,
       "ft" : 8192,
