@@ -73,7 +73,8 @@
         </div>
     {% case "textarea" %}
         <div class="form-group form-item-wrapper InputfieldTextarea{{ wheelformErrors[field.name] is defined ? ' formStateError'}}">
-            {% if craft.request.getPost(field.name) != '' %}
+            {% set setAciveClass = '' %}
+            {% if craft.app.request.getBodyParam(field.name) != '' %}
                 {% set setAciveClass = 'active' %}
             {% endif %}
             <label class="{{ setAciveClass }} lableInputField{% if field.required %} required{% endif %}"> {{field.label}}<em></em></label>
@@ -87,45 +88,46 @@
         </div>
     {% default %}
         <div class="form-group form-item-wrapper InputfieldText{{ wheelformErrors[field.name] is defined ? ' formStateError'}}">
-            {% if craft.request.getPost(field.name)|length %}
-                {% set setAciveClass = ' active' %}
+            {% set setAciveClass = '' %}
+            {% if craft.app.request.getBodyParam(field.name)|length %}
+                {% set setAciveClass = 'active' %}
             {% elseif field.name == 'telefon' %}
-                {% if craft.request.getPost('quick_tel')|length  %}
-                    {% set setAciveClass = ' active' %}
+                {% if craft.app.request.getBodyParam('quick_tel')|length  %}
+                    {% set setAciveClass = 'active' %}
                 {% endif %}
             {% elseif field.name == 'email' %}
-                {% if craft.request.getPost('quick_mail')|length  %}
-                    {% set setAciveClass = ' active' %}
+                {% if craft.app.request.getBodyParam('quick_mail')|length  %}
+                    {% set setAciveClass = 'active' %}
                 {% endif %}
             {% elseif field.name == 'name' %}
-                {% if craft.request.getPost('quick_name')|length  %}
-                    {% set setAciveClass = ' active' %}
+                {% if craft.app.request.getBodyParam('quick_name')|length  %}
+                    {% set setAciveClass = 'active' %}
                 {% endif %}
             {% else %}
                 {% set setAciveClass = '' %}
             {% endif %}
-            <label class="lableInputField{% if field.required %} required{% endif %}{{ setAciveClass }}"> {{field.label}}<em></em></label>
+            <label class="{{ setAciveClass }} lableInputField{% if field.required %} required{% endif %}"> {{field.label}}<em></em></label>
             {% set valueResult = '' %}
             {% if field.name == 'telefon' %}
-                    {% set postTel = craft.request.getPost('quick_tel') %}
+                    {% set postTel = craft.app.request.getBodyParam('quick_tel') %}
                     {% if postTel|length  %}
                         {% set valueResult = postTel %}
                     {% else %}
-                        {% set valueResult = craft.request.getPost(field.name) %}
+                        {% set valueResult = craft.app.request.getBodyParam(field.name) %}
                     {% endif %}
             {% elseif field.name == 'email' %}
-                    {% set postMail = craft.request.getPost('quick_mail') %}
+                    {% set postMail = craft.app.request.getBodyParam('quick_mail') %}
                     {% if postMail|length  %}
                         {% set valueResult = postMail %}
                     {% else %}
-                        {% set valueResult = craft.request.getPost(field.name) %}
+                        {% set valueResult = craft.app.request.getBodyParam(field.name) %}
                     {% endif %}
             {% elseif field.name == 'name' %}
-                    {% set postName = craft.request.getPost('quick_name') %}
+                    {% set postName = craft.app.request.getBodyParam('quick_name') %}
                     {% if postName|length  %}
                         {% set valueResult = postName %}
                     {% else %}
-                        {% set valueResult = craft.request.getPost(field.name) %}
+                        {% set valueResult = craft.app.request.getBodyParam(field.name) %}
                     {% endif %}
             {% else %}
                 {% set valueResult = values[field.name] ?? '' %}

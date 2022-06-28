@@ -15,7 +15,7 @@ Fonts
 $font-family-altivo:'altivo', Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", Arial, sans-serif;
 /* =================================================== */
 $font-name-orbitronBold: "orbitronBold";
-$font-family-orbitronBold: $font-name-orbitronBold, Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", Arial, sans-serif;
+  $font-family-orbitronBold: $font-name-orbitronBold, Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", Arial, sans-serif;
 @include font-face($font-name-orbitronBold, 'orbitron/orbitronBold', '' , '');
 /* =================================================== */
 

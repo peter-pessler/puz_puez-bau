@@ -1,0 +1,70 @@
+.modul-teaser-jobs {
+
+  .teaser-jobs {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px 25px; /* vertikal | Horizontal  */
+
+    @include wl-breakpoint(800) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include wl-breakpoint(600) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .teaser-jobs-link {
+
+      background-color: $wl-color-blue-soft;
+      border-radius: 25px;
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+
+      padding: 40px;
+      @include wl-breakpoint($page-width) {
+        padding: 2vw;
+      }
+      @include wl-breakpoint(1000) {
+        padding: 2.5vw;
+      }
+      @include wl-breakpoint(800) {
+        padding: 25px;
+      }
+
+      h2{
+        margin-top: 0px;
+        color: $wl-color-darkblue;
+      }
+      .teaser-text {
+        color: $wl-color-darkblue;
+      }
+
+    }
+
+    a{
+      cursor: pointer;
+      text-decoration: none;
+
+      &.teaser-jobs-link {
+        color: $wl-color-darkblue;
+        &:hover{
+          background-color: $wl-color-blue;
+          color: $wl-color-white;
+
+          h2{
+            color: $wl-color-white;
+          }
+
+        }
+      }
+    }
+
+
+  }
+
+}

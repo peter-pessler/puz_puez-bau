@@ -1,10 +1,75 @@
 {% set showModul = (block.modulAusblenden)? false : true %}
 {% if showModul %}
-  <section class="wrapper-outer standorte">
-    <section class="wl-wrapper">
-        <div class="modul-standorte">
 
-        </div>
+    <section class="wrapper-outer standorte">
+        <section class="wl-wrapper">
+
+            <div class="modul-standorte">
+
+                <div class="list-links">
+                    <div class="wrapper-container"></div>
+                    <div class="list-links-body">
+                        <h2>{{ block.headline }}</h2>
+                        {% if block.listeStandorte is not empty %}
+                            {% set count = 0 %}
+                            {% set anzahlElemente = block.listeStandorte.count() %}
+                            {% for item in block.listeStandorte.all() %}
+                                {% set count = count + 1 %}
+                                {% set abstand = (count < anzahlElemente )? ' abstand-bottom' : '' %}
+                                <div class="standort-item">
+                                    <h3>{{ item.standort }}</h3>
+                                    <div class="standort-item-wrapper">
+                                        <div class="standort-adresse">
+                                            <span class="li">{{ item.strasseHausnummer }}</span>
+                                            <span class="li">{{ item.plzOrt }}</span>
+                                        </div>
+                                        <div class="standort-kontakt">
+                                            <span class="re">
+                                                {% if item.telefon is not empty %}
+                                                    {% set teamTelNumber = craft.wul.phone(item.telefon,'','','','','1')|raw  %}
+                                                    <a href="tel:{{ teamTelNumber }}">
+                                                        <svg class="standort-tel-icn"  xmlns="http://www.w3.org/2000/svg" width="23.457" height="23.46" viewBox="0 0 23.457 23.46">
+                                                            <path id="standort-phone-icn" data-name="phone-solid (9)" d="M23.422,17.726l-1.065,4.618a1.424,1.424,0,0,1-1.4,1.11A20.985,20.985,0,0,1,0,2.491,1.423,1.423,0,0,1,1.11,1.1L5.728.031a1.438,1.438,0,0,1,1.639.83L9.5,5.833A1.434,1.434,0,0,1,9.088,7.5L6.621,9.483a16.021,16.021,0,0,0,7.308,7.308l2.02-2.465a1.425,1.425,0,0,1,1.671-.411l4.971,2.131A1.563,1.563,0,0,1,23.422,17.726Z" transform="translate(0 0.006)" fill="#205989"/>
+                                                        </svg>
+                                                        {{ item.telefon }}
+                                                    </a>
+                                                {% endif %}
+                                            </span>
+                                            <span class="re">
+                                                {% if item.eMail is not empty %}
+                                                    <a href="mailto:{{ item.eMail }}" target="_blank">
+                                                        <svg class="standort-mail-icn"  xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 20.924 15.693">
+                                                            <path id="standort-mail-icn" d="M18.962,64a1.962,1.962,0,0,1,1.177,3.531L11.246,74.2a1.312,1.312,0,0,1-1.569,0L.785,67.531A1.962,1.962,0,0,1,1.962,64ZM8.893,75.246a2.611,2.611,0,0,0,3.139,0l8.893-6.669v8.5a2.618,2.618,0,0,1-2.615,2.615H2.615A2.617,2.617,0,0,1,0,77.077v-8.5Z" transform="translate(0 -64)" fill="#205989"/>
+                                                        </svg>
+                                                        {{ item.eMail }}</a>
+                                                {% endif %}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="list-rechts">
+                    <div class="list-rechts-body">
+
+                        <div class="standorte-bild-container">
+                            {% set checkImage = block.bild.one()|default(false) %}
+                            {% if checkImage %}
+                                {% set image = block.bild.one() %}
+                                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '500', sizeMedium: '500', sizeSmall: '300', changePointLarge: '1920', changePointMedium: '600', changePointSmall: '320' } %}
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <div class="wrapper-container"></div>
+                </div>
+
+            </div>
+
+        </section>
     </section>
-  </section>
+
 {% endif %}

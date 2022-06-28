@@ -58,13 +58,20 @@
     </section>
 </section>
 
+{% set is404 = false %}
+{% if pageId == '' %}
+    {% set is404 = true %}
+{% endif %}
 
 {% if pageId == 2 %}
     {# *** HOME *** #}
     {% include '_include-system/header-body-home.twig' %}
-{% else %}
+{% elseif pageId != 2 and is404 == false %}
     {# *** CONTENT PAGES *** #}
     {% include '_include-system/header-body-contentpages.twig' %}
+{% else %}
+    {# *** 404 *** #}
+    {% include '_include-system/header-body-404.twig' %}
 {% endif %}
 
 

@@ -2,9 +2,9 @@
     <div class="intro abstand-top-outer">
 
         <div class="intro-spl-links">
-            {% set checkImage = entry.imagesingle.one()|default(false) %}
+            {% set checkImage = siteconfig.imagesingle.one()|default(false) %}
             {% if checkImage %}
-                {% set image = entry.imagesingle.one() %}
+                {% set image = siteconfig.imagesingle.one() %}
                 {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '400', sizeMedium: '400', sizeSmall: '300', changePointLarge: '1920', changePointMedium: '1200', changePointSmall: '320' } %}
             {% endif %}
         </div>
@@ -14,9 +14,9 @@
             <div class="text-element">
 
                 <div class="intro-text text">
-                    <h1>{{ entry.introHeadline }}</h1>
+                    <h1>{{ siteconfig.introHeadline }}</h1>
                     <div class="intro-text-body text">
-                        {{ entry.introTextSpalteLinks }}
+                        {{ siteconfig.introTextSpalteLinks }}
                     </div>
                 </div>
 

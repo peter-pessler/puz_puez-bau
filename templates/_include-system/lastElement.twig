@@ -6,7 +6,7 @@
         <div class="last-element-kontakt abstand-bottom abstand-top">
 
                 <div class="info">
-                    <h2>{{siteconfig.introHeadline | nl2br }}</h2>
+                    <h2>{{siteconfig.headlineAbschlussKontakt | nl2br }}</h2>
                     <div class="infotext">
                         {{siteconfig.bodyText }}
                     </div>
@@ -33,9 +33,9 @@
 
                 <div class="ansprechpartner">
                     <div class="li">
-                        {% set entrySingleImage = siteconfig.imagesingle.one()|default(false) %}
+                        {% set entrySingleImage = siteconfig.imagesingleAbschlussKontakt.one()|default(false) %}
                         {% if entrySingleImage %}
-                            {% set imageSingle = siteconfig.imagesingle.one() %}
+                            {% set imageSingle = siteconfig.imagesingleAbschlussKontakt.one() %}
                             {% include '_include-atoms/imgRoundWithBorder' with {image: imageSingle, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
                         {% endif %}
                     </div>

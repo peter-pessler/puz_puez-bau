@@ -1,17 +1,9 @@
 {# *------------* START Konfiguration *------------ *#}
 {# ************************************************* #}
-{% set categoryIdStr = output %}
-{# *-----------------------------------------*#}
 {% set categorySectionname = 'karriere' %}
-{# *-----------------------------------------*#}
-{% set showMore = false %}
 {# *-----------------------------------------*#}
 {% set imgQuality = 85 %}
 {# *-----------------------------------------*#}
-{% set imgFormat = siteconfig.imageFormat %}
-{# *-----------------------------------------*#}
-
-
 {% if block.sortierung == 'desc' %}
      {% set sort = 'postDate desc' %}
 {% elseif block.sortierung == 'asc' %}
@@ -19,34 +11,6 @@
 {% else %}
      {% set sort = 'lft' %}
 {% endif %}
-{# *-----------------------------------------*#}
-{% if categoryIdStr == '' %}
-     {% set artikelCount = craft.entries().section(categorySectionname).count() %}
-     {% set artikelTagCount = 0 %}
-
-{% else %}
-     {% set categoryIdsArray = categoryIdStr|split(',') %}
-
-     {% set tagsSelectById = craft.tags().id(categoryIdsArray) %}
-     {% set tagEntries  =  craft.entries().section(categorySectionname).relatedTo(tagsSelectById).all() %}
-
-     {% set categorySelectById = craft.categories().id(categoryIdsArray).all() %}
-     {% set categoryBy = { element: categorySelectById  }  %}
-
-     {% set artikelTagCount = craft.entries().section(categorySectionname).relatedTo(tagsSelectById).count() %}
-     {% if artikelTagCount > 0 %}
-          {% set artikelCount = artikelTagCount %}
-     {% else %}
-          {% set artikelCount = craft.entries()
-               .section(categorySectionname)
-               .relatedTo(['and',categoryBy])
-               .count() %}
-     {% endif %}
-
-{% endif %}
-{# *-----------------------------------------*#}
-{% set pageSizeArtikel = (block.anzahlArtikel|number != '' )? block.anzahlArtikel|number : artikelCount|number %}
-
 {# ************************************************ #}
 {# *------------* ENDE Konfiguration *------------ *#}
 
@@ -55,157 +19,36 @@
 {# *------------* Ausgabe *------------ *#}
 {# ************************************************* #}
 
-{# {% set productTags = craft.tags().title(entry.slug).one() %} //  { element: productTags } #}
-
-{% if categoryIdStr == '' %}
-
-
-     {% if showMore  %}
-          {% set categoriesEntries = craft.entries()
-               .section(categorySectionname)
-               .orderBy(sort)
-               .limit(pageSizeArtikel) %}
-     {% else %}
-          {% set categoriesEntries = craft.entries()
-               .section(categorySectionname)
-               .orderBy(sort)%}
-     {% endif %}
-
-
-{% else %}
-
-
-     {% if showMore  %}
-
-          {% if artikelTagCount > 0 %}
-               {% set tagEntries  =  craft.entries()
-                    .section(categorySectionname)
-                    .relatedTo(tagsSelectById)
-                    .orderBy(sort)
-                    .limit(pageSizeArtikel) %}
-          {% else %}
-               {% set categoriesEntries = craft.entries()
-                    .section(categorySectionname)
-                    .relatedTo(['and',categoryBy])
-                    .orderBy(sort)
-                    .limit(pageSizeArtikel) %}
-          {% endif %}
-
-     {% else %}
-
-          {% if artikelTagCount > 0 %}
-               {% set tagEntries  =  craft.entries()
-                    .section(categorySectionname)
-                    .relatedTo(tagsSelectById)
-                    .all() %}
-          {% else %}
-               {% set categoriesEntries = craft.entries()
-                    .section(categorySectionname)
-                    .relatedTo(['and',categoryBy])
-                    .orderBy(sort) %}
-          {% endif %}
-
-     {% endif %}
-
-
-{% endif %}
+   {% set categoriesEntries = craft.entries()
+   .section(categorySectionname)
+   .orderBy(sort)%}
 
 {# * ******************************************************************************************************* *#}
 
-      {% set result = (artikelTagCount > 0 )? tagEntries : categoriesEntries %}
+     {% set entries = categoriesEntries %}
+     {% set counter = '1' %}
+     {% if entries|length > 0 %}
+          {% for entry in entries.all() %}
 
-     {# *-----------------------------------------*#}
+               <div class="wl-article">
+                    <article>
+                         <div class="article-text">
+                              <div class="article-title article-title-js">
+                                   <h4>{{ entry.karriereTeaserHeadline }}</h4>
+                              </div>
+                              <div class="article-body article-body-js">
+                                   {{entry.karriereTeaserText}}
+                              </div>
+                         </div>
+                    </article>
+               </div>
 
-     {% if showMore  %}
-          {% paginate result as pageInfo, entries %}
+               {% set counter = counter + 1%}
+          {% endfor %}
      {% else %}
-          {% set entries = result %}
+          Es ist keine Ergebnise zu diesem Thema vorhanden!
      {% endif %}
 
-     {# *-----------------------------------------*#}
-
-     {% if block.buttonText is not empty  %}
-          {% set buttontext = block.buttonText %}
-     {% else %}
-          {% set buttontext = '<img src="/assets/images/arrow-right.svg" />' %}
-     {% endif %}
-
-     {# *-----------------------------------------*#}
-
-         {% set counter = '1' %}
-         {% if entries|length > 0 %}
-              {% for entry in entries.all() %}
-
-                   <div class="wl-article" style="padding: 20px; width: 40%; border: 1px solid #000000; margin-bottom: 25px;">
-                        <article>
-                             {% set showArticleImage =  false %}
-                             {% set teaserImage =  entry.imagesingle|default(false) %}
-
-                             {% if teaserImage is defined and teaserImage and teaserImage.one() %}
-                                  {% set articleImage = teaserImage.one() %}
-                                  {% set showArticleImage =  true %}
-                             {% else %}
-                                  {# Single Image Detailseite ------------------------------------------------------- #}
-                                  {% set imageDetail = entry.keyvisualImageSingle|default(false)  %}
-                                  {% if imageDetail is defined and imageDetail and imageDetail.one() %}
-                                       {% set articleImage = imageDetail.one() %}
-                                       {% set showArticleImage =  true %}
-                                  {% endif %}
-                             {% endif %}
-
-                             {% if showArticleImage %}
-                                  {% set settings = {
-                                       '0-900' : {
-                                            'size' : '400x249',
-                                            'mode' : 'crop'
-                                       },
-                                       '1-800': {
-                                            'size' : '600x374',
-                                            'mode' : 'crop'
-                                       },
-                                       '2-500': {
-                                            'size' : '400x249',
-                                            'mode' : 'crop'
-                                       }
-                                  } %}
-                                  <div class="article-img">
-                                       {% include '_include-atoms/image-picture' with {class: 'blog-teaser-img', sourceMediaSettings: settings, image: articleImage, imageSize: '550x343', imageMode: 'crop'} %}
-                                  </div>
-                             {% endif %}
-                             <div class="article-text">
-                                  <div class="article-title article-title-js">
-                                       <h4>{{ entry.karriereTeaserHeadline }}</h4>
-                                  </div>
-                                  <div class="article-body article-body-js">
-                                       {{entry.karriereTeaserText}}
-                                  </div>
-                                  <div class="article-btn">
-                                       <a class="article-button" href="{{ entry.url }}">
-                                            <svg class="article-button-arrow" xmlns="http://www.w3.org/2000/svg" width="15" height="37" viewBox="0 0 21.23 36.028">
-                                                 <path id="arrow-slider-right" d="M19.969,2,3,18.584,19.969,35.168" transform="translate(21.367 36.598) rotate(180)" fill="none" stroke="#111" stroke-width="4"/>
-                                            </svg>
-                                            <span>{{ buttontext|raw}}</span>
-                                       </a>
-                                  </div>
-                             </div>
-                        </article>
-                   </div>
-
-                   {% set counter = counter + 1%}
-              {% endfor %}
-         {% else %}
-              Es ist keine Ergebnise zu diesem Thema vorhanden!
-         {% endif %}
-
-          {% if showMore  %}
-               {% if pageInfo.nextUrl %}
-                    <div class="getMore">
-                         <a class="getMore-js btn" data-more="{{ pageInfo.nextUrl }}">
-                              {{ block.buttonTextMehr|raw }}
-                         </a>
-                    </div>
-               {% endif %}
-          {% endif %}
 
 
 

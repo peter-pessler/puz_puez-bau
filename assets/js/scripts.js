@@ -52,44 +52,16 @@ $(document).ready(function() {
     if ($("body").hasClass( "is-desktop" )) {
 
         var phone = $('[href^="tel"]');
-        var telNummer = '';
 
         phone.each(function () {
 
-            if($(this).attr("data-tel") !== undefined ){
-
-                var currentElement  = $(this), NewTelNummer = '';
-
-                //var currentElement  = tel = currentElement.attr('href'), telNummer = '';
-                //telNummer = tel.split(':');
-                //telNummer = telNummer[1];
-
-                NewTelNummer = $(this).attr("data-tel");
-                NewTelNummer = NewTelNummer.trim();
+                var currentElement  = $(this), myClassname = $(this).attr('class'), dataTooltip = $(this).attr("data-tooltip"), phoneNumber, newPhoneElement;
 
                 phoneNumber     = currentElement.html(),
-                newPhoneElement = $('<i class="cursor" onclick="openPhonelayer(\'' + NewTelNummer + '\')"></i>');
-                currentElement.before(newPhoneElement);
-                newPhoneElement.html(phoneNumber);
-                currentElement.remove();
-            }
-
-            if($(this).attr("data-tel") === undefined ){
-
-                var currentElement  = $(this), myClassname = $(this).attr('class'), dataTooltip = $(this).attr("data-tooltip"), phoneNumber;
-
-                if(typeof myClassname == 'undefined' || myClassname == ''){
-                    phoneNumber     = currentElement.html(), newPhoneElement = $('<i></i>');
-                } else if(dataTooltip && dataTooltip != '') {
-                    phoneNumber     = currentElement.html(), newPhoneElement = $('<i class="' + myClassname + '" data-tooltip="' + dataTooltip  + '"></i>');
-                }else {
-                    phoneNumber     = currentElement.html(), newPhoneElement = $('<i class="' + myClassname + '"></i>');
-                }
+                newPhoneElement = '<i class="' + myClassname + '">' + phoneNumber + '</i>';
 
                 currentElement.before(newPhoneElement);
-                newPhoneElement.html(phoneNumber);
                 currentElement.remove();
-            }
 
         });
     }
@@ -257,6 +229,8 @@ $(document).ready(function() {
    $('.teamPosition').matchHeight();
    $('.teamTel').matchHeight();
    $('.teamMail').matchHeight();
+   $('.article-job-js').matchHeight();
+   $('.article-title-js').matchHeight();
 
 
 

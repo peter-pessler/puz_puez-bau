@@ -34,7 +34,7 @@
                             {% set checkImage = item.bild.one()|default(false) %}
                             {% if checkImage %}
                                 {% set image = item.bild.one() %}
-                                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '260', sizeMedium: '260', sizeSmall: '200', changePointLarge: '1920', changePointMedium: '1000', changePointSmall: '320' } %}
+                                {% include '_include-atoms/imgRoundWithBorder' with {image: image, sizeLarge: '500', sizeMedium: '500', sizeSmall: '300', changePointLarge: '1920', changePointMedium: '600', changePointSmall: '320' } %}
                             {% endif %}
                             <div class="schmuckelement-container-changePoint">
                                 <img src="/assets/images/icons/schmuckelement-icn-pfeilmuster.svg" alt="Muster Logos"/>
