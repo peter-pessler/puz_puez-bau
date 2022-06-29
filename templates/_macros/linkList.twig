@@ -1,15 +1,12 @@
 {% macro linkList(element,className = '') %}
-    {% if element.getUrl() is not empty %}
+    {% if element.getUrl() != '' %}
             {#
             ========================================================
             AUFRUF:
                 {% import "_macros/linkList.twig" as _self %}
                 {{ _self.linkList(my Link Element) | trim | raw  }}
             #}
-
             {% set class = (className != '')? ' class="' ~ className ~ '"' : '' %}
-
-
             {% set type = element.type %}{# asset, email, entry, tel, url, custom #}{% if type == 'email' %}
             <a href="mailto:{{element.getUrl()}}"{% if element.getTarget() == '_blank' %} target="_blank" {% endif %}{{ class|raw }}>{{ element.getCustomText()}}</a>
         {% elseif  type == 'entry' %}
