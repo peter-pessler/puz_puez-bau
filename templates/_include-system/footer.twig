@@ -65,21 +65,25 @@
 
                         <div class="foo-body-socialList">
                             <ul class="social-media-list">
+                                {#
                                 <li>
                                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ craft.app.request.absoluteUrl }}" target="_blank">
                                         <img class="icn-1" src="/assets/images/icons/footer-icn-facebook.svg" alt="share Icon">
                                     </a>
                                 </li>
+                                #}
                                 <li>
                                     <a href="mailto:?subject={{ siteconfig.subject }}&amp;body={{ siteconfig.mailBody }} {{ craft.app.request.absoluteUrl }}" target="_blank">
                                         <img class="icn-2" src="/assets/images/icons/footer-icn-mail.svg" alt="mail Icon">
                                     </a>
                                 </li>
+                                {#
                                 <li>
                                     <a href="https://www.instagram.com/puetz_galabau/?hl=de" target="_blank">
                                         <img class="icn-3" src="/assets/images/icons/footer-icn-instagram.svg" alt="Instagram Icon"/>
                                     </a>
                                 </li>
+                                #}
                             </ul>
                         </div>
 

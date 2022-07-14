@@ -55,7 +55,11 @@
                         {% set counter = counter + 1%}
                     {% endfor %}
                 {% else %}
-                    Es ist keine Ergebnise zu diesem Thema vorhanden!
+                     {% if lg == 'en' %}
+                         There are no job offers available!
+                     {% else %}
+                         Es ist keine Jobangebote vorhanden!
+                     {% endif %}
                 {% endif %}
 
             </div>
