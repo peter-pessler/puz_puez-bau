@@ -292,49 +292,54 @@
 
 }
 
-#quickForm{
-  width: 90%;
 
-  @include wl-breakpoint(1500) {
+/**
+Formular ( momentan nicht aktiv => Formular für Übergabe an kontaktformular)
+
+  #quickForm{
     width: 90%;
-  }
 
-  @include wl-breakpoint(900) {
-    width: 100%;
-  }
-
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  align-content: stretch;
-
-
-  input[type=text]{
-    background-color: $wl-color-blue;
-    border: 2px solid $wl-color-white;
-    margin-bottom: 25px;
-    border-radius: 18px;
-    padding-right: 22px;
-    padding-left: 22px;
-    padding-top: 19px;
-    padding-bottom: 18px;
-    @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
-    letter-spacing: 0.07em;
-    color:$wl-color-white;
-    text-transform: uppercase;
-
-    &::placeholder {
-      color: rgba($wl-color-white, 0.60);
+    @include wl-breakpoint(1500) {
+      width: 90%;
     }
+
+    @include wl-breakpoint(900) {
+      width: 100%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+
+    input[type=text]{
+      background-color: $wl-color-blue;
+      border: 2px solid $wl-color-white;
+      margin-bottom: 25px;
+      border-radius: 18px;
+      padding-right: 22px;
+      padding-left: 22px;
+      padding-top: 19px;
+      padding-bottom: 18px;
+      @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+      letter-spacing: 0.07em;
+      color:$wl-color-white;
+      text-transform: uppercase;
+
+      &::placeholder {
+        color: rgba($wl-color-white, 0.60);
+      }
+    }
+
+    .InputfieldSubmit{
+      @include btn($wl-color-blue, $wl-color-darkblue, $wl-color-darkblue, $wl-color-white, $wl-color-darkblue, $wl-color-darkblue);
+    }
+
   }
 
-  .InputfieldSubmit{
-    @include btn($wl-color-blue, $wl-color-darkblue, $wl-color-darkblue, $wl-color-white, $wl-color-darkblue, $wl-color-darkblue);
-  }
+ */
 
 
-
-
-}

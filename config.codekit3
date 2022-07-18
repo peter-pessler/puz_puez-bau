@@ -65,6 +65,22 @@
       "oAP" : "\/.idea\/puz_puez-bau.iml",
       "oF" : 0
     },
+    "\/.idea\/shelf\/Uncommitted_changes_before_Update_at_14_07_22__11_31__Changes_.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/.idea\/shelf\/Uncommitted_changes_before_Update_at_14_07_22__11_31__Changes_.xml",
+      "oF" : 0
+    },
+    "\/.idea\/shelf\/Uncommitted_changes_before_Update_at_14_07_22,_11_31_[Changes]\/shelved.patch" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/.idea\/shelf\/Uncommitted_changes_before_Update_at_14_07_22,_11_31_[Changes]\/shelved.patch",
+      "oF" : 0
+    },
     "\/.idea\/vcs.xml" : {
       "cB" : 0,
       "ft" : 8192,
@@ -232,6 +248,21 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/web\/assets\/css\/_footer.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/assets\/sccs\/components\/_formular-quickForm.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/web\/assets\/css\/_formular-quickForm.min.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -5638,6 +5669,14 @@
       "hM" : 0,
       "oA" : 2,
       "oAP" : "\/templates\/_include-form-template\/formular_id1-id2.twig",
+      "oF" : 0
+    },
+    "\/templates\/_include-form-template\/formular_id3-id4.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 2,
+      "oAP" : "\/templates\/_include-form-template\/formular_id3-id4.twig",
       "oF" : 0
     },
     "\/templates\/_include-system\/example-code.twig" : {
@@ -125488,6 +125527,18 @@
       "oA" : 2,
       "oAP" : "\/web\/index.php",
       "oF" : 0
+    },
+    "\/web\/typeform-wl.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/web\/typeform-wl-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/web\/web.config" : {
       "cB" : 0,

@@ -1,453 +1,464 @@
-textarea {
-	overflow: auto;
-	resize: none;
-	display: block;
-}
 
-[type="checkbox"],
-[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
-}
+/**
+Formular
+ */
+
+.list-rechts-body {
 
 
-button, input, optgroup, select, textarea {
-	font-family: $wl-form-font-family;
-}
-
-input {
-	&:focus {
-		outline: none;
+	textarea {
+		overflow: auto;
+		resize: none;
+		display: block;
 	}
-}
 
-.wl-form-wrapper {
+	[type="checkbox"],
+	[type="radio"] {
+		box-sizing: border-box;
+		padding: 0;
+	}
 
-	width: 100%;
 
-	@include wl-breakpoint(600) {
+	button, input, optgroup, select, textarea {
+		font-family: $wl-form-font-family;
+	}
+
+	input {
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.wl-form-wrapper {
+
 		width: 100%;
-	}
 
-	.form-item-wrapper{
-		margin-bottom: 18px;
-	}
-
-	.form-group{
-		position: relative;
-	}
-
-	form{
-
-		// Placeholder-Farben der Input-Felder
-		input::placeholder {
-			color: lighten($wl-form-color-text,30%);;
-			font-size: 0.85em;
-			font-style: italic;
+		@include wl-breakpoint(600) {
+			width: 100%;
 		}
 
-		.lableInputField{
+		.form-item-wrapper {
+			margin-bottom: 18px;
+		}
+
+		.form-group {
+			position: relative;
+		}
+
+		form {
+
+			// Placeholder-Farben der Input-Felder
+			input::placeholder {
+				color: lighten($wl-form-color-text, 30%);;
+				font-size: 0.85em;
+				font-style: italic;
+			}
+
+			.lableInputField {
 				position: absolute;
 				left: 18px;
 				top: 17px;
 				z-index: 10;
 				color: rgba($wl-color-blue, 0.5);
-			    @include responsive-font(17px, 17px, $base-font-breakpoint-min, $base-font-breakpoint-max, $font-family-orbitronBold, $base-line-height);
-			    letter-spacing: 0.1em;
-			    text-transform: uppercase;
+				@include responsive-font(17px, 17px, $base-font-breakpoint-min, $base-font-breakpoint-max, $font-family-orbitronBold, $base-line-height);
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
 				display: inline-block;
 				padding: 4px 16px;
 				background-color: $wl-form-color-fields;
 				pointer-events: none;
 				transition: all 0.3s linear;
-				&.active{
+
+				&.active {
 					top: -15px;
 					color: $wl-color-blue;
 					background-color: $wl-form-color-fields;
 				}
-				&.isActive{
+
+				&.isActive {
 					top: -15px;
 					color: $wl-color-blue;
 					background-color: $wl-form-color-fields;
 				}
-		}
+			}
 
 
-		// Input-Felder für Text, E-Mail + Textbereich
-		input[type=text], input[type=email], textarea {
-			font-size: 16px;
-			font-weight: 300;
-			width: 100%;
-			-webkit-appearance: none;
-			box-shadow: none;
-			outline: none;
-			background-color: $wl-form-color-fields;
-			color: $wl-form-color-text;
-
-
-			padding-right: 30px;
-			padding-left: 30px;
-			padding-top: 20px;
-			padding-bottom: 20px;
-
-
-			border-radius: 16px;
-			text-decoration: none;
-			border: 2px solid $wl-color-blue;
-
-
-			margin-bottom: 0;
-			margin-left: 0;
-			margin-right: 0;
-			margin-bottom: 8px;
-
-
-
-
-			position: relative;
-		}
-
-		// Dropdown-Feld
-		select {
-			font-size: 16px;
-			font-weight: 300;
-			width: 100%;
-			margin-bottom: 15px;
-			appearance: none;
-			border-radius: 1px;
-			border: 1px solid $wl-form-color-border;
-			padding: 9px 35px 7px 10px;
-			position: relative;
-			user-select: none;
-			cursor: pointer;
-			background-size: 34px 34px;
-			background-position: center right;
-			background-color: $wl-form-color-fields;
-			color: $wl-form-color-text;
-
-			&:focus {
+			// Input-Felder für Text, E-Mail + Textbereich
+			input[type=text], input[type=email], textarea {
+				font-size: 16px;
+				font-weight: 300;
+				width: 100%;
+				-webkit-appearance: none;
+				box-shadow: none;
 				outline: none;
+				background-color: $wl-form-color-fields;
+				color: $wl-form-color-text;
+
+
+				padding-right: 30px;
+				padding-left: 30px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+
+
+				border-radius: 16px;
+				text-decoration: none;
+				border: 2px solid $wl-color-blue;
+
+
+				margin-bottom: 0;
+				margin-left: 0;
+				margin-right: 0;
+				margin-bottom: 8px;
+
+
+				position: relative;
 			}
 
-			&[disabled] {
-				cursor: not-allowed;
+			// Dropdown-Feld
+			select {
+				font-size: 16px;
+				font-weight: 300;
+				width: 100%;
+				margin-bottom: 15px;
+				appearance: none;
+				border-radius: 1px;
+				border: 1px solid $wl-form-color-border;
+				padding: 9px 35px 7px 10px;
+				position: relative;
+				user-select: none;
+				cursor: pointer;
+				background-size: 34px 34px;
+				background-position: center right;
+				background-color: $wl-form-color-fields;
+				color: $wl-form-color-text;
+
+				&:focus {
+					outline: none;
+				}
+
+				&[disabled] {
+					cursor: not-allowed;
+				}
+
+				&::-ms-expand {
+					display: none;
+				}
 			}
 
-			&::-ms-expand {
+			#wrap_Inputfield_agree {
 				display: none;
 			}
-		}
-
-		#wrap_Inputfield_agree{
-			display: none;
-		}
 
 
-		textarea {
-			line-height: 1.45;
-			width: 100%;
-			height: 170px;
-			margin-bottom: 0;
-			resize: none;
-			overflow: auto;
-		}
-
-		// Checkbox
-		.InputfieldCheckbox {
-			margin-bottom: 15px;
-			user-select: none;
-
-			.checkmark-labletext {
-				display: flex;
-				flex-direction: row;
-				flex-wrap: nowrap;
-				justify-content: flex-start;
-				align-items: stretch;
-				align-content: stretch;
+			textarea {
+				line-height: 1.45;
 				width: 100%;
+				height: 170px;
+				margin-bottom: 0;
+				resize: none;
+				overflow: auto;
 			}
 
-			.labletext {
-				&.required{
-					padding-left: 10px;
+			// Checkbox
+			.InputfieldCheckbox {
+				margin-bottom: 15px;
+				user-select: none;
+
+				.checkmark-labletext {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					justify-content: flex-start;
+					align-items: stretch;
+					align-content: stretch;
+					width: 100%;
 				}
-			}
 
-			span {
+				.labletext {
+					&.required {
+						padding-left: 10px;
+					}
+				}
 
-				&.checkmark {
-					display: inline-block;
-					cursor: pointer;
-					position: relative;
-					padding-left: 30px;
+				span {
 
-					&::before{
-						content: "";
-						position: absolute;
-						top: 3px;
-						left: 0;
-						width: 20px;
-						height: 20px;
+					&.checkmark {
+						display: inline-block;
+						cursor: pointer;
+						position: relative;
+						padding-left: 30px;
 
-						border: 1px solid $wl-form-color-border;
-						border-radius: 1px;
-						background-color: $wl-form-color-fields;
+						&::before {
+							content: "";
+							position: absolute;
+							top: 3px;
+							left: 0;
+							width: 20px;
+							height: 20px;
+
+							border: 1px solid $wl-form-color-border;
+							border-radius: 1px;
+							background-color: $wl-form-color-fields;
+						}
+
 					}
 
 				}
 
-			}
+				input {
+					display: none;
+				}
 
-			input {
-				display: none;
-			}
+				input:checked ~ .checkmark-labletext {
 
-			input:checked ~ .checkmark-labletext {
+					.checkmark {
+						display: inline-block;
 
-				.checkmark {
-					display: inline-block;
-
-					&::after {
-						content: "✔";
-						position: absolute;
-						top: 1px;
-						left: 3px;
-						width: 20px;
-						height: 20px;
-						font-size: 0.8em;
-						@include wl-breakpoint(1500) {
-							font-size: 1em !important;
+						&::after {
+							content: "✔";
+							position: absolute;
+							top: 1px;
+							left: 3px;
+							width: 20px;
+							height: 20px;
+							font-size: 0.8em;
+							@include wl-breakpoint(1500) {
+								font-size: 1em !important;
+							}
 						}
 					}
+
 				}
 
 			}
 
-		}
 
-
-		// Bei fokussiertem oder validem Inhalt
-		input, textarea, select {
-			&:focus, &:valid, &.filled {
-				border: 2px solid $wl-color-blue;
+			// Bei fokussiertem oder validem Inhalt
+			input, textarea, select {
+				&:focus, &:valid, &.filled {
+					border: 2px solid $wl-color-blue;
+				}
 			}
-		}
 
-		.select-icon {
-			position: relative;
-			pointer-events: none;
-
-			&:after {
-				content: "⟪";
-				transform: rotate(-90deg);
-				font-size: 1.5em;
-				clear: both;
-				position: absolute;
-				bottom: -25px;
-				right: 24px;
-				width: 20px;
-				height: 20px;
-				z-index: 100;
+			.select-icon {
+				position: relative;
 				pointer-events: none;
-				cursor: pointer;
-			}
 
-		}
-
-		.Inputfield {
-			width: 100%;
-			position: relative;
-			float: left;
-		}
-
-		input[type=text], input[type=email], textarea {
-			//padding-right: 25px;
-		}
-
-		label{
-			span{
-				&.labletext-dsgvo{
-					color: $wl-form-color-text;
-					font-size: 0.85em;
+				&:after {
+					content: "⟪";
+					transform: rotate(-90deg);
+					font-size: 1.5em;
+					clear: both;
+					position: absolute;
+					bottom: -25px;
+					right: 24px;
+					width: 20px;
+					height: 20px;
+					z-index: 100;
+					pointer-events: none;
+					cursor: pointer;
 				}
-			}
-		}
 
-
-		// Pflichtfelder
-		label.required, span.required{
-
-			min-height: 25px;
-
-			&.mandatory{
-				text-indent: -3px;
-
-				em{
-					display: inline-block;
-					position: relative;
-					top: -8px;
-				}
 			}
 
-			em{
-				font-style: normal;
-				position: absolute;
-				display: inline-block;
-
-				&::after {
-					content: "*";
-					position: relative;
-					top: -10px;
-					text-align: center;
-					font-size: 1.4rem;
-					font-family: $font-family-altivo;
-					color: $wl-color-blue;
-				}
+			.Inputfield {
+				width: 100%;
+				position: relative;
+				float: left;
 			}
 
-		}
-
-		// Fehler-Warnung
-		.formStateError {
-
-			span {
-				&.checkmark {
-					&::before{
-						border: 1px solid rgba($wl-form-color-error, 0.35);
-						background-color: rgba($wl-form-color-error, 0.05);
-					}
-				}
-			}
-
-			input::placeholder {
-				color: $wl-form-color-error;
-			}
-
-			input[type=text], input[type=email], textarea, select{
-				border: 2px solid rgba($wl-form-color-error, 0.35);
-				//background-color: rgba($wl-form-color-error, 0.05);
-				//color: $wl-form-color-error;
+			input[type=text], input[type=email], textarea {
+				//padding-right: 25px;
 			}
 
 			label {
-				color: $wl-form-color-error;
-
-				span{
-					&.labletext-dsgvo{
+				span {
+					&.labletext-dsgvo {
 						color: $wl-form-color-text;
 						font-size: 0.85em;
 					}
 				}
+			}
 
-				em{
 
-					&::after {
-						color: $wl-form-color-error;
+			// Pflichtfelder
+			label.required, span.required {
+
+				min-height: 25px;
+
+				&.mandatory {
+					text-indent: -3px;
+
+					em {
+						display: inline-block;
+						position: relative;
+						top: -8px;
 					}
 				}
 
+				em {
+					font-style: normal;
+					position: absolute;
+					display: inline-block;
+
+					&::after {
+						content: "*";
+						position: relative;
+						top: -10px;
+						text-align: center;
+						font-size: 1.4rem;
+						font-family: $font-family-altivo;
+						color: $wl-color-blue;
+					}
+				}
 
 			}
 
-			&.InputfieldStateRequired {
-				&:not(.InputfieldSelect) {
-					.InputfieldContent {
+			// Fehler-Warnung
+			.formStateError {
+
+				span {
+					&.checkmark {
+						&::before {
+							border: 1px solid rgba($wl-form-color-error, 0.35);
+							background-color: rgba($wl-form-color-error, 0.05);
+						}
+					}
+				}
+
+				input::placeholder {
+					color: $wl-form-color-error;
+				}
+
+				input[type=text], input[type=email], textarea, select {
+					border: 2px solid rgba($wl-form-color-error, 0.35);
+					//background-color: rgba($wl-form-color-error, 0.05);
+					//color: $wl-form-color-error;
+				}
+
+				label {
+					color: $wl-form-color-error;
+
+					span {
+						&.labletext-dsgvo {
+							color: $wl-form-color-text;
+							font-size: 0.85em;
+						}
+					}
+
+					em {
+
 						&::after {
 							color: $wl-form-color-error;
 						}
 					}
+
+
+				}
+
+				&.InputfieldStateRequired {
+					&:not(.InputfieldSelect) {
+						.InputfieldContent {
+							&::after {
+								color: $wl-form-color-error;
+							}
+						}
+					}
+				}
+
+			}
+
+			// Submit-Button
+			button {
+				margin-top: 10px;
+
+				&.submit-button {
+					@include btn($wl-color-white, $wl-color-darkblue, $wl-color-darkblue, $wl-color-blue-soft, $wl-color-darkblue, $wl-color-darkblue);
+					//float: right;
 				}
 			}
 
 		}
 
-		// Submit-Button
-		button {
-			margin-top: 10px;
-			&.submit-button {
-				@include btn($wl-color-white, $wl-color-darkblue, $wl-color-darkblue, $wl-color-blue-soft, $wl-color-darkblue, $wl-color-darkblue);
-				//float: right;
-			}
+		// Honeypot für Spam-Prevention
+		input[name="bouncer"] {
+			display: none;
+		}
+
+		// Error-Meldungen ausblenden
+		.error {
+			display: none;
 		}
 
 	}
 
-	// Honeypot für Spam-Prevention
-	input[name="bouncer"] {
+
+	.form-info {
+		margin-top: 25px;
+		margin-bottom: 50px;
+		color: $wl-form-color-error;
+		font-size: 0.85em;
+	}
+
+
+	/**
+    *************************************************************************************************************
+    ******** Sende Button ***************************************************************************************
+    *************************************************************************************************************
+    */
+
+	form .submit-button {
+		cursor: pointer;
+		background: transparent;
+		//border: 1px solid #e1d29d;
+		outline: none;
+		transition: 1s ease-in-out;
+		font-size: 1.2em;
+
+		&:hover {
+			background-color: #eadbbe;
+		}
+	}
+
+
+	/**
+    ***********************************
+     */
+
+
+	#lock-modal {
 		display: none;
+		background-color: $wl-color-blue-soft;
+		opacity: 0.4;
+		overflow: hidden;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: inherit;
+		z-index: 1000;
 	}
 
-	// Error-Meldungen ausblenden
-	.error{
+	#loading-circle {
 		display: none;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 150px;
+		height: 150px;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		align-content: stretch;
 	}
 
-}
 
-
-.form-info {
-	margin-top: 25px;
-	margin-bottom: 50px;
-	color: $wl-form-color-error;
-	font-size: 0.85em;
-}
-
-
-
-/**
-*************************************************************************************************************
-******** Sende Button ***************************************************************************************
-*************************************************************************************************************
-*/
-
-form .submit-button {
-	cursor: pointer;
-	background: transparent;
-	//border: 1px solid #e1d29d;
-	outline: none;
-	transition: 1s ease-in-out;
-	font-size: 1.2em;
-
-	&:hover {
-		background-color: #eadbbe;
-	}
-}
-
-
-/**
-***********************************
- */
-
-
-#lock-modal {
-	display: none;
-	background-color: $wl-color-blue-soft;
-	opacity: 0.4;
-	overflow: hidden;
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border-radius: inherit;
-	z-index: 1000;
-}
-
-#loading-circle {
-	display: none;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	width: 150px;
-	height: 150px;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: stretch;
 }

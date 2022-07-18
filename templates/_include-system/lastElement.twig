@@ -19,8 +19,8 @@
                 </div>
 
             <div class="info-wrapper">
-
                 <div class="formular">
+                    {#
                     <form id="quickForm" action="/kontakt" method="post">
                         <input type="text" name="quick_name" placeholder="{{siteconfig.placeholderName }}"/>
                         <input type="text" name="quick_mail" placeholder="{{siteconfig.placeholderMail }}"/>
@@ -29,6 +29,26 @@
                             <div id="quickSubmit" class="InputfieldSubmit">{{siteconfig.buttontext }}</div>
                         </div>
                     </form>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+
+                            $('#quickSubmit').click(function(){
+                                $('#quickForm').submit();
+                            });
+
+                        });
+                    </script>
+                    #}
+                    {% set formularAntwortUrl = '' %}
+                    {% set formularAntwortUrlCheck = siteconfig.quickFormularAntwortseite|default(false) %}
+                    {% if formularAntwortUrlCheck %}
+                        {% set formularAntwortUrl = siteconfig.quickFormularAntwortseite.one().url()  %}
+                    {% endif %}
+                    {% set formularId = (lg == 'de')? 3 : 4 %}
+                    {% set formTempl = '_include-form-template/formular_id3-id4' %}
+                    <div class="formular" id="quickFormular">
+                    {% include formTempl with {formularId: formularId, formularAntwortUrl: formularAntwortUrl} %}
+                    </div>
                 </div>
 
                 <div class="ansprechpartner">
@@ -50,17 +70,6 @@
             </div>
 
         </div>
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-
-                $('#quickSubmit').click(function(){
-                    $('#quickForm').submit();
-                });
-
-            });
-        </script>
-
 
     </section>
 </section>

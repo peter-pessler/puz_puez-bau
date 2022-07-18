@@ -1,0 +1,310 @@
+#quickFormular {
+
+		textarea {
+			overflow: auto;
+			resize: none;
+			display: block;
+		}
+
+		[type="checkbox"],
+		[type="radio"] {
+			box-sizing: border-box;
+			padding: 0;
+		}
+
+
+		button, input, optgroup, select, textarea {
+			font-family: $wl-form-font-family;
+		}
+
+		input {
+			&:focus {
+				outline: none;
+			}
+		}
+
+
+			width: 100%;
+
+			@include wl-breakpoint(600) {
+				width: 100%;
+			}
+
+			.form-item-wrapper {
+				margin-bottom: 18px;
+			}
+
+			.form-group {
+				position: relative;
+			}
+
+			form {
+
+				display: inline-block;
+				width: 90%;
+
+				// Placeholder-Farben der Input-Felder
+				input::placeholder {
+					color: lighten($wl-form-color-text, 30%);;
+					font-size: 0.85em;
+					font-style: italic;
+				}
+
+				.lableInputField {
+					position: absolute;
+					left: 18px;
+					top: 17px;
+					z-index: 10;
+					color: rgba($wl-color-white, 0.60);
+					@include responsive-font(17px, 17px, $base-font-breakpoint-min, $base-font-breakpoint-max, $font-family-orbitronBold, $base-line-height);
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+					display: inline-block;
+					padding: 4px 16px;
+					background-color: $wl-color-blue;
+					pointer-events: none;
+					transition: all 0.3s linear;
+
+					&.active {
+						top: -15px;
+						color: $wl-color-white;
+						background-color: $wl-color-blue;
+					}
+
+					&.isActive {
+						top: -15px;
+						color: $wl-color-blue;
+						background-color: $wl-color-blue;
+					}
+				}
+
+
+				// Input-Felder für Text, E-Mail + Textbereich
+				input[type=text], input[type=email]{
+					font-size: 16px;
+					font-weight: 300;
+					width: 100%;
+					-webkit-appearance: none;
+					box-shadow: none;
+					outline: none;
+					background-color: $wl-color-blue;
+					@include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+					letter-spacing: 0.07em;
+					color:$wl-color-white;
+
+					padding-right: 30px;
+					padding-left: 30px;
+					padding-top: 20px;
+					padding-bottom: 20px;
+
+					border-radius: 16px;
+					text-decoration: none;
+					border: 2px solid $wl-color-white;
+
+					margin-bottom: 0;
+					margin-left: 0;
+					margin-right: 0;
+					margin-bottom: 8px;
+
+					position: relative;
+				}
+
+
+				#wrap_Inputfield_agree {
+					display: none;
+				}
+
+				// Bei fokussiertem oder validem Inhalt
+				input, textarea, select {
+					&:focus, &:valid, &.filled {
+						border: 2px solid $wl-color-white;
+					}
+				}
+
+				.Inputfield {
+					width: 100%;
+					position: relative;
+					float: left;
+				}
+
+				label {
+					span {
+						&.labletext-dsgvo {
+							color: $wl-form-color-text;
+							font-size: 0.85em;
+						}
+					}
+				}
+
+
+				// Pflichtfelder
+				label.required, span.required {
+
+					min-height: 25px;
+
+					&.mandatory {
+						text-indent: -3px;
+
+						em {
+							display: inline-block;
+							position: relative;
+							top: -8px;
+						}
+					}
+
+					em {
+						font-style: normal;
+						position: absolute;
+						display: inline-block;
+
+						&::after {
+							content: "*";
+							position: relative;
+							top: -10px;
+							text-align: center;
+							font-size: 1.4rem;
+							font-family: $font-family-altivo;
+							color: $wl-color-blue;
+						}
+					}
+
+				}
+
+				// Fehler-Warnung
+				.formStateError {
+
+					span {
+						&.checkmark {
+							&::before {
+								border: 1px solid rgba($wl-form-color-error, 0.35);
+								background-color: rgba($wl-form-color-error, 0.05);
+							}
+						}
+					}
+
+					input::placeholder {
+						color: $wl-form-color-error;
+					}
+
+					input[type=text], input[type=email], textarea, select {
+						border: 2px solid rgba($wl-form-color-error, 0.35);
+						//background-color: rgba($wl-form-color-error, 0.05);
+						//color: $wl-form-color-error;
+					}
+
+					label {
+						color: $wl-form-color-error;
+
+						span {
+							&.labletext-dsgvo {
+								color: $wl-form-color-text;
+								font-size: 0.85em;
+							}
+						}
+
+						em {
+
+							&::after {
+								color: $wl-form-color-error;
+							}
+						}
+
+
+					}
+
+					&.InputfieldStateRequired {
+						&:not(.InputfieldSelect) {
+							.InputfieldContent {
+								&::after {
+									color: $wl-form-color-error;
+								}
+							}
+						}
+					}
+
+				}
+
+				// Submit-Button
+				button {
+					//margin-top: 10px;
+
+					&.submit-button {
+						cursor: pointer;
+						@include btn($wl-color-blue, $wl-color-darkblue, $wl-color-darkblue, $wl-color-white, $wl-color-darkblue, $wl-color-darkblue);
+					}
+				}
+
+			}
+
+			// Honeypot für Spam-Prevention
+			input[name="bouncer"] {
+				display: none;
+			}
+
+			// Error-Meldungen ausblenden
+			.error {
+				display: none;
+			}
+
+
+		/**
+        *************************************************************************************************************
+        ******** Sende Button ***************************************************************************************
+        *************************************************************************************************************
+        */
+
+	/*
+		form .submit-button {
+			cursor: pointer;
+			background: transparent;
+			outline: none;
+			transition: 1s ease-in-out;
+			font-size: 1.2em;
+
+			&:hover {
+				background-color: #eadbbe;
+			}
+		}
+
+	 */
+
+
+		/**
+        ***********************************
+         */
+
+		#lock-modal {
+			display: none;
+			background-color: $wl-color-blue-soft;
+			opacity: 0.4;
+			overflow: hidden;
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: inherit;
+			z-index: 1000;
+		}
+
+		#loading-circle {
+			display: none;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 150px;
+			height: 150px;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: center;
+			align-content: stretch;
+		}
+
+
+}

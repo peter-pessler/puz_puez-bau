@@ -1,0 +1,155 @@
+{% macro errorList(errors) %}
+
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% from _self import errorList %}
+
+{% set form = wheelform.form({
+    id: formularId,
+    redirect: formularAntwortUrl,
+}) %}
+
+
+{{ form.open() }}
+{#
+{{ wheelformErrors['honeypot'] is defined ? errorList(wheelformErrors['honeypot']) }}
+#}
+
+{{ form.honeypot() }}
+{% set errorArray = [] %}
+{% set formError = 0 %}
+{% set setAciveClass = '' %}
+
+    {% for field in form.fields %}
+
+        <div class="form-group form-item-wrapper InputfieldText{{ wheelformErrors[field.name] is defined ? ' formStateError'}}">
+            {% set setAciveClass = '' %}
+            {% if craft.app.request.getBodyParam(field.name)|length %}
+                {% set setAciveClass = 'active' %}
+            {% elseif field.name == 'telefon' %}
+                {% if craft.app.request.getBodyParam('quick_tel')|length  %}
+                    {% set setAciveClass = 'active' %}
+                {% endif %}
+            {% elseif field.name == 'email' %}
+                {% if craft.app.request.getBodyParam('quick_mail')|length  %}
+                    {% set setAciveClass = 'active' %}
+                {% endif %}
+            {% elseif field.name == 'name' %}
+                {% if craft.app.request.getBodyParam('quick_name')|length  %}
+                    {% set setAciveClass = 'active' %}
+                {% endif %}
+            {% else %}
+                {% set setAciveClass = '' %}
+            {% endif %}
+            <label class="{{ setAciveClass }} lableInputField{% if field.required %} required{% endif %}"> {{field.label}}<em></em></label>
+            {% set valueResult = '' %}
+            {% if field.name == 'telefon' %}
+                    {% set postTel = craft.app.request.getBodyParam('quick_tel') %}
+                    {% if postTel|length  %}
+                        {% set valueResult = postTel %}
+                    {% else %}
+                        {% set valueResult = craft.app.request.getBodyParam(field.name) %}
+                    {% endif %}
+            {% elseif field.name == 'email' %}
+                    {% set postMail = craft.app.request.getBodyParam('quick_mail') %}
+                    {% if postMail|length  %}
+                        {% set valueResult = postMail %}
+                    {% else %}
+                        {% set valueResult = craft.app.request.getBodyParam(field.name) %}
+                    {% endif %}
+            {% elseif field.name == 'name' %}
+                    {% set postName = craft.app.request.getBodyParam('quick_name') %}
+                    {% if postName|length  %}
+                        {% set valueResult = postName %}
+                    {% else %}
+                        {% set valueResult = craft.app.request.getBodyParam(field.name) %}
+                    {% endif %}
+            {% else %}
+                {% set valueResult = values[field.name] ?? '' %}
+            {% endif %}
+            <input class="form-control {{field.name}} {{field.fieldClass}}" type="{{field.type}}" value="{{ valueResult }}" name="{{field.name}}" id="form-{{field.name}}"/>
+        </div>
+
+
+    {% if wheelformErrors[field.name] is defined %}
+        {% set fieldNames = field.label %}
+        {% set errorArray = errorArray|merge( [fieldNames] )  %}
+        {% set formError = 1 %}
+    {% endif %}
+
+{% endfor %}
+
+    <button type="submit" class="submit-button" id="submit">{{ siteconfig.buttontext }}</button>
+
+    <div id="lock-modal"></div>
+    <div id="loading-circle"><img src="/assets/images/loading-circle.svg" alt="loading-circle" /></div>
+
+</form>
+
+
+{% set scrollTo = '0' %}
+
+{% if craft.app.request.getBodyParam('name')|length  %}
+    {% set scrollTo = '1' %}
+{% endif %}
+
+{% if craft.app.request.getBodyParam('email')|length  %}
+    {% set scrollTo = '1' %}
+{% endif %}
+
+{% if craft.app.request.getBodyParam('telefon')|length  %}
+    {% set scrollTo = '1' %}
+{% endif %}
+
+<script>
+
+    $(document).ready(function() {
+
+        var scrollTo = {{scrollTo}};
+
+        if(scrollTo == 1){
+
+                $('html, body').animate(
+                    {
+                        scrollTop: $('#quickFormular').offset().top -60,
+                    },
+                    500,
+                    'linear'
+                )
+        }
+
+        floatLabel(".form-control");
+
+    });
+
+    /**
+     * Lables Interaktion
+     * @param inputType
+     */
+    function floatLabel(inputType){
+        $(inputType).each(function(){
+            var $this = $(this);
+            // on focus add cladd active to label
+            $this.focus(function(){
+                $this.parent().find('.lableInputField').addClass("active");
+            });
+            //on blur check field and remove class if needed
+            $this.blur(function(){
+                if($this.val() === '' || $this.val() === 'blank'){
+                    $this.parent().find('.lableInputField').removeClass("active");
+                }
+            });
+        });
+    }
+</script>
+
+
+
+

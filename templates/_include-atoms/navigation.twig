@@ -8,10 +8,28 @@
 
     <div id="myNav">
         <div id="myNav-inner">
-            {#  slide-down-from-the-top / slide-in-from-the-side / without-animation  #}
-            {#  {% set pages = craft.entries().section('contentPage').id('not 2').level(1).excludeNavigation(0).all() %}  #}
-            {#  {% set pages = craft.entries.section('contentPage').id('not 2').excludeNavigation(0).all() %}  #}
+
+        {#
+            {% set counter = '1' %}
+            {% set IdStr = '' %}
+            {% set IdsArray = []  %}
+            {% set entries = craft.entries().section("contentPage") %}
+            {% for entry in entries.all() %}
+
+                {% if entry.excludeNavigation == false %}
+                    {% set IdStr  = (counter == 1)? entry.id : IdStr  ~ ',' ~ entry.id  %}
+                    {% set counter = counter + 1 %}
+                {% endif %}
+
+            {% endfor %}
+
+            {% set IdStr  = IdStr|trim(',') %}
+            {% set IdsArray = IdStr|split(',') %}
+        #}
+
+            {#  {% set pages = craft.entries().section('contentPage').level('<= ' ~ siteconfig.navigationLevel).id(IdsArray) %}  #}
             {% set pages = craft.entries().section('contentPage').level('<= ' ~ siteconfig.navigationLevel).excludeNavigation(0).all() %}
+
             {% set firstLevelID = "" %}
             {% set firstLevelActiveID = "" %}
             {% nav page in pages %}
