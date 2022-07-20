@@ -36,7 +36,6 @@ NAVIGATION
 }
 
 
-
 /* Ace Responsive Menu
 ----------------------------------------*/
 
@@ -50,7 +49,7 @@ NAVIGATION
     list-style: none;
     margin: 0;
     padding: 0;
-    @include responsive-font(16px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
+    @include responsive-font(20px, 20px, $base-font-breakpoint-min, $base-font-breakpoint-max, $navigation-font-family, $base-line-height);
 
     display: flex;
     flex-direction: row;
@@ -87,83 +86,9 @@ NAVIGATION
 
 /**
 * Layout Style
+* CONTENT PAGES
 */
-// HOME
 
-body{
-
-  &.startseite {
-    .responsive-menu {
-      li {
-        &.level-1 {
-          a{
-            span {
-              color: $wl-color-white;
-            }
-          }
-          a{
-            &:hover{
-              color: $wl-color-white;
-            }
-          }
-          a:before {
-            background: rgba($wl-color-blue, 0.4);
-          }
-
-        }
-      }
-    }
-  }
-
-
-  &.startseite {
-          .on {
-            .responsive-menu {
-              li{
-              &.level-1 {
-                a:before {
-                  background: rgba($wl-color-blue, 0.2);
-                }
-              }
-            }
-            }
-         }
-  }
-
-
-  &.startseite {
-
-    &.bodyStatus {
-
-        .responsive-menu {
-
-          li {
-
-            &.level-1 {
-              a{
-                span {
-                  color: $wl-color-black;
-                }
-              }
-              a{
-                &:hover{
-                  color: $wl-color-black;;
-                }
-              }
-
-            }
-
-          }
-
-        }
-
-    }
-  }
-}
-
-
-
-// CONTENT PAGES
 .responsive-menu {
 
   li{
