@@ -25,7 +25,31 @@
 <!DOCTYPE HTML>
 <html{% if doNotTrack %} data-doNotTrack="on"{% else %} data-doNotTrack="off"{% endif %} lang="{{ currentSite.language }}" dir="{{craft.app.i18n.getLocaleById(currentSite.id).getOrientation()}}">
 <head>
-{% hook 'seo' %}
+
+{% set seoTitlePage = entry.seoTitle|default(false) %}
+{% if seoTitlePage %}
+    {% set title = seoTitlePage %}
+{% else %}
+    {% set title = seo.seoTitle %}
+{% endif %}
+{# ------------------------------------------------------------------------------- #}
+{% set seoDescriptionPage = entry.seoDescription|default(false) %}
+{% if seoDescriptionPage %}
+    {% set description = seoDescriptionPage %}
+{% else %}
+    {% set description = seo.seoDescription %}
+{% endif %}
+{# ------------------------------------------------------------------------------- #}
+
+<title>{{title}}</title>
+<meta name="description" content="{{description}}" />
+{% if not craft.app.config.general.devMode %}
+    <meta name="robots" content="index,follow">
+{% else %}
+    <meta name="robots" content="noindex,nofollow">
+{% endif %}
+<link rel="canonical" href="{{ craft.app.request.absoluteUrl }}">
+
 
 {% include '_include-system/meta' %}
 
