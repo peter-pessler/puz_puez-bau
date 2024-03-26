@@ -1,3 +1,5 @@
+{# -------------- Macro -------------- #}
+{% import "_macros/linkList.twig" as _self %}
 <div class="navigation">
 
     <div class="humburger" id="hambuger_menu">
@@ -9,25 +11,6 @@
     <div id="myNav">
         <div id="myNav-inner">
 
-        {#
-            {% set counter = '1' %}
-            {% set IdStr = '' %}
-            {% set IdsArray = []  %}
-            {% set entries = craft.entries().section("contentPage") %}
-            {% for entry in entries.all() %}
-
-                {% if entry.excludeNavigation == false %}
-                    {% set IdStr  = (counter == 1)? entry.id : IdStr  ~ ',' ~ entry.id  %}
-                    {% set counter = counter + 1 %}
-                {% endif %}
-
-            {% endfor %}
-
-            {% set IdStr  = IdStr|trim(',') %}
-            {% set IdsArray = IdStr|split(',') %}
-        #}
-
-            {#  {% set pages = craft.entries().section('contentPage').level('<= ' ~ siteconfig.navigationLevel).id(IdsArray) %}  #}
             {% set pages = craft.entries().section('contentPage').level('<= ' ~ siteconfig.navigationLevel).excludeNavigation(0).all() %}
 
             {% set firstLevelID = "" %}
@@ -49,7 +32,7 @@
             {% endif %}
 
             <nav class="wl-navigation wl-navi-overlay-content" style="display: inline-block">
-                <ul id="nav" class="responsive-menu" data-menu-style="accordion">
+                <ul id="nav" class="{% if pageId == 2%}startseite{% else %}contentseite{% endif %} responsive-menu" data-menu-style="accordion">
                     {% nav page in pages %}
                         {% set outputUrl = page.getUrl() %}
                         {% set outputTitle = page.title %}
@@ -77,13 +60,9 @@
 
                         {% set redirect = page.redirect %}
                         {% if redirect is defined and redirect is not null %}
-                            {% set redirectLink = redirect.getUrl() %}
-                            {% if redirectLink is not null %}
-                                {% if redirect.getTarget() == '_blank' %}
-                                    {% set output = '<a class="navi" href="' ~ outputUrl ~ '" target="_blank"><span>' ~ outputTitle ~ '</span></a>' %}
-                                {% else %}
-                                    {% set output = '<a class="navi" href="' ~ redirectLink ~ '"><span>' ~ outputTitle ~ '</span></a>' %}
-                                {% endif %}
+                            {% set redirectLink = redirect.getLink()  %}
+                            {% if redirectLink != '' %}
+                                {% set output = _self.linkListOnlyAtag( redirect, 'navi level-' ~ page.level ) | trim | raw ~ '<span data-test>' ~ outputTitle ~ '</span></a>' %}
                             {% endif %}
                         {% endif %}
 

@@ -11,7 +11,6 @@ header {
     margin-top: 47px;
   }
 
-
   .nav-item-header-left{
 
     position: relative;
@@ -29,8 +28,8 @@ header {
     @include wl-breakpoint($page-width) {
       width: 17%;
     }
-    @include wl-breakpoint(1500) {
-      width: 12%;
+    @include wl-breakpoint(1700) {
+      width: 10%;
     }
     @include wl-breakpoint($breakpoint-navigation) {
       width: 120px;
@@ -55,8 +54,8 @@ header {
     @include wl-breakpoint($page-width) {
       width: 71%;
     }
-    @include wl-breakpoint(1500) {
-      width: 78%;
+    @include wl-breakpoint(1700) {
+      width: 80%;
     }
     @include wl-breakpoint($breakpoint-navigation) {
       width: calc(100% - 380px);
@@ -83,12 +82,11 @@ header {
       justify-content: flex-end;
     }
 
-
     width: 190px;
     @include wl-breakpoint($page-width) {
       width: 12%;
     }
-    @include wl-breakpoint(1500) {
+    @include wl-breakpoint(1700) {
       width: 10%;
     }
     @include wl-breakpoint($breakpoint-navigation) {

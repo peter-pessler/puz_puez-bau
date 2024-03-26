@@ -49,49 +49,37 @@
 /* =================================================== */
 // Font size mixin
 /* =================================================== */
-/*
-// simple (no scale)
-x { @include font-size(15px); }
 
-//  fluid scale based on default bounding
-x { @include font-size(16px, 24px); }
+/* ===================================================
+ACHTUNG! responsive-font wurde nachträglich bearbeitet
+Die Variabeln $base-font-breakpoint-min, $base-font-breakpoint-max werden nun nicht mehr berücksichtigt !!!!!!!!!
+ =================================================== */
 
-//  fluid scale based on custom bounding
-//  (you could also change defaults)
-x { @include font-size(16px, 24px, 320px, 960px); }
+@mixin responsive-font($font-size-min, $font-size-max, $base-font-breakpoint-min, $base-font-breakpoint-max,  $font-family, $line-height) {
 
-*/
-@mixin responsive-font(
-	$min,                        			// font-size
-    $max: null,                  			// optional maximum font size
-    $lock-min: $base-font-breakpoint-min,  	// optional minimum viewport width
-    $lock-max: $base-font-breakpoint-max,   // optional maximum viewport width
-	$font-family: $base-font-family,		// opional font family
-	$line-height: $base-line-height
-){
-	& { font-size: $min; }
-	@if $max {
-		@media (min-width: $lock-min) {
-			& {
-				font-size: calc(
-								#{$min} +
-								#{num($max) - num($min)} *
-								(100vw - #{$lock-min}) /
-								#{num($lock-max) - num($lock-min)}
-				);
-			}
-		}
-		@media (min-width: $lock-max){
-			& { font-size: $max; }
-		}
-	}
+	$breakpointMax: $page-width; //wird aus _vars.scss übergeben
+	$breakpointMin: calc(calc($font-size-min / $font-size-max ) * $breakpointMax);
 
+	font-family: $font-family;
+	font-size: $font-size-max;
 	@if $line-height != 0{
 		line-height: $line-height;
 	}
 
-	font-family: $font-family;
+	@include wl-breakpoint($breakpointMax) {
+
+		// 1 vw is equal to 1% of the viewport width
+		$vw-context: calc(calc($breakpointMax* .01) * 1px); // 1% viewport width
+		font-size: calc(calc($font-size-max/$vw-context) * 1vw);
+	}
+
+	@include wl-breakpoint($breakpointMin) {
+		font-size: $font-size-min;
+		//color: red;
+	}
+
 }
+
 
 /* =================================================== */
 

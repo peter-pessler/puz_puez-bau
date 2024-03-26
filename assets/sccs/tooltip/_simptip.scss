@@ -79,7 +79,7 @@ $c-warning: #e67e22;
 @mixin multiline ($width: 150px, $align: left) {
   height: auto;
   width: $width;
-  padding: $tooltipHeight/2;
+  padding: calc($tooltipHeight/2);
   line-height: $tooltipHeight - 3px;
   white-space: normal;
   text-align: $align;
@@ -135,9 +135,9 @@ $coloring:                true!default;
 	  // tooltip box
 	  &:after {
 		height: $tooltipHeight;
-		padding: $tooltipHeight/2 $tooltipHeight/2 0 $tooltipHeight/2;
+		padding: calc($tooltipHeight/2) calc($tooltipHeight/2) 0 calc($tooltipHeight/2);
 		  @include responsive-font(18px, 18px, $base-font-breakpoint-min, $base-font-breakpoint-max, $base-font-family, $base-line-height);
-		  line-height: $tooltipHeight/2;
+		  line-height: calc($tooltipHeight/2);
 		content: attr(data-tooltip);
 		white-space: nowrap;
 	  }
@@ -158,7 +158,7 @@ $coloring:                true!default;
 %shared--left-and-right {
   &:before, &:after {bottom: 50%;}
   &:before{margin-bottom: $arrowSize * -1 + 1; } // -5px
-  &:after {margin-bottom: $tooltipHeight/-1.5;}
+  &:after {margin-bottom: calc($tooltipHeight/-1.5);}
 
   @if $half-arrows == true {
 	  &.half-arrow{
